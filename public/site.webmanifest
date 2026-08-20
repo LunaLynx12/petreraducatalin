@@ -1,0 +1,17 @@
+{
+  "name": "Petre Radu Cătălin — Offensive Security Professional",
+  "short_name": "Petre Radu Cătălin",
+  "description": "Penetration Tester & Offensive Security Professional based in Brașov, Romania. Penetration testing, Red Team, Cloud & AI security.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

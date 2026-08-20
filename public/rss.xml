@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Petre Radu Cătălin - Blog</title>
+    <link>https://petreraducatalin.com/blog/</link>
+    <description>Insights from Petre Radu Cătălin - technical write-ups on offensive security, penetration testing, cloud threats, and AI security.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Aug 2026 08:56:29 GMT</lastBuildDate>
+    <atom:link href="https://petreraducatalin.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Security: Testing LLMs for Prompt Injection and Data Exfiltration</title>
+      <link>https://petreraducatalin.com/blog/ai-security-testing-llms/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/ai-security-testing-llms/</guid>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 GMT</pubDate>
+      <description>A field guide to how I evaluate AI systems offensively - prompt injection, indirect injection through retrieved content, and the data-exfiltration bugs that leak what LLMs are told through their own outputs.</description>
+      <category>AI Security</category>
+      <category>Penetration Testing</category>
+      <category>LLM Security</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Cloud Misconfigurations That Pentesters Love to Exploit</title>
+      <link>https://petreraducatalin.com/blog/cloud-misconfigurations-pentesters-love/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/cloud-misconfigurations-pentesters-love/</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+      <description>The top cloud misconfigurations I encounter on real engagements - S3 buckets, over-permissive roles, exposed credentials, and public snapshots - and how to find them before the attackers do.</description>
+      <category>Cloud Security</category>
+      <category>Penetration Testing</category>
+      <category>AWS</category>
+      <category>Azure</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>From Web App to Domain Admin: A Red Team Playbook</title>
+      <link>https://petreraducatalin.com/blog/from-web-app-to-domain-admin/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/from-web-app-to-domain-admin/</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <description>A practical, phase-by-phase breakdown of how a single web application flaw can be chained into full Active Directory compromise - and the detection gaps that let it happen.</description>
+      <category>Penetration Testing</category>
+      <category>Red Team</category>
+      <category>Active Directory</category>
+      <category>CTF Writeups</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+  </channel>
+</rss>

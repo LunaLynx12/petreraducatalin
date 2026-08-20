@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#0a0a0f"/>
+  <rect x="40" y="40" width="1200" height="640" rx="10" fill="#12121a" stroke="#00ccff" stroke-opacity="0.4" stroke-width="1.5"/>
+  <rect x="40" y="40" width="1200" height="44" rx="10" fill="#1a1a24"/>
+  <circle cx="70" cy="62" r="6" fill="#ff3366"/><circle cx="95" cy="62" r="6" fill="#e8b93c"/><circle cx="120" cy="62" r="6" fill="#00ff88"/>
+  <text x="160" y="68" font-family="monospace" font-size="18" fill="#8899aa">Signature Stealer — Authenticode PoC</text>
+  <g font-family="monospace">
+    <text x="70" y="140" font-size="18" fill="#00ff88">$ python3 sigsteal.py signed-app.exe</text>
+    <text x="70" y="180" font-size="18" fill="#e0e0e0">[+] Opening signed binary...</text>
+    <text x="70" y="220" font-size="18" fill="#e0e0e0">[+] PKCS#7 structure found at offset 0x2E000</text>
+    <text x="70" y="260" font-size="18" fill="#e0e0e0">[+] Signer:     DigiCert Trusted G4 Code Signing</text>
+    <text x="70" y="300" font-size="18" fill="#e0e0e0">[+] Timestamp:  2025-11-12 09:14:22 UTC</text>
+    <text x="70" y="340" font-size="18" fill="#00ccff">[*] Cert chain extracted (2 certs)</text>
+    <text x="70" y="380" font-size="18" fill="#e0e0e0">[*] Metadata serialized to sig.json</text>
+    <text x="70" y="460" font-size="20" fill="#ff3366" font-weight="bold">PROJECT SCREENSHOT PLACEHOLDER</text>
+    <text x="70" y="495" font-size="14" fill="#8899aa">replace with /images/projects/signature-stealer.webp (&lt;200KB)</text>
+  </g>
+</svg>
