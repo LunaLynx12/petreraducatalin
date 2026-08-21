@@ -22,6 +22,10 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/petreradu/",
     github: "https://github.com/LunaLynx12",
+    x: "https://x.com/petreraducata",
+    devto: "https://dev.to/petreraducatalin",
+    reddit: "https://reddit.com/user/petreraducatalin",
+    youtube: "https://youtube.com/@PetreRaduCatalin",
     site: "https://kiwidefence.com",
   },
   ogTitle: "Petre Radu Cătălin | Senior Penetration Tester & Offensive Security Professional",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
-import { Analytics, PersonJsonLd } from "@/components/seo";
+import { Analytics } from "@/components/seo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
@@ -20,6 +20,47 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   preload: true,
 });
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  alternateName: siteConfig.alternateName,
+  jobTitle: siteConfig.jobTitle,
+  worksFor: {
+    "@type": "Organization",
+    name: "NTT DATA",
+  },
+  url: siteConfig.url,
+  sameAs: [
+    siteConfig.social.linkedin,
+    siteConfig.social.github,
+    siteConfig.social.x,
+    siteConfig.social.devto,
+    siteConfig.social.reddit,
+    siteConfig.social.youtube,
+    siteConfig.social.site,
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universitatea Transilvania din Brașov",
+  },
+  knowsAbout: [
+    "Penetration Testing",
+    "Red Team Operations",
+    "Active Directory Security",
+    "Cloud Security",
+    "AI Security",
+    "MITRE ATT&CK Framework",
+    "GDPR Compliance",
+    "NIS2 Directive",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Brașov",
+    addressCountry: "RO",
+  },
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -40,7 +81,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: siteConfig.url,
-    siteName: `${siteConfig.name} - Offensive Security Professional`,
+    siteName: `${siteConfig.name} - Senior Offensive Security Professional`,
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
     locale: "en_US",
@@ -49,7 +90,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/images/og.png`,
         width: 1200,
         height: 630,
-        alt: "Petre Radu Cătălin - Offensive Security Professional",
+        alt: "Petre Radu Cătălin - Senior Offensive Security Professional",
       },
     ],
   },
@@ -93,8 +134,13 @@ export default function RootLayout({
         "scroll-smooth"
       )}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className="scanline">
-        <PersonJsonLd />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
