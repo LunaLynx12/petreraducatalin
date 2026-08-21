@@ -65,7 +65,7 @@ const personJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.title,
+    default: "Petre Radu Cătălin | Penetration Tester & Offensive Security",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -79,11 +79,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    type: "profile",
+    type: "website",
     url: siteConfig.url,
-    siteName: `${siteConfig.name} - Senior Offensive Security Professional`,
-    title: siteConfig.ogTitle,
-    description: siteConfig.ogDescription,
+    siteName: siteConfig.name,
+    title: "Petre Radu Cătălin | Offensive Security Professional",
+    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security. Based in Brașov, Romania.",
     locale: "en_US",
     images: [
       {
@@ -96,8 +96,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.ogTitle,
-    description: siteConfig.ogDescription,
+    title: "Petre Radu Cătălin | Offensive Security Professional",
+    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security.",
     images: [`${siteConfig.url}/images/og.png`],
   },
   robots: {
@@ -112,8 +112,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
     apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+    shortcut: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION

@@ -77,7 +77,7 @@ export default async function PostPage({ params }: PostPageProps) {
     publisher: {
       "@type": "Organization",
       name: "Petre Radu Cătălin",
-      logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.svg` },
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.png` },
     },
     mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}/`,
     image: `${siteConfig.url}${post.cover}`,

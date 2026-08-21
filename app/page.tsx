@@ -11,14 +11,14 @@ import { BlogSection } from "@/components/blog-section";
 import { ContactSection } from "@/components/contact-section";
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
+  title: "Petre Radu Cătălin | Penetration Tester & Offensive Security",
   description: siteConfig.description,
   alternates: { canonical: `${siteConfig.url}/` },
   openGraph: {
-    type: "profile",
+    type: "website",
     url: siteConfig.url,
-    title: siteConfig.ogTitle,
-    description: siteConfig.ogDescription,
+    title: "Petre Radu Cătălin | Offensive Security Professional",
+    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security. Based in Brașov, Romania.",
   },
 };
 
