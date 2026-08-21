@@ -12,9 +12,9 @@ export interface CtfAchievement {
 
 export const certifications: Certification[] = [
   {
-    name: "TryHackMe Junior Penetration Tester (PT1)",
-    issuer: "TryHackMe",
-    icon: "thm",
+    name: "eLearnSecurity Certified Penetration Tester (eCPPT)",
+    issuer: "INE / eLearnSecurity",
+    icon: "ine",
   },
   {
     name: "OpenAI Cyber Practitioner",

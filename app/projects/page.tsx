@@ -65,7 +65,7 @@ export default function ProjectsPage() {
               >
                 <div className="relative aspect-[16/8] border-b border-border bg-black/20">
                   <Image
-                    src={`/images/projects/${project.slug}.svg`}
+                    src={`/images/projects/${project.slug}.webp`}
                     alt={`${project.title} - ${project.subtitle} case study by Petre Radu Cătălin`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 896px"

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "About Petre Radu Cătălin",
-  description: `Full biography of Petre Radu Cătălin (Petre Radu) - Penetration Tester at NTT DATA, offensive security professional based in Brașov, Romania.`,
+  description: `Full biography of Petre Radu Cătălin (Petre Radu) - Senior Penetration Tester at NTT DATA with 4+ years of offensive security experience across enterprise, B2B2C, and B2C environments. Based in Brașov, Romania.`,
   alternates: { canonical: `${siteConfig.url}/about/` },
 };
 
@@ -16,7 +16,12 @@ const extendedBio = [
   {
     heading: "Foundations",
     paragraph:
-      "Petre Radu Cătălin - known to clients and colleagues simply as Petre Radu - is an offensive security professional from Brașov, Romania, currently working as a Penetration Tester at NTT DATA. His security journey began with a relentless curiosity about how systems actually break: not in theory, not in slideware, but under real attack. That curiosity took him through a Master's degree in Cyber Security at Universitatea Transilvania din Brașov, where he studied advanced cyber defense, red and blue team operations, and the auditing discipline that underpins every serious security career.",
+      "Petre Radu Cătălin - known to clients and colleagues simply as Petre Radu - is a senior offensive security professional from Brașov, Romania, currently working as a Penetration Tester at NTT DATA. With 4+ years of hands-on penetration testing experience spanning enterprise B2B2C agency partnerships, direct B2C client engagements, and now large-scale enterprise assessments, he has built a practice rooted in real-world attack chains rather than theoretical vulnerabilities. His security journey began with a relentless curiosity about how systems actually break - not in theory, not in slideware, but under real attack.",
+  },
+  {
+    heading: "The freelance years",
+    paragraph:
+      "Before joining NTT DATA, Petre spent two years as an independent penetration tester. Through B2B2C partnerships with security agencies, he delivered full-stack assessments - web applications, APIs, network infrastructure, and Active Directory estates - for enterprise clients he never met directly. In parallel, his B2C practice put him in direct contact with businesses that needed security testing but lacked an internal security function. That dual exposure taught him something most enterprise testers never learn: how to communicate risk to both technical security teams and non-technical business owners with equal precision.",
   },
   {
     heading: "The Master's years",
@@ -46,7 +51,7 @@ const extendedBio = [
   {
     heading: "Continuous learning",
     paragraph:
-      "With more than 100 certifications - from TryHackMe's Junior Penetration Tester path and OpenAI's Cyber Practitioner programme to Microsoft's AI Skills Fest and AZ-700 - Petre treats certification not as decoration but as a structured way to force himself into unfamiliar territory. When he is not testing or studying, he competes in CTF competitions, where results like a team rank of 6 out of 20,220 in TryHackMe's Industrial Intrusion CTF keep him honest.",
+      "With more than 100 certifications - from eLearnSecurity's eCPPT and OpenAI's Cyber Practitioner programme to Microsoft's AI Skills Fest and AZ-700 - Petre treats certification not as decoration but as a structured way to force himself into unfamiliar territory. When he is not testing or studying, he competes in CTF competitions, where results like a team rank of 6 out of 20,220 in TryHackMe's Industrial Intrusion CTF keep him honest.",
   },
   {
     heading: "What I stand for",
@@ -82,8 +87,9 @@ export default function AboutPage() {
             About <span className="text-gradient-green">Petre Radu Cătălin</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Full biography of Petre Radu Cătălin (Petre Radu) - Penetration
-            Tester at NTT DATA and offensive security professional based in
+            Full biography of Petre Radu Cătălin (Petre Radu) - Senior
+            Penetration Tester at NTT DATA with 4+ years of offensive security
+            experience across enterprise, B2B2C, and B2C environments. Based in
             Brașov, Romania.
           </p>
         </Reveal>
@@ -91,7 +97,7 @@ export default function AboutPage() {
         <Reveal delay={0.1} className="mt-10">
           <div className="neon-border overflow-hidden rounded-2xl bg-surface">
             <Image
-              src="/images/photo-placeholder.svg"
+              src="/images/photo-placeholder.webp"
               alt="Petre Radu Cătălin - professional photo, Penetration Tester based in Brașov, Romania"
               width={1024}
               height={640}

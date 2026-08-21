@@ -17,7 +17,7 @@ export function AboutSection() {
           title="About Petre Radu Cătălin"
           description={
             <>
-              Offensive security professional · Penetration Tester at NTT DATA ·
+              Senior offensive security professional with 4+ years in penetration testing · Penetration Tester at NTT DATA ·
               Based in Brașov, Romania. Known as <strong className="text-foreground">Petre Radu</strong> to clients,
               peers, and the security community.
             </>
@@ -28,7 +28,7 @@ export function AboutSection() {
           <Reveal className="order-2 lg:order-1">
             <div className="neon-border overflow-hidden rounded-2xl bg-surface">
               <Image
-                src="/images/photo-placeholder.svg"
+                src="/images/photo-placeholder.webp"
                 alt="Petre Radu Cătălin - About, penetration tester in Brașov, Romania"
                 width={512}
                 height={640}

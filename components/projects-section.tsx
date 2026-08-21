@@ -23,7 +23,7 @@ export function ProjectsSection() {
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
                 <div className="relative aspect-[16/9] overflow-hidden border-b border-border">
                   <Image
-                    src={`/images/projects/${project.slug}.svg`}
+                    src={`/images/projects/${project.slug}.webp`}
                     alt={`${project.title} - ${project.subtitle} project by Petre Radu Cătălin`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 33vw"

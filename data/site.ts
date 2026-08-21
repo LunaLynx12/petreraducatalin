@@ -4,14 +4,14 @@ export const siteConfig = {
   title:
     "Petre Radu Cătălin | Penetration Tester & Offensive Security Professional",
   description:
-    "Petre Radu Cătălin is an offensive security professional specializing in penetration testing, Red Team operations, and cloud security. Based in Brașov, Romania. View certifications, projects, and contact.",
+    "Petre Radu Cătălin is a senior offensive security professional with 4+ years of penetration testing experience across enterprise, B2B2C, and B2C environments. Specializing in Red Team operations, cloud security, and AI security evaluations. Based in Brașov, Romania.",
   url: "https://petreraducatalin.com",
   domain: "petreraducatalin.com",
   alternateDomain: "petreradu.com",
   tagline:
     "Offensive Security Professional | Penetration Testing · Red Team · Cloud & AI Security",
   subTagline: "Identifying critical vulnerabilities. Delivering actionable defense.",
-  jobTitle: "Penetration Tester",
+  jobTitle: "Senior Penetration Tester",
   company: "NTT DATA",
   location: {
     city: "Brașov",
@@ -24,9 +24,9 @@ export const siteConfig = {
     github: "https://github.com/LunaLynx12",
     site: "https://kiwidefence.com",
   },
-  ogTitle: "Petre Radu Cătălin | Offensive Security Professional",
+  ogTitle: "Petre Radu Cătălin | Senior Penetration Tester & Offensive Security Professional",
   ogDescription:
-    "Petre Radu Cătălin (Petre Radu) - Penetration Tester & Offensive Security Professional. Penetration testing, Red Team, Cloud & AI security. Based in Brașov, Romania.",
+    "Petre Radu Cătălin (Petre Radu) - Senior Penetration Tester with 4+ years in enterprise, B2B2C, and B2C offensive security. Red Team, Cloud & AI security. Based in Brașov, Romania.",
   keywords: [
     "Petre Radu Cătălin",
     "Petre Radu",

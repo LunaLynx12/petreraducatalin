@@ -1,7 +1,7 @@
 export const bioParagraphs: { heading: string; text: string }[] = [
   {
     heading: "Who I am",
-    text: "I'm Petre Radu Cătălin - often simply known as Petre Radu - an offensive security professional and Penetration Tester at NTT DATA, based in Brașov, Romania. Every day I probe enterprise networks, web applications, and cloud infrastructure for the flaws that attackers are paid to find, and I translate them into risk owners can understand and engineers can fix.",
+    text: "I'm Petre Radu Cătălin - often simply known as Petre Radu - a senior offensive security professional with 4+ years of penetration testing experience across enterprise, B2B2C, and B2C environments. I currently work as a Penetration Tester at NTT DATA, based in Brașov, Romania. Every day I probe enterprise networks, web applications, and cloud infrastructure for the flaws that attackers are paid to find, and I translate them into risk owners can understand and engineers can fix.",
   },
   {
     heading: "My philosophy",
@@ -9,7 +9,7 @@ export const bioParagraphs: { heading: string; text: string }[] = [
   },
   {
     heading: "The journey",
-    text: "My path runs through the Master's programme in Cyber Security at Universitatea Transilvania din Brașov (2024-2026), where I studied advanced cyber defense, red and blue team operations, and security auditing - and where I complemented the curriculum with Google.org Cybersecurity Seminars in 2025. That foundation carried me into enterprise penetration testing at NTT DATA, where I lead assessments against production systems at scale.",
+    text: "Before NTT DATA, I spent two years as a freelance penetration tester delivering B2B2C assessments through agency partnerships and B2C engagements directly to businesses - covering web applications, APIs, Active Directory estates, and cloud environments. That freelance foundation carried me into enterprise testing at NTT DATA, where I now lead assessments against production systems at scale. The Master's programme in Cyber Security at Universitatea Transilvania din Brașov (2024-2026) complemented this hands-on work with advanced cyber defense, red and blue team operations, and security auditing theory.",
   },
   {
     heading: "Beyond the enterprise",

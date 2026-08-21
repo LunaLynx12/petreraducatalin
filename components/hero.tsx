@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
 
 const badges = [
-  { icon: ShieldCheck, label: "TryHackMe PT1 Certified" },
+  { icon: ShieldCheck, label: "OSCP-Level PT Experience" },
   { icon: Trophy, label: "HackTheBox Holo Tier" },
   { icon: BrainCircuit, label: "OpenAI Cyber Practitioner" },
 ];
@@ -45,7 +45,7 @@ export function Hero() {
 
           <Reveal delay={0.15}>
             <p className="mt-4 font-mono text-sm text-secondary sm:text-base">
-              Penetration Tester @ NTT DATA
+              Senior Penetration Tester @ NTT DATA
               <span
                 aria-hidden="true"
                 className="ml-1.5 inline-block h-4 w-2 translate-y-0.5 bg-primary animate-blink"
@@ -60,11 +60,11 @@ export function Hero() {
 
           <Reveal delay={0.2}>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, a Penetration
-              Tester at NTT DATA. I identify critical vulnerabilities in Active
-              Directory, cloud environments, and complex web applications - then
-              deliver remediation guidance that security teams can act on
-              immediately.
+              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, a Senior Penetration
+              Tester with 4+ years of offensive security experience spanning
+              enterprise, B2B2C, and B2C environments. I break Active Directory
+              forests, cloud estates, and complex web applications - then
+              deliver the remediation plan that closes the gap.
             </p>
           </Reveal>
 
@@ -97,7 +97,7 @@ export function Hero() {
           <figure className="neon-border relative overflow-hidden rounded-2xl bg-surface">
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="/images/photo-placeholder.svg"
+                src="/images/photo-placeholder.webp"
                 alt="Petre Radu Cătălin - Penetration Tester based in Brașov, Romania"
                 fill
                 priority

@@ -11,7 +11,7 @@ export function CertificationsSection() {
           eyebrow="credentials"
           id="certifications-heading"
           title="Certifications & Achievements"
-          description="100+ certifications earned across security, cloud, and AI disciplines - plus CTF results that put the theory to work."
+          description="100+ certifications earned across security, cloud, and AI disciplines - backed by 4+ years of real-world penetration testing and Red Team experience."
         />
 
         <Reveal>

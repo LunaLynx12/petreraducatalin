@@ -20,7 +20,7 @@ export function PersonJsonLd() {
     "@type": "Person",
     name: siteConfig.name,
     alternateName: siteConfig.alternateName,
-    jobTitle: "Penetration Tester",
+    jobTitle: siteConfig.jobTitle,
     worksFor: {
       "@type": "Organization",
       name: "NTT DATA",

@@ -4,7 +4,7 @@ date: "2026-05-18"
 excerpt: "A practical, phase-by-phase breakdown of how a single web application flaw can be chained into full Active Directory compromise - and the detection gaps that let it happen."
 tags: ["Penetration Testing","Red Team","Active Directory","CTF Writeups"]
 readTime: "9 min read"
-cover: "/images/blog/domain-admin.svg"
+cover: "/images/blog/from-web-app-to-domain-admin.webp"
 ---
 
 Every red team engagement I run starts the same way: pick the softest edge, earn a foothold, then crawl toward the domain. As **Petre Radu Cătălin**, a penetration tester at NTT DATA, I have spent the last two years turning that crawl into a repeatable, documented discipline. In this write-up I break down the exact playbook I use to go from a single web application finding to full domain compromise, along with the detection gaps that let attackers execute it undetected.
