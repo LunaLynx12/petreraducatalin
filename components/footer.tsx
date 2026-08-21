@@ -105,7 +105,7 @@ export function Footer() {
                   <a
                     href={href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer me"
                     className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-primary"
                   >
                     <Icon className="h-4 w-4" />
