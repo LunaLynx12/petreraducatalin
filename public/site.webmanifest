@@ -1,7 +1,7 @@
 {
-  "name": "Petre Radu Cătălin — Offensive Security Professional",
-  "short_name": "Petre Radu Cătălin",
-  "description": "Penetration Tester & Offensive Security Professional based in Brașov, Romania. Penetration testing, Red Team, Cloud & AI security.",
+  "name": "Petre Radu Cătălin - Senior Penetration Tester",
+  "short_name": "Petre Radu",
+  "description": "Senior Penetration Tester at NTT DATA. 4+ years in enterprise penetration testing, Red Team, and cloud security. Brașov, Romania.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
@@ -12,6 +12,11 @@
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ]
 }

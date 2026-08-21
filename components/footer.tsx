@@ -64,7 +64,7 @@ export function Footer() {
 
           <nav aria-label="Footer navigation">
             <h2 className="mb-4 font-mono text-sm uppercase tracking-widest text-primary">
-              Navigate
+              Site Navigation
             </h2>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {NAV_LINKS.map((link) => (
@@ -79,26 +79,26 @@ export function Footer() {
               ))}
               <li>
                 <Link href="/blog" className="text-sm text-muted transition-colors hover:text-primary">
-                  Blog Posts
+                  Read the Blog
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="text-sm text-muted transition-colors hover:text-primary">
-                  Case Studies
+                  View Case Studies
                 </Link>
               </li>
               <li>
                 <a href="/rss.xml" className="text-sm text-muted transition-colors hover:text-primary">
-                  RSS Feed
+                  Subscribe via RSS
                 </a>
               </li>
             </ul>
           </nav>
 
           <div>
-            <h2 className="mb-4 font-mono text-sm uppercase tracking-widest text-primary">
+            <h3 className="mb-4 font-mono text-sm uppercase tracking-widest text-primary">
               Find me on
-            </h2>
+            </h3>
             <ul className="space-y-2">
               {findMeOn.map(({ label, href, icon: Icon, handle }) => (
                 <li key={href}>

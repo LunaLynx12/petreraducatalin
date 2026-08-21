@@ -41,6 +41,7 @@ export function Hero() {
             <Reveal delay={0.1}>
               <span className="text-foreground"> Cătălin</span>
             </Reveal>
+            <span className="sr-only"> - Senior Penetration Tester &amp; Offensive Security Professional</span>
           </h1>
 
           <Reveal delay={0.15}>

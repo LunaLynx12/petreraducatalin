@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "Petre Radu Cătălin",
   alternateName: "Petre Radu",
   title:
-    "Petre Radu Cătălin | Penetration Tester & Offensive Security Professional",
+    "Petre Radu Cătălin | Senior Penetration Tester",
   description:
-    "Petre Radu Cătălin is a senior offensive security professional with 4+ years of penetration testing experience across enterprise, B2B2C, and B2C environments. Specializing in Red Team operations, cloud security, and AI security evaluations. Based in Brașov, Romania.",
+    "Petre Radu Cătălin - Senior Penetration Tester at NTT DATA. 4+ years in enterprise penetration testing, Red Team operations, and cloud security. Based in Brașov, Romania.",
   url: "https://petreraducatalin.com",
   domain: "petreraducatalin.com",
   alternateDomain: "petreradu.com",
