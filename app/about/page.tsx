@@ -21,7 +21,7 @@ const extendedBio = [
   {
     heading: "The freelance years",
     paragraph:
-      "Before joining NTT DATA, Petre spent two years as an independent penetration tester. Through B2B2C partnerships with security agencies, he delivered full-stack assessments - web applications, APIs, network infrastructure, and Active Directory estates - for enterprise clients he never met directly. In parallel, his B2C practice put him in direct contact with businesses that needed security testing but lacked an internal security function. That dual exposure taught him something most enterprise testers never learn: how to communicate risk to both technical security teams and non-technical business owners with equal precision.",
+      "Before joining NTT DATA, Petre spent nearly two years as an independent penetration tester in two distinct phases. He started with direct B2C engagements (Nov 2023 - May 2024), delivering web application and infrastructure assessments to businesses that lacked an internal security function. That foundation led to B2B2C agency partnerships (Jun 2024 - Oct 2025), where he delivered full-stack assessments for enterprise clients through tier-one security consultancies - web applications, APIs, Active Directory estates, and cloud environments. The transition from direct client work to agency-scale delivery taught him something most enterprise testers never learn: how to communicate risk to both technical security teams and non-technical business owners with equal precision.",
   },
   {
     heading: "The Master's years",
