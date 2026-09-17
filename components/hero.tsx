@@ -32,6 +32,9 @@ export function Hero() {
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Available for engagements - {siteConfig.location.label}
             </p>
+            <p className="mt-2 text-sm text-muted">
+              Available for solo engagements or team-led assessments with trusted security professionals.
+            </p>
           </Reveal>
 
           <h1 className="font-mono text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">

@@ -12,10 +12,18 @@ export function ExperienceSection() {
           eyebrow="history"
           id="experience-heading"
           title="Experience"
-          description="Enterprise penetration testing, bug bounty hunting, and a Master's in Cyber Security - a career built on finding real vulnerabilities and fixing them for good."
+          description="Penetration testing, bug bounty research, and hands-on security work shaped by real-world findings and practical remediation guidance."
         />
 
-        <div className="relative mx-auto max-w-3xl">
+        <div className="mt-6 rounded-xl border border-border bg-surface/70 p-5 text-sm text-muted">
+          <p>
+            <strong className="text-foreground">Engagement model:</strong> for broader scopes, I coordinate complementary work
+            with trusted specialists in cloud, compliance, and incident response. I remain the primary point of contact and
+            lead the assessment flow from scoping through reporting and remediation validation.
+          </p>
+        </div>
+
+        <div className="relative mx-auto mt-8 max-w-3xl">
           <div aria-hidden="true" className="absolute left-[22px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-secondary/30 to-transparent md:left-[26px]" />
 
           <ol className="space-y-8">

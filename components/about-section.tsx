@@ -53,6 +53,19 @@ export function AboutSection() {
         </div>
 
         <Reveal delay={0.1} className="mt-12">
+          <div className="rounded-xl border border-border bg-surface/70 p-6">
+            <h3 className="mb-2 font-mono text-sm font-semibold uppercase tracking-widest text-primary">
+              How I work with others
+            </h3>
+            <p className="text-sm leading-relaxed text-muted sm:text-base">
+              For larger scopes, I collaborate with a small network of vetted professionals across offensive security,
+              cloud, compliance, and incident response. I remain the main point of contact, while bringing in specialists
+              when the assessment requires deeper coverage.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1} className="mt-12">
           <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {stats.map((stat, i) => {
               const Icon = statIcons[i];

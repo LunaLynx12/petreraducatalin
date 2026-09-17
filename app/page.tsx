@@ -9,6 +9,7 @@ import { CertificationsSection } from "@/components/certifications-section";
 import { ToolsSection } from "@/components/tools-section";
 import { BlogSection } from "@/components/blog-section";
 import { ContactSection } from "@/components/contact-section";
+import { TrustedCollaboratorsSection } from "@/components/trusted-collaborators";
 
 export const metadata: Metadata = {
   title: "Petre Radu Cătălin | Penetration Tester & Offensive Security",
@@ -27,6 +28,7 @@ export default function HomePage() {
     <>
       <Hero />
       <AboutSection />
+      <TrustedCollaboratorsSection />
       <ExpertiseSection />
       <ExperienceSection />
       <ProjectsSection />

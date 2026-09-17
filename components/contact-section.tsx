@@ -65,6 +65,11 @@ export function ContactSection() {
           description="Available for remote and on-site engagements. Based in Brașov, Romania."
         />
 
+        <div className="mb-8 rounded-xl border border-border bg-surface/70 p-4 text-sm text-muted">
+          <span className="font-medium text-foreground">Engagement type:</span> solo / team-led assessment. I can lead the
+          engagement directly or coordinate with trusted specialists for broader coverage.
+        </div>
+
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.3fr]">
           <Reveal>
             <div className="space-y-4">

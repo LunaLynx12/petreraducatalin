@@ -7,7 +7,7 @@ readTime: "10 min read"
 cover: "/images/blog/ai-security-testing-llms.webp"
 ---
 
-AI systems bring a completely new class of vulnerability to enterprise security, and most teams are still treating them like a web application. As **Petre Radu Cătălin**, I evaluate modern AI systems daily at NTT DATA, where I test everything from customer-facing chatbots to internal LLM-powered triage tools. This post is a practical field guide to how I approach AI security offensively, with a particular focus on prompt injection and the quiet data-exfiltration bugs that leak sensitive information through an LLM's own outputs.
+AI systems bring a completely new class of vulnerability to enterprise security, and most teams are still treating them like a web application. As **Petre Radu Cătălin**, I evaluate modern AI systems as part of my offensive security work, with a particular focus on prompt injection and the quiet data-exfiltration bugs that leak sensitive information through an LLM's own outputs.
 
 ## The AI Threat Model Is Different
 

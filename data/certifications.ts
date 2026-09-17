@@ -51,17 +51,17 @@ export const certifications: Certification[] = [
 export const ctfAchievements: CtfAchievement[] = [
   {
     event: "HackTheBox Season 9",
-    result: "Holo Tier",
+    result: "Participation",
     highlight: true,
   },
   {
     event: "TryHackMe Industrial Intrusion CTF",
-    result: "Team Rank 6 / 20,220",
+    result: "Participation",
     highlight: false,
   },
   {
     event: "TryHackMe Honeynet Collapse CTF",
-    result: "Solo Rank 66 / 960",
+    result: "Participation",
     highlight: false,
   },
 ];
