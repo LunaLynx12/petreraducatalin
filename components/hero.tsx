@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
 
 const badges = [
-  { icon: ShieldCheck, label: "OSCP-Level PT Experience" },
-  { icon: Trophy, label: "HackTheBox Holo Tier" },
-  { icon: BrainCircuit, label: "OpenAI Cyber Practitioner" },
+  { icon: ShieldCheck, label: "Penetration Testing" },
+  { icon: Trophy, label: "Bug Bounty Research" },
+  { icon: BrainCircuit, label: "Cyber Security Studies" },
 ];
 
 export function Hero() {
@@ -41,12 +41,12 @@ export function Hero() {
             <Reveal delay={0.1}>
               <span className="text-foreground"> Cătălin</span>
             </Reveal>
-            <span className="sr-only"> - Senior Penetration Tester &amp; Offensive Security Professional</span>
+            <span className="sr-only"> - Offensive Security Professional</span>
           </h1>
 
           <Reveal delay={0.15}>
             <p className="mt-4 font-mono text-sm text-secondary sm:text-base">
-              Senior Penetration Tester @ NTT DATA
+              Penetration Tester @ NTT DATA
               <span
                 aria-hidden="true"
                 className="ml-1.5 inline-block h-4 w-2 translate-y-0.5 bg-primary animate-blink"
@@ -55,17 +55,16 @@ export function Hero() {
               </span>
             </p>
             <p className="mt-3 text-lg text-foreground/90 sm:text-xl">
-              Offensive Security · Red Team · Cloud &amp; AI Security
+              Offensive Security · Bug Bounty · Cloud &amp; AI Security
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, a Senior Penetration
-              Tester with 4+ years of offensive security experience spanning
-              enterprise, B2B2C, and B2C environments. I break Active Directory
-              forests, cloud estates, and complex web applications - then
-              deliver the remediation plan that closes the gap.
+              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, an offensive security
+              professional focused on penetration testing, security research, and
+              practical risk assessment. I work on real-world web application and
+              infrastructure testing, then turn findings into clear remediation paths.
             </p>
           </Reveal>
 

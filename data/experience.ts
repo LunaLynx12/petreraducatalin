@@ -22,23 +22,21 @@ export const experienceItems: ExperienceItem[] = [
     location: "Remote",
     type: "Freelance",
     details: [
-      "Discovered 14 high-impact vulnerabilities across production SaaS platforms - including 3 critical IDOR chains leading to cross-tenant data exposure.",
-      "Triaged findings by real-world exploitability rather than CVSS score, prioritizing business-logic flaws and privilege escalation paths that scanners miss.",
-      "Coordinated disclosure with vendor security teams across 8 programs, achieving 100% confirmation rate on reported criticals.",
-      "Mapped attack surfaces across authentication, authorization, and API layers using Burp Suite Pro, ffuf, and custom fuzzing wordlists.",
+      "Conduct vulnerability research and bug bounty testing on public programs.",
+      "Focus on web application and API security, business logic flaws, and responsible disclosure.",
+      "Use Burp Suite and related tooling to validate findings and communicate impact clearly.",
     ],
   },
   {
     company: "NTT DATA, Inc.",
-    role: "Senior Penetration Tester",
+    role: "Penetration Tester",
     period: "Nov 2025 - Present",
     location: "Romania · Remote",
-    type: "Enterprise",
+    type: "Full-time",
     details: [
-      "Led 12 enterprise penetration tests across production web applications, APIs, and Active Directory estates - identifying 47 critical and high-severity findings including RCE, SQLi, and broken access control.",
-      "Architected full-chain attack simulations from unauthenticated foothold to domain compromise, mapping every technique to MITRE ATT&CK and delivering remediation playbooks to SOC teams.",
-      "Designed cross-cloud lateral movement paths chaining AWS IAM misconfigs with on-premise AD exploitation - reducing client attack surface by 60% within 90 days of remediation.",
-      "Built Python and Bash automation toolkit that cut assessment turnaround by 30% - automated subdomain enumeration, credential harvesting, and report generation across concurrent engagements.",
+      "Perform penetration tests on enterprise web applications and infrastructure.",
+      "Assess production environments to identify security weaknesses and validate risk.",
+      "Provide actionable findings and remediation guidance to engineering and security teams.",
     ],
   },
   {
@@ -48,34 +46,9 @@ export const experienceItems: ExperienceItem[] = [
     location: "Remote",
     type: "Freelance",
     details: [
-      "Discovered and disclosed 9 vulnerabilities across production applications - XSS, IDOR, CSRF, and access control flaws - triaged by impact over severity-score theater.",
-      "Chained low-severity findings into high-impact attack paths, escalating 4 reports from informational to critical after demonstrating real-world exploitability.",
-      "Partnered with vendor security teams to validate remediation within SLA, building a 100% disclosure compliance record across all submitted reports.",
-    ],
-  },
-  {
-    company: "Self-Employed",
-    role: "Penetration Tester (B2B2C)",
-    period: "Jun 2024 - Oct 2025",
-    location: "Romania · Remote",
-    type: "Freelance",
-    details: [
-      "Delivered 18 penetration tests for enterprise clients through tier-one security consultancy partnerships - full-stack assessments covering web applications, APIs, and network infrastructure.",
-      "Performed cloud security assessments on AWS and Azure environments, identifying IAM privilege escalation paths, exposed S3 buckets, and over-permissive role assumptions.",
-      "Led Active Directory security audits for mid-market and enterprise clients, mapping attack chains from initial foothold to domain admin using BloodHound, Impacket, and Kerberos exploitation.",
-      "Produced executive-ready reports with prioritized remediation guidance, driving an 85% repeat business rate across 6 agency partnerships.",
-    ],
-  },
-  {
-    company: "Self-Employed",
-    role: "Penetration Tester (B2C)",
-    period: "Nov 2023 - May 2024",
-    location: "Remote",
-    type: "Freelance",
-    details: [
-      "Delivered 12 penetration tests directly to businesses - web application security assessments, API testing, and infrastructure reviews across fintech, e-commerce, and SaaS verticals.",
-      "Identified business-logic flaws and access-control vulnerabilities that automated scanners miss - including 3 critical broken access control issues leading to privilege escalation.",
-      "Established responsible disclosure workflows with 9 vendors, achieving 100% remediation confirmation on reported findings and building a track record of trusted partnerships.",
+      "Performed independent vulnerability research through bug bounty programs.",
+      "Identified and reported issues such as XSS, IDOR, CSRF, and access control flaws.",
+      "Worked through responsible disclosure and collaborated with program owners on remediation.",
     ],
   },
 ];
@@ -83,19 +56,37 @@ export const experienceItems: ExperienceItem[] = [
 export const educationItems: EducationItem[] = [
   {
     institution: "Universitatea Transilvania din Brașov",
-    degree: "Master's, Cyber Security",
+    degree: "Master's degree, Cyber Security",
     period: "2024 - 2026",
     details: [
-      "Completed advanced offensive curriculum: red team operations, network exploitation, security auditing, and adversarial simulation under Dr. ing. Radu-Emil Precup.",
-      "Achieved team rank 6 out of 20,220 teams in TryHackMe Industrial Intrusion CTF - top 0.03% field placement.",
-      "Selected for Google.org Cybersecurity Seminars (Mar 2025 - Jul 2025) - competitive programme focused on applied defensive thinking and threat analysis.",
+      "Studied advanced topics in cyber defense, ethical hacking, cryptography, and secure software development.",
+      "Worked with tools such as Wireshark, Burp Suite, Splunk, Wazuh, and Suricata.",
+      "Participated in cybersecurity labs, practical simulations, and CTF-style exercises.",
+    ],
+  },
+  {
+    institution: "Universitatea Transilvania din Brașov",
+    degree: "Bachelor of Engineering, Renewable Energy Systems",
+    period: "2020 - 2024",
+    details: [
+      "Completed a bachelor's program in renewable energy systems.",
+      "Worked on applied engineering projects involving system analysis and energy efficiency.",
+    ],
+  },
+  {
+    institution: "Google.org",
+    degree: "Cybersecurity Seminars",
+    period: "Mar 2025 - Jul 2025",
+    details: [
+      "Completed a cybersecurity training program focused on threat awareness, network protection, and practical SOC concepts.",
+      "Covered topics including phishing, malware, IDS/IPS, cryptography, and vulnerability detection.",
     ],
   },
 ];
 
 export const stats = [
-  { value: "100+", label: "Certifications" },
-  { value: "98+", label: "Skills" },
-  { value: "4+", label: "Years Experience" },
-  { value: "1000+", label: "LinkedIn Followers" },
+  { value: "3", label: "Current roles" },
+  { value: "2", label: "Degrees" },
+  { value: "2+", label: "Years of work" },
+  { value: "CTF", label: "Practice" },
 ] as const;

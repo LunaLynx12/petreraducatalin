@@ -1,23 +1,23 @@
 export const bioParagraphs: { heading: string; text: string }[] = [
   {
     heading: "Who I am",
-    text: "I'm Petre Radu Cătălin - often simply known as Petre Radu - a senior offensive security professional with 4+ years of penetration testing experience across enterprise, B2B2C, and B2C environments. I currently work as a Penetration Tester at NTT DATA, based in Brașov, Romania. Every day I probe enterprise networks, web applications, and cloud infrastructure for the flaws that attackers are paid to find, and I translate them into risk owners can understand and engineers can fix.",
+    text: "I'm Petre Radu Cătălin, an offensive security professional focused on penetration testing, bug bounty research, and practical security evaluation. I work as a Penetration Tester at NTT DATA and am based in Brașov, Romania.",
   },
   {
     heading: "My philosophy",
-    text: "My approach to security is simple: real risk over noise. Anyone can produce a spreadsheet of low-severity findings. My work focuses on what actually matters - the vulnerabilities that persist, the paths that lead to domain compromise, and the remediation guidance that a security team can act on the same day. Every report I ship includes a clear, prioritized, and technically accurate plan to get from 'vulnerable' to 'defended'.",
+    text: "I approach security with a practical mindset: focus on the issues that matter, validate how they can be exploited, and turn them into clear remediation steps that teams can act on. The goal is not just to find flaws, but to explain the real risk and support the fix.",
   },
   {
     heading: "The journey",
-    text: "Before NTT DATA, I spent two years as a freelance penetration tester delivering B2B2C assessments through agency partnerships and B2C engagements directly to businesses - covering web applications, APIs, Active Directory estates, and cloud environments. That freelance foundation carried me into enterprise testing at NTT DATA, where I now lead assessments against production systems at scale. The Master's programme in Cyber Security at Universitatea Transilvania din Brașov (2024-2026) complemented this hands-on work with advanced cyber defense, red and blue team operations, and security auditing theory.",
-  },
-  {
-    heading: "Beyond the enterprise",
-    text: "Between full-time engagements, I work as a Bug Bounty Hunter on Intigriti and as a Vulnerability Researcher on HackerOne, hunting for flaws in production systems through responsible disclosure. This freelance work keeps me sharp: real bug bounty programs are a constant grind of edge cases, business logic abuse, and access control failures that no lab environment can reproduce.",
+    text: "My academic path includes a Master's degree in Cyber Security at Universitatea Transilvania din Brașov (2024-2026), alongside a Bachelor's in Renewable Energy Systems completed there between 2020 and 2024. This mix of study and hands-on practice has shaped my understanding of systems, networks, and security testing.",
   },
   {
     heading: "Beyond testing",
-    text: "My scope extends past traditional pentesting into AI security evaluations - testing LLM applications for prompt injection, data exfiltration, and excessive agency - and into the regulatory world through GDPR assessments and NIS2 implementation support. Security is a moving target, so I treat continuous learning as part of the job: new platforms, new tools, new attack classes, every single week.",
+    text: "I also engage in vulnerability research through bug bounty programs on Intigriti and HackerOne, which keeps my work grounded in real-world exposure and responsible disclosure. I continue expanding my skills through security training, labs, and CTF-style exercises.",
+  },
+  {
+    heading: "Learning mindset",
+    text: "I value continuous learning and hands-on practice. Security is always evolving, so I stay engaged with training, tooling, and applied research across web, infrastructure, and defensive concepts.",
   },
 ];
 

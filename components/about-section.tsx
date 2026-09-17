@@ -17,9 +17,8 @@ export function AboutSection() {
           title="About Petre Radu Cătălin"
           description={
             <>
-              Senior offensive security professional with 4+ years in penetration testing · Penetration Tester at NTT DATA ·
-              Based in Brașov, Romania. Known as <strong className="text-foreground">Petre Radu</strong> to clients,
-              peers, and the security community.
+              Offensive security professional and penetration tester based in Brașov, Romania. Known as
+              <strong className="text-foreground"> Petre Radu</strong> to clients, peers, and the security community.
             </>
           }
         />

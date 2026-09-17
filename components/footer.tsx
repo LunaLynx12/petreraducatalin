@@ -57,8 +57,8 @@ export function Footer() {
               <span className="text-muted">- Senior Offensive Security Professional</span>
             </p>
             <p className="max-w-xs text-sm text-muted">
-              Penetration testing, Red Team operations, and Cloud &amp; AI
-              security. 4+ years across enterprise, B2B2C, and B2C engagements. Based in Brașov, Romania.
+              Penetration testing, bug bounty research, and practical security
+              evaluation. Based in Brașov, Romania.
             </p>
           </div>
 

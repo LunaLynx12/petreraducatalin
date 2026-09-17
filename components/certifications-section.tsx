@@ -11,16 +11,16 @@ export function CertificationsSection() {
           eyebrow="credentials"
           id="certifications-heading"
           title="Certifications & Achievements"
-          description="100+ certifications earned across security, cloud, and AI disciplines - backed by 4+ years of real-world penetration testing and Red Team experience."
+          description="Focused cybersecurity training, hands-on practice, and participation in security exercises that sharpen real-world testing skills."
         />
 
         <Reveal>
           <div className="mb-6 flex flex-wrap items-center gap-4">
             <span className="rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 font-mono text-sm font-bold text-primary shadow-glow-sm">
-              100+ Certifications Earned
+              Selected Security Training
             </span>
             <p className="text-sm text-muted">
-              Curated highlights below - full list available on request.
+              Curated highlights below from coursework, labs, and CTF-style practice.
             </p>
           </div>
         </Reveal>

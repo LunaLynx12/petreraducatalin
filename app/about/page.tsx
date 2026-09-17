@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "About Petre Radu Cătălin",
-  description: `Full biography of Petre Radu Cătălin (Petre Radu) - Senior Penetration Tester at NTT DATA with 4+ years of offensive security experience across enterprise, B2B2C, and B2C environments. Based in Brașov, Romania.`,
+  description: "Full biography of Petre Radu Cătălin (Petre Radu) - offensive security professional focused on penetration testing, bug bounty work, and practical security evaluation. Based in Brașov, Romania.",
   alternates: { canonical: `${siteConfig.url}/about/` },
 };
 
@@ -16,47 +16,27 @@ const extendedBio = [
   {
     heading: "Foundations",
     paragraph:
-      "Petre Radu Cătălin - known to clients and colleagues simply as Petre Radu - is a senior offensive security professional from Brașov, Romania, currently working as a Penetration Tester at NTT DATA. With 4+ years of hands-on penetration testing experience spanning enterprise B2B2C agency partnerships, direct B2C client engagements, and now large-scale enterprise assessments, he has built a practice rooted in real-world attack chains rather than theoretical vulnerabilities. His security journey began with a relentless curiosity about how systems actually break - not in theory, not in slideware, but under real attack.",
+      "Petre Radu Cătălin is an offensive security professional based in Brașov, Romania, currently working as a Penetration Tester at NTT DATA. His work focuses on practical assessment of web applications, infrastructure, and security controls, with attention to how real weaknesses can be exploited and remediated.",
   },
   {
-    heading: "The freelance years",
+    heading: "Education",
     paragraph:
-      "Before joining NTT DATA, Petre spent nearly two years as an independent penetration tester in two distinct phases. He started with direct B2C engagements (Nov 2023 - May 2024), delivering web application and infrastructure assessments to businesses that lacked an internal security function. That foundation led to B2B2C agency partnerships (Jun 2024 - Oct 2025), where he delivered full-stack assessments for enterprise clients through tier-one security consultancies - web applications, APIs, Active Directory estates, and cloud environments. The transition from direct client work to agency-scale delivery taught him something most enterprise testers never learn: how to communicate risk to both technical security teams and non-technical business owners with equal precision.",
+      "He is currently pursuing a Master's degree in Cyber Security at Universitatea Transilvania din Brașov (2024-2026), building on a Bachelor's in Renewable Energy Systems completed there between 2020 and 2024. His studies include cyber defense, ethical hacking, cryptography, secure software development, and applied security analysis.",
   },
   {
-    heading: "The Master's years",
+    heading: "Training and research",
     paragraph:
-      "Between 2024 and 2026, the Master's programme at Universitatea Transilvania din Brașov became the laboratory where Petre Radu converted academic knowledge into operator skill. The curriculum covered advanced cyber defense techniques, adversarial operations, and security auditing - but the real growth came from the applied work: CTF competitions, hands-on security audits, and the Google.org Cybersecurity Seminars he completed between March and July 2025. The seminars gave him a direct line into the practical, defensive-minded thinking that shapes how he runs offensive engagements today.",
+      "Petre has participated in Google.org Cybersecurity Seminars, worked through security labs and CTF-style exercises, and developed hands-on practice with tools such as Wireshark, Burp Suite, Splunk, Wazuh, and Suricata. That mix of academic study and practical training shapes how he approaches testing and reporting today.",
   },
   {
-    heading: "Enterprise penetration testing",
+    heading: "Current work",
     paragraph:
-      "At NTT DATA he leads penetration tests against production environments - critical web applications, APIs, and Active Directory estates. His work regularly surfaces remote code execution, SQL injection, and broken access control issues, and he delivers findings alongside remediation guidance that security teams can act on immediately. Beyond individual vulnerabilities, Petre designs full-chain Active Directory attack simulations, walking the path from unauthenticated foothold to domain compromise so that defenders can see their estate the way an adversary does.",
-  },
-  {
-    heading: "The bug bounty grind",
-    paragraph:
-      "Alongside enterprise work, Petre Radu hunts vulnerabilities as a Bug Bounty Hunter on Intigriti and as a Vulnerability Researcher on HackerOne. Responsible disclosure is more than a professional obligation for him - it is a training environment that no lab can reproduce. Production systems do not care about intended configurations or documented behavior; they care about edge cases, business logic, and the gap between design and reality. That freelance body of work has sharpened his ability to triage impact quickly and communicate with vendors precisely.",
-  },
-  {
-    heading: "The AI security frontier",
-    paragraph:
-      "The fastest-growing part of his practice is AI security. Petre tests LLM applications for prompt injection - both direct and indirect through retrieved content - as well as data exfiltration through output channels and excessive agency in tool-calling systems. He treats AI evaluation with the same rigor as web application testing: a threat model, a methodology, and a remediation plan. It is a field he believes every penetration tester must learn, and he writes about it regularly on this site.",
-  },
-  {
-    heading: "Compliance and governance",
-    paragraph:
-      "Security does not exist in a vacuum, so Petre's scope includes the regulatory layer: GDPR assessments, NIS2 implementation support, security policy review, and technical risk assessment. His conviction is that compliance frameworks only earn their cost when they translate into real, measurable security posture - which means his compliance work always starts with what the attacker can actually do, not with what the checkbox says.",
-  },
-  {
-    heading: "Continuous learning",
-    paragraph:
-      "With more than 100 certifications - from eLearnSecurity's eCPPT and OpenAI's Cyber Practitioner programme to Microsoft's AI Skills Fest and AZ-700 - Petre treats certification not as decoration but as a structured way to force himself into unfamiliar territory. When he is not testing or studying, he competes in CTF competitions, where results like a team rank of 6 out of 20,220 in TryHackMe's Industrial Intrusion CTF keep him honest.",
+      "At NTT DATA, he performs penetration testing on production systems and provides findings in a way that connects technical risk with actionable remediation. Outside of that role, he also continues security research through bug bounty work on Intigriti and HackerOne, focusing on real-world exploitability and responsible disclosure.",
   },
   {
     heading: "What I stand for",
     paragraph:
-      "At the core of everything is a single conviction: real risk over noise. Organizations drown in vulnerability scans and compliance reports; what they need is someone who can say clearly what will actually hurt them, prove it safely, and show them exactly how to fix it. That is the professional Petre Radu Cătălin tries to be every single day - for enterprise clients, for the companies whose programs he hunts on, and for the wider security community he writes for.",
+      "His approach is practical and evidence-based: identify the issues that matter, explain the risk clearly, and help teams move from vulnerable to defended with a realistic remediation path. That mindset is at the center of his offensive security work.",
   },
 ];
 
@@ -87,10 +67,9 @@ export default function AboutPage() {
             About <span className="text-gradient-green">Petre Radu Cătălin</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Full biography of Petre Radu Cătălin (Petre Radu) - Senior
-            Penetration Tester at NTT DATA with 4+ years of offensive security
-            experience across enterprise, B2B2C, and B2C environments. Based in
-            Brașov, Romania.
+            Full biography of Petre Radu Cătălin (Petre Radu) - offensive
+            security professional focused on penetration testing, research, and
+            practical security evaluation. Based in Brașov, Romania.
           </p>
         </Reveal>
 
