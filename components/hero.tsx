@@ -100,7 +100,7 @@ export function Hero() {
           <figure className="neon-border relative overflow-hidden rounded-2xl bg-surface">
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="/images/photo-placeholder.webp"
+                src="/images/Profile.webp"
                 alt="Petre Radu Cătălin - Penetration Tester based in Brașov, Romania"
                 fill
                 priority

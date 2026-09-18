@@ -76,10 +76,10 @@ export default function AboutPage() {
         <Reveal delay={0.1} className="mt-10">
           <div className="neon-border overflow-hidden rounded-2xl bg-surface">
             <Image
-              src="/images/photo-placeholder.webp"
-              alt="Petre Radu Cătălin - professional photo, Penetration Tester based in Brașov, Romania"
-              width={1024}
-              height={640}
+              src="/images/Stage.webp"
+              alt="Petre Radu Cătălin presenting on stage at a cybersecurity conference"
+              width={1672}
+              height={941}
               className="aspect-[16/7] w-full object-cover"
               priority
             />

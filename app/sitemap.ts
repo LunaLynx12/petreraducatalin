@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site";
 import { getAllPosts } from "@/lib/posts";
+import { collaborators } from "@/data/collaborators";
 
 export const dynamic = "force-static";
 
@@ -41,5 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const collaboratorRoutes: MetadataRoute.Sitemap = collaborators.map(
+    (collab) => ({
+      url: `${siteConfig.url}/collaborator/${collab.slug}/`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })
+  );
+
+  return [...staticRoutes, ...blogRoutes, ...collaboratorRoutes];
 }

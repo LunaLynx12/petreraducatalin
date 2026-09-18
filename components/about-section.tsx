@@ -27,7 +27,7 @@ export function AboutSection() {
           <Reveal className="order-2 lg:order-1">
             <div className="neon-border overflow-hidden rounded-2xl bg-surface">
               <Image
-                src="/images/photo-placeholder.webp"
+                src="/images/Profile.webp"
                 alt="Petre Radu Cătălin - About, penetration tester in Brașov, Romania"
                 width={512}
                 height={640}
