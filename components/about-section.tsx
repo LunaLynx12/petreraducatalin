@@ -31,7 +31,7 @@ export function AboutSection() {
                 alt="Petre Radu Cătălin presenting on stage at a cybersecurity conference"
                 width={1672}
                 height={941}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-right"
               />
             </div>
           </Reveal>

@@ -80,7 +80,7 @@ export default function AboutPage() {
               alt="Petre Radu Cătălin presenting on stage at a cybersecurity conference"
               width={1672}
               height={941}
-              className="aspect-[16/7] w-full object-cover"
+              className="aspect-[16/7] w-full object-cover object-right"
               priority
             />
           </div>

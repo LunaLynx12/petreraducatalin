@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${siteConfig.url}/images/og.png`,
+        url: `${siteConfig.url}/images/og.png?v=2`,
         width: 1200,
         height: 630,
         alt: "Petre Radu Cătălin - Senior Offensive Security Professional",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Petre Radu Cătălin | Offensive Security Professional",
     description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security.",
-    images: [`${siteConfig.url}/images/og.png`],
+    images: [`${siteConfig.url}/images/og.png?v=2`],
   },
   robots: {
     index: true,
