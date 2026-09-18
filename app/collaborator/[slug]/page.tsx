@@ -145,10 +145,6 @@ export default async function CollaboratorPage({
             </span>
           )}
         </div>
-
-        <p className="mt-12 bg-gradient-to-r from-primary/5 via-transparent to-transparent py-8 font-mono text-sm text-muted">
-          — Marius Galmati
-        </p>
       </div>
     </article>
   );

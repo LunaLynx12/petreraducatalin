@@ -27,10 +27,10 @@ export function AboutSection() {
           <Reveal className="order-2 lg:order-1">
             <div className="neon-border overflow-hidden rounded-2xl bg-surface">
               <Image
-                src="/images/Profile.webp"
-                alt="Petre Radu Cătălin - About, penetration tester in Brașov, Romania"
-                width={512}
-                height={640}
+                src="/images/Stage.webp"
+                alt="Petre Radu Cătălin presenting on stage at a cybersecurity conference"
+                width={1672}
+                height={941}
                 className="h-full w-full object-cover"
               />
             </div>

@@ -2,7 +2,7 @@
   "name": "petre-radu-catalin-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Petre Radu Cătălin — Offensive Security Professional. Penetration Testing, Red Team, Cloud & AI Security.",
+  "description": "Petre Radu Cătălin - Offensive Security Professional. Penetration Testing, Red Team, Cloud & AI Security.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
