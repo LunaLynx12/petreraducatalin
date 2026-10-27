@@ -16,6 +16,11 @@ export type ServicePageContent = {
   whatItems: { title: string; text: string }[];
   processHeading: string;
   processSteps: { title: string; text: string }[];
+  methodologyHeading?: string;
+  methodologyText?: string;
+  methodologyPoints?: string[];
+  pricingHeading?: string;
+  pricingText?: string;
   localHeading: string;
   localText: string;
   faqHeading: string;
@@ -84,6 +89,18 @@ export const brasovService: ServicePageContent = {
       text: "I stay available to clarify fixes and can re-test after patches so risk can be closed properly.",
     },
   ],
+  methodologyHeading: "Methodology and delivery standard",
+  methodologyText:
+    "Engagements follow recognized offensive-security practice, not a scanner export. Scope is written first. Testing is manual-first, with automation for coverage. Findings are validated for exploitability before they enter the report.",
+  methodologyPoints: [
+    "OWASP Top 10 / WSTG for web and API surfaces",
+    "PTES-aligned phases: scoping, recon, exploitation, post-exploitation, reporting",
+    "MITRE ATT&CK mapping when identity or red-team style paths matter",
+    "Deliverables: executive summary, technical evidence, remediation order, optional re-test",
+  ],
+  pricingHeading: "Pricing signals (orientation, not a public rate card)",
+  pricingText:
+    "Price follows attack surface and depth: focused web/API assessments cost less than combined web + Active Directory or red-team style work. Romanian and EU remote delivery is standard. Ask for a scoped quote with assets and timeline. Searches like pret test de penetrare or firme pentesting Romania usually need that scoped proposal, not a fixed homepage number.",
   localHeading: "Why a Brașov-based pentester",
   localText:
     "I live and work in Brașov. That means timezone overlap with Romanian teams, optional on-site kickoffs, and context for local business and university ecosystems around Universitatea Transilvania din Brașov. Remote engagements across Romania and the EU are available too. If you searched for pentesting Brașov, penetration tester Brașov, or pentester Brașov, this page is the direct offer.",
@@ -182,6 +199,18 @@ export const romaniaService: ServicePageContent = {
       text: "After remediation, I verify closures so your risk register stays honest.",
     },
   ],
+  methodologyHeading: "How Romania engagements are run",
+  methodologyText:
+    "Same standard as Brașov work: written scope, manual-first testing, validated findings, bilingual reporting when stakeholders need it.",
+  methodologyPoints: [
+    "OWASP-aligned application testing",
+    "Infrastructure and Active Directory paths when scoped",
+    "Clear severity tied to exploitability",
+    "Optional re-test after remediation",
+  ],
+  pricingHeading: "What drives pret test de penetrare in Romania",
+  pricingText:
+    "Commercial searches for firme pentesting Romania or pret test de penetrare depend on surface size, environments, identity scope, and report language. I quote after a short discovery call so you compare apples to apples against other Romanian providers.",
   localHeading: "A Romania-based penetration tester",
   localText:
     "Romania has strong engineering talent and growing regulatory pressure. Buyers searching for pentester Romania or penetration tester Romania usually want someone who understands local delivery culture, can work in English or Romanian, and can explain risk without theatre. That is the offer here: practical offensive testing from Brașov, available remotely across the country.",
@@ -235,13 +264,13 @@ export const brasovServiceRo: ServicePageContent = {
   h1: "Test de penetrare",
   h1Accent: "Brașov",
   intro:
-    "Cauți un pentester în Brașov sau testare de securitate pentru aplicația ta? Sunt Petre Radu Cătălin, penetration tester din Brașov, România. Fac evaluări ofensive pe web, API, rețea, Active Directory și cloud, apoi livrez un raport clar, cu pași concreți de remediere.",
+    "Cauți un pentester în Brașov sau testare de securitate pentru aplicația ta? Sunt Petre Radu Cătălin, specialist în testare ofensivă din Brașov, România. Fac teste de penetrare pe web, API, rețea, Active Directory și cloud, apoi livrez un raport clar, cu pași concreți de remediere.",
   whoForHeading: "Pentru cine este serviciul",
   whoFor: [
     "Companii din Brașov care au nevoie de un test de penetrare real, nu doar un scan automat",
     "Echipe de produs care pregătesc chestionare de securitate, review-uri de parteneri sau teme tip NIS2",
-    "Startup-uri și IMM-uri care vor un pentester Brașov cu comunicare clară în română sau engleză",
-    "Responsabili IT care au nevoie de testare de securitate pe aplicații web și infrastructură",
+    "Startup-uri și IMM-uri care vor un pentester din Brașov cu comunicare clară în română sau engleză",
+    "Responsabili IT care compară firme de pentesting din România și vor un expert nominalizat",
   ],
   whatHeading: "Ce include evaluarea",
   whatItems: [
@@ -281,15 +310,27 @@ export const brasovServiceRo: ServicePageContent = {
       text: "Rămân disponibil pentru clarificări și pot re-testa după fixuri, ca riscul să fie închis corect.",
     },
   ],
+  methodologyHeading: "Metodologie și standarde de livrare",
+  methodologyText:
+    "Lucrez după practici recunoscute de securitate ofensivă. Nu livrezi un export de scaner. Fiecare finding trece prin validare de exploatare înainte să apară în raport.",
+  methodologyPoints: [
+    "OWASP Top 10 / WSTG pentru web și API",
+    "Faze aliniate PTES: scope, recon, exploatare, post-exploatare, raportare",
+    "Mapare MITRE ATT&CK când apar căi pe identitate sau red team",
+    "Livrabile: sumar executiv, dovezi tehnice, ordine de remediere, re-test opțional",
+  ],
+  pricingHeading: "Orientare de preț pentru test de penetrare",
+  pricingText:
+    "Prețul depinde de suprafața de atac și de adâncime. Un test web/API concentrat costă mai puțin decât o combinație web + Active Directory sau un engagement tip red team. Pentru căutări precum pret test de penetrare sau firme pentesting România, trimit o ofertă pe scope după o discuție scurtă. Nu public un preț fix pe site, ca să nu compari greșit cu oferte incomplete.",
   localHeading: "De ce un pentester din Brașov",
   localText:
-    "Lucrez din Brașov. Asta înseamnă același fus orar cu echipele din România, posibilitate de întâlniri on-site și context local pentru mediul de business și academic din jurul Universității Transilvania din Brașov. Dacă ai căutat test de penetrare Brașov, testare de securitate Brașov, ethical hacking Brașov, pentester Brașov sau penetration tester Brașov, aici găsești oferta directă.",
+    "Lucrez din Brașov. Asta înseamnă același fus orar cu echipele din România, posibilitate de întâlniri on-site și context local pentru mediul de business și academic din jurul Universității Transilvania din Brașov. Dacă ai căutat test de penetrare Brașov, testare de securitate Brașov, ethical hacking Brașov sau pentester Brașov, aici găsești oferta directă.",
   faqHeading: "Întrebări frecvente",
   faqs: [
     {
       question: "Cine oferă test de penetrare în Brașov?",
       answer:
-        "Petre Radu Cătălin este penetration tester din Brașov, România. Lucrează ca Penetration Tester la NTT DATA și oferă evaluări solo sau împreună cu specialiști de încredere pentru web, infrastructură, Active Directory, cloud și AI.",
+        "Petre Radu Cătălin este specialist în testare ofensivă din Brașov, România. Lucrează ca Penetration Tester la NTT DATA și oferă evaluări solo sau împreună cu specialiști de încredere pentru web, infrastructură, Active Directory, cloud și AI.",
     },
     {
       question: "Lucrezi doar cu firme din Brașov?",
@@ -297,9 +338,9 @@ export const brasovServiceRo: ServicePageContent = {
         "Nu. Brașovul este baza. Colaborez cu clienți din toată România și remote în UE. Pentru Brașov pot lucra și on-site când ajută.",
     },
     {
-      question: "Ce trebuie pregătit înainte de un pentest?",
+      question: "Cum se stabilește prețul unui test de penetrare?",
       answer:
-        "Lista de active din scop, conturi de test dacă e nevoie, un contact tehnic și autorizare scrisă. Te ajut să definești scope-ul ca evaluarea să fie utilă.",
+        "În funcție de numărul de aplicații, medii, conturi, includerea Active Directory/cloud și limba raportului. Primești o ofertă pe scope, nu un preț generic.",
     },
     {
       question: "Cu ce diferă de un scan de vulnerabilități?",
@@ -314,14 +355,17 @@ export const brasovServiceRo: ServicePageContent = {
   relatedLabel: "Pagini conexe",
   related: [
     {
-      label: "Penetration Tester Brașov (EN)",
-      href: "/services/penetration-testing-brasov/",
+      label: "Testare de securitate Brașov",
+      href: "/ro/testare-securitate-brasov/",
     },
     {
-      label: "Pentester Romania (EN)",
-      href: "/services/penetration-testing-romania/",
+      label: "Pentester România",
+      href: "/ro/pentester-romania/",
     },
-    { label: "Despre Petre Radu Cătălin", href: "/about/" },
+    {
+      label: "Versiune EN",
+      href: "/services/penetration-testing-brasov/",
+    },
   ],
 };
 

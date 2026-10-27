@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
 
 const badges = [
-  { icon: ShieldCheck, label: "Penetration Testing" },
-  { icon: Trophy, label: "Bug Bounty Research" },
-  { icon: BrainCircuit, label: "Cyber Security Studies" },
+  { icon: ShieldCheck, label: "eCPPT · Penetration Tester" },
+  { icon: Trophy, label: "Bug Bounty · Intigriti / HackerOne" },
+  { icon: BrainCircuit, label: "MSc Cyber Security · UniTBv" },
 ];
 
 export function Hero() {

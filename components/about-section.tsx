@@ -12,7 +12,7 @@ export function AboutSection() {
     <section id="about" aria-labelledby="about-heading" className="section-padding border-t border-border">
       <div className="container">
         <SectionHeading
-          eyebrow="whoami"
+          eyebrow="about"
           id="about-heading"
           title="About Petre Radu Cătălin"
           description={

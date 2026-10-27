@@ -16,7 +16,7 @@ export function ClientsLocationsSection() {
     >
       <div className="container">
         <SectionHeading
-          eyebrow="clients_eu"
+          eyebrow="clients"
           id="clients-heading"
           title="Satisfied clients across Romania and the EU"
           description={

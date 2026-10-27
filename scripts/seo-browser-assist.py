@@ -1,101 +1,81 @@
 #!/usr/bin/env python3
-"""Guided SEO browser assist: opens Google + Bing; you log in and submit."""
+"""
+Open SEO consoles in the SYSTEM browser (Firefox/Chrome).
 
-import argparse
-import sys
+Google blocks Playwright/Chromium automation with:
+"This browser or app may not be secure."
+So this helper uses xdg-open / webbrowser instead.
+"""
+
+import subprocess
 import time
-
-from playwright.sync_api import sync_playwright
+import webbrowser
 
 SITE = "https://petreraducatalin.com"
 SITEMAP = f"{SITE}/sitemap.xml"
 
+URLS = [
+    ("Google Search Console", "https://search.google.com/search-console"),
+    (
+        "GSC Sitemaps",
+        "https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fpetreraducatalin.com%2F",
+    ),
+    (
+        "GSC URL Inspection hint",
+        "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fpetreraducatalin.com%2F&id=https%3A%2F%2Fpetreraducatalin.com%2Fpentester-brasov%2F",
+    ),
+    ("Bing Webmaster", "https://www.bing.com/webmasters"),
+    ("Bing Sitemaps", "https://www.bing.com/webmasters/sitemaps"),
+]
 
-def pause(msg: str, auto: bool, seconds: int = 0) -> None:
-    print(f"\n>>> {msg}")
-    if auto:
-        if seconds:
-            print(f">>> Waiting {seconds}s for you to finish in the browser...")
-            time.sleep(seconds)
-        return
-    input(">>> Press ENTER to continue... ")
+
+def open_url(url: str) -> None:
+    try:
+        subprocess.Popen(
+            ["xdg-open", url],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except Exception:
+        webbrowser.open(url)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--auto",
-        action="store_true",
-        help="No terminal prompts; keep browser open with timed waits",
-    )
-    parser.add_argument(
-        "--wait",
-        type=int,
-        default=180,
-        help="Seconds to wait on each step in --auto mode",
-    )
-    args = parser.parse_args()
-
     print(
         f"""
 ============================================================
-SEO browser assist for {SITE}
+SEO submit helper (system browser only)
+Site: {SITE}
 Sitemap: {SITEMAP}
-Mode: {'auto' if args.auto else 'interactive'}
+============================================================
+Google blocks automated Chromium. Use the Firefox/Chrome
+windows that open now and complete these steps:
+
+GOOGLE SEARCH CONSOLE
+1) Log in
+2) Add property if needed: {SITE}
+3) Verify ownership
+4) Sitemaps -> submit: sitemap.xml
+5) URL Inspection -> request indexing for priority pages
+
+BING WEBMASTER
+1) Log in (or Import from Google)
+2) Add site if needed
+3) Submit sitemap: {SITEMAP}
+4) URL Submission for top pages
+
+IndexNow was already submitted automatically for all sitemap URLs.
 ============================================================
 """
     )
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=80)
-        context = browser.new_context(viewport={"width": 1400, "height": 900})
+    for name, url in URLS:
+        print(f"Opening: {name}")
+        open_url(url)
+        time.sleep(1.2)
 
-        gsc = context.new_page()
-        bing = context.new_page()
-
-        print("[Google] Opening Search Console...")
-        gsc.goto("https://search.google.com/search-console", wait_until="domcontentloaded")
-        pause(
-            "Log into Google. Add property https://petreraducatalin.com if needed.\n"
-            "Verify ownership, then Sitemaps -> submit sitemap.xml\n"
-            "Then URL Inspection for /pentester-brasov/ and other priority pages.",
-            args.auto,
-            args.wait,
-        )
-
-        try:
-            gsc.goto(
-                "https://search.google.com/search-console/sitemaps?resource_id="
-                + SITE.replace(":", "%3A").replace("/", "%2F"),
-                wait_until="domcontentloaded",
-            )
-        except Exception as exc:
-            print(f"[Google] navigation note: {exc}")
-
-        print("[Bing] Opening Webmaster Tools...")
-        bing.goto("https://www.bing.com/webmasters", wait_until="domcontentloaded")
-        pause(
-            "Log into Bing (Import from Google is fastest).\n"
-            f"Add site and submit sitemap: {SITEMAP}\n"
-            "Use URL Submission for top pages if available.",
-            args.auto,
-            args.wait,
-        )
-
-        pause(
-            "Finish any remaining clicks in both tabs.\n"
-            "IndexNow already submitted all sitemap URLs automatically.",
-            args.auto,
-            max(60, args.wait // 2),
-        )
-
-        browser.close()
-        print("\nDone.")
+    print("\nBrowser tabs opened. Finish login + submits there.")
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\nStopped.", file=sys.stderr)
-        sys.exit(130)
+    main()

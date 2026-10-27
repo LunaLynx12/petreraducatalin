@@ -25,6 +25,31 @@ export function ServiceLanding({
   };
 }) {
   const angle = landingAngles[content.slug];
+  const methodologyHeading =
+    content.methodologyHeading ??
+    (content.lang === "ro"
+      ? "Metodologie și standarde"
+      : "Methodology and standards");
+  const methodologyText =
+    content.methodologyText ??
+    (content.lang === "ro"
+      ? "Testare manuală prioritară, validare de exploatare, raport cu dovezi. Aliniere OWASP pentru web/API și MITRE ATT&CK când apar căi pe identitate."
+      : "Manual-first testing, exploit validation, evidence-backed reporting. OWASP-aligned for web/API and MITRE ATT&CK when identity paths matter.");
+  const methodologyPoints =
+    content.methodologyPoints ??
+    (content.lang === "ro"
+      ? [
+          "OWASP Top 10 / WSTG",
+          "Faze tip PTES",
+          "Severitate legată de exploatare",
+          "Re-test opțional după remediere",
+        ]
+      : [
+          "OWASP Top 10 / WSTG",
+          "PTES-style phases",
+          "Severity tied to exploitability",
+          "Optional re-test after remediation",
+        ]);
   const jsonLd = [
     buildProfessionalServiceJsonLd(),
     buildServiceJsonLd({
@@ -51,7 +76,7 @@ export function ServiceLanding({
           <Breadcrumbs items={crumbs} />
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-primary">
             {content.lang === "ro"
-              ? "Servicii ofensive · Brașov, România"
+              ? "Servicii de testare ofensivă · Brașov, România"
               : "Offensive security services · Brașov, Romania"}
           </p>
           <h1 className="font-mono text-3xl font-bold leading-tight text-foreground sm:text-5xl">
@@ -153,6 +178,42 @@ export function ServiceLanding({
             ))}
           </ol>
         </Reveal>
+
+        <Reveal delay={0.11} className="mt-14">
+          <h2 className="font-mono text-xl font-semibold text-primary sm:text-2xl">
+            {methodologyHeading}
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-foreground/85">
+            {methodologyText}
+          </p>
+          <ul className="mt-5 space-y-3">
+            {methodologyPoints.map((point) => (
+              <li
+                key={point}
+                className="flex gap-3 text-sm leading-relaxed text-foreground/85"
+              >
+                <CheckCircle2
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        {content.pricingHeading && content.pricingText ? (
+          <Reveal delay={0.115} className="mt-14">
+            <div className="rounded-2xl border border-border bg-surface/70 p-6 md:p-8">
+              <h2 className="font-mono text-xl font-semibold text-primary">
+                {content.pricingHeading}
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-foreground/85">
+                {content.pricingText}
+              </p>
+            </div>
+          </Reveal>
+        ) : null}
 
         <Reveal delay={0.12} className="mt-14">
           <div className="neon-border rounded-2xl bg-surface/70 p-6 md:p-8">

@@ -3,10 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { Analytics } from "@/components/seo";
-import {
-  buildPersonJsonLd,
-  buildProfessionalServiceJsonLd,
-} from "@/components/seo";
+import { buildRootJsonLdGraph } from "@/components/seo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
@@ -25,29 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
 });
 
-const rootJsonLd = [
-  buildPersonJsonLd(),
-  buildProfessionalServiceJsonLd(),
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    alternateName: [
-      "Pentester Brașov",
-      "Penetration Tester Brașov",
-      "Pentester Romania",
-      siteConfig.alternateName,
-    ],
-    url: siteConfig.url,
-    description: siteConfig.description,
-    publisher: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    inLanguage: ["en", "ro"],
-  },
-];
+const rootJsonLd = buildRootJsonLdGraph();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

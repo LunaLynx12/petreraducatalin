@@ -35,7 +35,7 @@ export function LocalSeoBand() {
     >
       <div className="container">
         <SectionHeading
-          eyebrow="hire_me"
+          eyebrow="hire"
           id="hire-heading"
           title="Hire a penetration tester in Brașov"
           description={

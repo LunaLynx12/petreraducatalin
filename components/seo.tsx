@@ -3,6 +3,10 @@ import { siteConfig } from "@/data/site";
 import type { ServiceFaq } from "@/data/services";
 import { buildAreaServedSchema } from "@/data/locations";
 
+const PERSON_ID = `${siteConfig.url}/#person`;
+const SERVICE_ID = `${siteConfig.url}/#professional-service`;
+const WEBSITE_ID = `${siteConfig.url}/#website`;
+
 export function JsonLd({
   data,
 }: {
@@ -18,26 +22,36 @@ export function JsonLd({
 
 export function buildPersonJsonLd() {
   return {
-    "@context": "https://schema.org",
     "@type": "Person",
+    "@id": PERSON_ID,
     name: siteConfig.name,
     alternateName: siteConfig.alternateName,
     jobTitle: siteConfig.jobTitle,
     description: siteConfig.description,
-    worksFor: [
-      {
-        "@type": "Organization",
-        name: siteConfig.company,
-      },
-    ],
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.company,
+    },
     founderOf: {
       "@type": "Organization",
       name: siteConfig.foundedCompany.name,
       url: siteConfig.foundedCompany.url,
     },
     url: siteConfig.url,
+    mainEntityOfPage: WEBSITE_ID,
     email: siteConfig.email,
     image: `${siteConfig.url}/images/Profile.webp`,
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "eLearnSecurity Certified Penetration Tester (eCPPT)",
+        credentialCategory: "Professional Certification",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "INE / eLearnSecurity",
+        },
+      },
+    ],
     sameAs: [
       siteConfig.social.linkedin,
       siteConfig.social.github,
@@ -54,28 +68,17 @@ export function buildPersonJsonLd() {
     },
     knowsAbout: [
       "Penetration Testing",
-      "Pentester Brașov",
-      "Penetration Tester Brașov",
-      "Pentesting Brașov",
-      "Pentester Romania",
-      "Penetration Tester Romania",
-      "Ethical Hacker Brașov",
-      "Ethical Hacking Romania",
-      "Red Team Brașov",
-      "Red Team Romania",
-      "Offensive Security Brașov",
-      "Security Testing Brașov",
-      "Test de penetrare Brașov",
-      "Testare de securitate Brașov",
-      "Red Team Operations",
+      "OWASP",
+      "PTES",
+      "MITRE ATT&CK",
       "Active Directory Security",
       "Cloud Security",
       "AI Security",
-      "MITRE ATT&CK Framework",
-      "Vulnerability Assessment",
+      "Red Team Operations",
       "Bug Bounty",
-      "GDPR Compliance",
-      "NIS2 Directive",
+      "Test de penetrare",
+      "Testare de securitate",
+      "Ethical Hacking",
     ],
     address: {
       "@type": "PostalAddress",
@@ -101,38 +104,43 @@ export function buildPersonJsonLd() {
 
 export function buildProfessionalServiceJsonLd() {
   return {
-    "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": SERVICE_ID,
     name: "Petre Radu Cătălin - Penetration Testing",
     alternateName: [
       "Pentester Brașov",
       "Penetration Tester Brașov",
       "Pentester Romania",
-      "Penetration Tester Netherlands",
-      "Penetration Tester Austria",
-      "Penetration Tester Finland",
-      "Pentester Amsterdam",
-      "Pentester Vienna",
-      "Pentester Helsinki",
       "Test de penetrare Brașov",
+      "Testare de securitate Brașov",
+      "Ethical Hacking Brașov",
     ],
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
     image: `${siteConfig.url}/images/og.png`,
     priceRange: "$$",
-    founder: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    currenciesAccepted: "EUR, RON",
+    paymentAccepted: "Invoice",
+    provider: { "@id": PERSON_ID },
+    founder: { "@id": PERSON_ID },
+    employee: { "@id": PERSON_ID },
     areaServed: buildAreaServedSchema(),
     serviceType: [
       "Penetration Testing",
       "Web Application Penetration Testing",
       "Active Directory Security Assessment",
-      "Cloud Security Assessment",
+      "Cloud Security Testing",
       "Red Team Assessment",
+      "Ethical Hacking",
+      "Security Testing",
+    ],
+    knowsAbout: [
+      "OWASP Top 10",
+      "OWASP ASVS",
+      "PTES",
+      "MITRE ATT&CK",
+      "NIS2 readiness themes",
     ],
     address: {
       "@type": "PostalAddress",
@@ -149,6 +157,32 @@ export function buildProfessionalServiceJsonLd() {
       siteConfig.social.linkedin,
       siteConfig.social.github,
       siteConfig.social.site,
+      siteConfig.social.kiwi,
+    ],
+  };
+}
+
+export function buildWebsiteJsonLd() {
+  return {
+    "@type": "WebSite",
+    "@id": WEBSITE_ID,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: ["en", "ro"],
+    publisher: { "@id": PERSON_ID },
+    about: { "@id": SERVICE_ID },
+  };
+}
+
+/** Root graph: Person + ProfessionalService + WebSite interlinked for E-E-A-T. */
+export function buildRootJsonLdGraph() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildPersonJsonLd(),
+      buildProfessionalServiceJsonLd(),
+      buildWebsiteJsonLd(),
     ],
   };
 }
@@ -183,16 +217,12 @@ export function buildServiceJsonLd(opts: {
     description: opts.description,
     url: opts.url,
     serviceType: opts.serviceType,
-    provider: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      jobTitle: siteConfig.jobTitle,
-    },
+    provider: { "@id": PERSON_ID },
     areaServed: {
       "@type": opts.areaType ?? "City",
       name: opts.areaName,
     },
+    isRelatedTo: { "@id": SERVICE_ID },
   };
 }
 
