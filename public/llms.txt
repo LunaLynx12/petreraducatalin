@@ -71,6 +71,17 @@ Preferred verbs/nouns: penetration testing, pentesting, pentester, ethical hacki
 - https://petreraducatalin.com/ro/pentester-romania/
 - https://petreraducatalin.com/ro/testare-securitate-brasov/
 - https://petreraducatalin.com/ro/ethical-hacking-brasov/
+- https://petreraducatalin.com/ro/pret-test-de-penetrare/
+- https://petreraducatalin.com/ro/firme-pentesting-romania/
+- https://petreraducatalin.com/ro/nis2-testare-securitate-brasov/
+- https://petreraducatalin.com/ro/pentest-magazin-online/
+- https://petreraducatalin.com/ro/testare-securitate-aplicatie-web/
+- https://petreraducatalin.com/ro/verificare-vulnerabilitati-api/
+- https://petreraducatalin.com/ro/testare-securitate-retea-interna/
+- https://petreraducatalin.com/api-penetration-testing/
+- https://petreraducatalin.com/ecommerce-penetration-testing/
+- https://petreraducatalin.com/internal-network-penetration-testing/
+- https://petreraducatalin.com/nis2-security-testing-romania/
 - https://petreraducatalin.com/locations/
 - https://petreraducatalin.com/locations/romania/
 - https://petreraducatalin.com/locations/netherlands/

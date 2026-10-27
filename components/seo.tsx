@@ -65,21 +65,35 @@ export function buildPersonJsonLd() {
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "Universitatea Transilvania din Brașov",
+      url: "https://www.unitbv.ro",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Brașov",
+        addressCountry: "RO",
+      },
     },
     knowsAbout: [
       "Penetration Testing",
       "OWASP",
+      "OWASP Top 10",
       "PTES",
       "MITRE ATT&CK",
       "Active Directory Security",
       "Cloud Security",
+      "AWS Security",
+      "Azure Security",
+      "API Security",
+      "Web Application Security",
       "AI Security",
       "Red Team Operations",
       "Bug Bounty",
+      "NIS2 readiness",
       "Test de penetrare",
       "Testare de securitate",
+      "Pret test de penetrare",
       "Ethical Hacking",
     ],
+    knowsLanguage: ["ro", "en"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Brașov",
@@ -89,6 +103,11 @@ export function buildPersonJsonLd() {
     homeLocation: {
       "@type": "Place",
       name: "Brașov, Romania",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 45.6427,
+        longitude: 25.5887,
+      },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Brașov",
@@ -104,9 +123,9 @@ export function buildPersonJsonLd() {
 
 export function buildProfessionalServiceJsonLd() {
   return {
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": SERVICE_ID,
-    name: "Petre Radu Cătălin - Penetration Testing",
+    name: "Petre Radu Cătălin - Offensive Security Professional",
     alternateName: [
       "Pentester Brașov",
       "Penetration Tester Brașov",
@@ -114,12 +133,16 @@ export function buildProfessionalServiceJsonLd() {
       "Test de penetrare Brașov",
       "Testare de securitate Brașov",
       "Ethical Hacking Brașov",
+      "Firme pentesting România",
+      "Pret test de penetrare",
     ],
-    description: siteConfig.description,
+    description:
+      "Servicii profesionale de penetration testing, testare de securitate, ethical hacking și Red Teaming în Brașov și România. Web, API, magazin online, rețea internă, Active Directory și cloud. Petre Radu Cătălin, Penetration Tester la NTT DATA, alumni Universitatea Transilvania din Brașov.",
     url: siteConfig.url,
     email: siteConfig.email,
     image: `${siteConfig.url}/images/og.png`,
-    priceRange: "$$",
+    logo: `${siteConfig.url}/images/Profile.webp`,
+    priceRange: "$$$",
     currenciesAccepted: "EUR, RON",
     paymentAccepted: "Invoice",
     provider: { "@id": PERSON_ID },
@@ -129,18 +152,73 @@ export function buildProfessionalServiceJsonLd() {
     serviceType: [
       "Penetration Testing",
       "Web Application Penetration Testing",
+      "API Penetration Testing",
+      "E-commerce Penetration Testing",
+      "Internal Network Penetration Testing",
       "Active Directory Security Assessment",
       "Cloud Security Testing",
       "Red Team Assessment",
       "Ethical Hacking",
       "Security Testing",
+      "NIS2 readiness security testing",
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Penetration testing services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Web & API penetration testing",
+            url: `${siteConfig.url}/ro/testare-securitate-aplicatie-web/`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "E-commerce / magazin online pentest",
+            url: `${siteConfig.url}/ro/pentest-magazin-online/`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "API vulnerability verification",
+            url: `${siteConfig.url}/ro/verificare-vulnerabilitati-api/`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Internal network security testing",
+            url: `${siteConfig.url}/ro/testare-securitate-retea-interna/`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "NIS2 readiness security testing Brașov",
+            url: `${siteConfig.url}/ro/nis2-testare-securitate-brasov/`,
+          },
+        },
+      ],
+    },
     knowsAbout: [
       "OWASP Top 10",
       "OWASP ASVS",
+      "OWASP WSTG",
       "PTES",
       "MITRE ATT&CK",
       "NIS2 readiness themes",
+      "Shopify security testing",
+      "WooCommerce security testing",
+      "API security",
+      "Pret test de penetrare",
     ],
     address: {
       "@type": "PostalAddress",
@@ -152,6 +230,18 @@ export function buildProfessionalServiceJsonLd() {
       "@type": "GeoCoordinates",
       latitude: 45.6427,
       longitude: 25.5887,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      opens: "09:00",
+      closes: "18:00",
     },
     sameAs: [
       siteConfig.social.linkedin,

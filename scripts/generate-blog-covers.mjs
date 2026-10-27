@@ -67,6 +67,9 @@ const COVERS = [
   { file: "pentest-engagement-romania-sanitized-lessons.webp", lines: ["REAL PENTEST", "LESSONS", "ROMANIA"] },
   { file: "pentester-brasov-vs-company.webp", lines: ["PERSON VS", "COMPANY", "PENTESTER"] },
   { file: "cum-alegi-pentester-brasov.webp", lines: ["CUM ALEGI", "PENTESTER", "IN BRASOV"] },
+  { file: "cat-costa-un-pentest-in-romania.webp", lines: ["CAT COSTA", "UN PENTEST", "IN ROMANIA"] },
+  { file: "reparare-vulnerabilitati-idor-xss.webp", lines: ["FIX IDOR", "AND XSS", "IN PRACTICE"] },
+  { file: "ghid-securitate-aws-azure.webp", lines: ["AWS AZURE", "SECURITY", "HARDENING"] },
 ];
 
 const GREEN = [0x00, 0xff, 0x88];

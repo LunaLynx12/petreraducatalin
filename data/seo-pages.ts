@@ -859,6 +859,888 @@ export const keywordLandings: KeywordLanding[] = [
       areaType: "Country",
     },
   }),
+  page({
+    slug: "pret-test-de-penetrare",
+    path: "/ro/pret-test-de-penetrare/",
+    lang: "ro",
+    title: "Preț test de penetrare",
+    metaTitle: "Preț test de penetrare | Pret test de penetrare firme | Petre Radu",
+    metaDescription:
+      "Cât costă un test de penetrare în România? Orientare de preț pentru web, API, rețea și Active Directory. Ofertă pe scope de la Petre Radu Cătălin, Brașov.",
+    h1: "Preț test de",
+    h1Accent: "penetrare",
+    intro:
+      "Cauți pret test de penetrare sau preț test de penetrare firme? Prețul real urmează suprafața de atac, nu un slogan pe Google. Sunt Petre Radu Cătălin, pentester din Brașov. Aici explic ce mută bugetul și cum primești o ofertă comparabilă.",
+    whoForHeading: "Pentru cine e pagina",
+    whoFor: [
+      "Cumpărători B2B care compară pret test de penetrare între furnizori",
+      "IMM-uri și product teams care vor un interval realist înainte de RFQ",
+      "Responsabili IT care trebuie să justifice bugetul către management",
+      "Firme care caută pret test de penetrare firme, nu un scan ieftin fără validare",
+    ],
+    whatHeading: "Ce influențează prețul",
+    whatItems: [
+      {
+        title: "Numărul de aplicații și API-uri",
+        text: "Un magazin online și un SaaS multi-tenant cu SSO nu costă la fel. Complexitatea de autentificare și roluri ridică efortul.",
+      },
+      {
+        title: "Adâncime: web vs rețea + AD",
+        text: "Test web/API concentrat e mai ieftin decât combinația cu rețea internă sau Active Directory.",
+      },
+      {
+        title: "Medii și conturi de test",
+        text: "Staging asemănător producției reduce riscul și poate reduce timpul. Doar producție crește precauția și costul.",
+      },
+      {
+        title: "Raportare și re-test",
+        text: "Raport bilingv, workshop de remediere și re-test pe critice se bugetează separat față de zilele de test.",
+      },
+    ],
+    processHeading: "Cum obții o ofertă corectă",
+    processSteps: [
+      {
+        title: "Trimite lista de asset-uri",
+        text: "URL-uri, medii, tip de autentificare, dacă există AD/cloud în scope.",
+      },
+      {
+        title: "Discuție scurtă de discovery",
+        text: "Clarificăm riscul de business și intensitatea, ca să nu compari oferte incomplete.",
+      },
+      {
+        title: "Propunere pe scope",
+        text: "Primești durată, livrabile, metodologie (OWASP/PTES) și preț pe acel scope.",
+      },
+      {
+        title: "Autorizare scrisă",
+        text: "Începem doar după scope și autorizare. Fără surprize pe factură.",
+      },
+    ],
+    methodologyHeading: "De ce nu public un preț fix",
+    methodologyText:
+      "Un număr pe homepage forțează oferte incomplete. Căutările pret test de penetrare și pret test de penetrare firme merită o comparație pe același scope: aceleași ținte, aceeași adâncime, aceleași livrabile.",
+    methodologyPoints: [
+      "OWASP pentru web/API",
+      "PTES pentru faze de engagement",
+      "Severitate legată de exploatare",
+      "Re-test opțional după remediere",
+    ],
+    pricingHeading: "Orientare de buget (nu listă de preț)",
+    pricingText:
+      "Engagement-urile concentrate pe o aplicație web/API costă de obicei mai puțin decât pachetele care includ rețea internă, Active Directory sau red team. Pentru intervale și factori detaliați, vezi și articolul despre costuri. Trimite scope-ul pe email pentru o ofertă pe măsură.",
+    localHeading: "Brașov + România",
+    localText:
+      "Lucrez din Brașov, cu livrare remote în toată România. Pentru firme pentesting România și pret test de penetrare, entitatea personală este Petre Radu Cătălin pe petreraducatalin.com. Kiwi Defence este brandul de companie pentru oferte împachetate.",
+    faqHeading: "Întrebări despre preț",
+    faqs: [
+      {
+        question: "Cât costă un test de penetrare în România?",
+        answer:
+          "Depinde de suprafață. Un web/API concentrat e o categorie; web + rețea + AD e alta. Primești preț după discovery, nu un număr generic public.",
+      },
+      {
+        question: "De ce unele oferte sunt mult mai ieftine?",
+        answer:
+          "Adesea exclud validarea manuală, logica de business, re-testul sau raportarea pentru management. Compară livrabilele, nu doar ziua de lucru.",
+      },
+      {
+        question: "Includeți TVA / factură?",
+        answer:
+          "Lucrez pe factură. Detaliile fiscale se confirmă în propunere.",
+      },
+    ],
+    ctaHeading: "Cere o ofertă pe scope",
+    ctaText:
+      "Trimite asset-urile și termenul la hello@petreraducatalin.com. Revin cu plan și pret test de penetrare pe măsură.",
+    ctaLabel: "Solicită ofertă",
+    relatedLabel: "Vezi și",
+    related: [
+      { label: "Firme pentesting România", href: "/ro/firme-pentesting-romania/" },
+      { label: "Test de penetrare Brașov", href: "/ro/pentesting-brasov/" },
+      { label: "Costuri pentest (blog)", href: "/blog/pentesting-costs-romania-2026/" },
+      { label: "Cât costă un pentest (RO)", href: "/blog/cat-costa-un-pentest-in-romania/" },
+    ],
+    serviceSchema: {
+      name: "Preț test de penetrare România",
+      serviceType: "Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "firme-pentesting-romania",
+    path: "/ro/firme-pentesting-romania/",
+    lang: "ro",
+    title: "Firme pentesting România",
+    metaTitle: "Firme pentesting România | Cum alegi | Petre Radu Cătălin",
+    metaDescription:
+      "Cauți firme pentesting România? Compară expert nominalizat vs firmă. Petre Radu Cătălin (Brașov) oferă test de penetrare hands-on; Kiwi Defence e brandul de companie.",
+    h1: "Firme pentesting",
+    h1Accent: "România",
+    intro:
+      "Căutarea firme pentesting România duce de obicei la două nevoi: un expert pe care îl poți numi în chestionare, sau o firmă cu procese de scală. Sunt Petre Radu Cătălin, pentester din Brașov. Fondator Kiwi Defence. Aici clarific diferența și cum să evaluezi o ofertă.",
+    whoForHeading: "Cine caută firme de pentesting",
+    whoFor: [
+      "Enterprise și mid-market care compară furnizori din România",
+      "Procurement care are nevoie de criterii dincolo de preț",
+      "Echipe de produs care vor un lead tester nominalizat",
+      "Companii care pregătesc teme tip NIS2 și vor dovezi exploatabile",
+    ],
+    whatHeading: "Ce să verifici la o firmă / expert",
+    whatItems: [
+      {
+        title: "Cine testează efectiv",
+        text: "Cere numele lead testerului. Raportul anonim fără contact tehnic e un semnal slab.",
+      },
+      {
+        title: "Metodologie",
+        text: "OWASP, PTES, mapare ATT&CK când e cazul. Nu doar un export de scaner redenumit pentest.",
+      },
+      {
+        title: "Livrabile",
+        text: "Sumar executiv, PoC, pași de remediere, opțiune de re-test. Cere un cuprins tip.",
+      },
+      {
+        title: "Persoană vs companie",
+        text: "Petre Radu = expert nominalizat. Kiwi Defence = oferte de firmă / automate. Alege după nevoie.",
+      },
+    ],
+    processHeading: "Cum lucrez cu clienții din România",
+    processSteps: [
+      {
+        title: "Scope scris",
+        text: "Ținte, intensitate și autorizare înainte de test.",
+      },
+      {
+        title: "Evaluare practică",
+        text: "Testare manuală prioritară. Fiecare finding e validat.",
+      },
+      {
+        title: "Raport cu dovezi",
+        text: "Impact, pași de reproducere, ordine de remediere.",
+      },
+      {
+        title: "Re-test opțional",
+        text: "Verific închiderea riscurilor critice după fixuri.",
+      },
+    ],
+    methodologyHeading: "Standard de livrare",
+    methodologyText:
+      "Indiferent dacă mă angajezi ca persoană sau prin canalul de firmă, standardul ofensiv rămâne: scope scris, testare manuală prioritară, findings validate.",
+    methodologyPoints: [
+      "OWASP Top 10 / WSTG",
+      "Faze tip PTES",
+      "Raport acționabil",
+      "Re-test opțional",
+    ],
+    pricingHeading: "Preț vs valoare",
+    pricingText:
+      "Cele mai ieftine oferte din listările firme pentesting România exclud adesea logica de business și re-testul. Compară pe același scope. Vezi și pagina de pret test de penetrare.",
+    localHeading: "Baza: Brașov, acoperire: România",
+    localText:
+      "Pentru firme pentesting România și pentester România, contactul personal este hello@petreraducatalin.com. Livrare remote națională; on-site în Brașov când ajută.",
+    faqHeading: "Întrebări",
+    faqs: [
+      {
+        question: "Ești o firmă sau un freelancer?",
+        answer:
+          "Sunt persoana Petre Radu Cătălin (Penetration Tester la NTT DATA) și fondatorul Kiwi Defence. Angajează-mă direct pentru expert nominalizat; folosește Kiwi pentru oferte de companie.",
+      },
+      {
+        question: "Lucrați cu enterprise?",
+        answer:
+          "Da, pe engagement-uri cu scope clar, NDA și raportare pentru stakeholderi tehnici și de business.",
+      },
+    ],
+    ctaHeading: "Compară o ofertă reală",
+    ctaText: "Trimite scope-ul. Primești o propunere pe care o poți pune lângă alte firme pentesting România.",
+    ctaLabel: "Contact",
+    relatedLabel: "Pagini conexe",
+    related: [
+      { label: "Preț test de penetrare", href: "/ro/pret-test-de-penetrare/" },
+      { label: "Pentester România", href: "/ro/pentester-romania/" },
+      { label: "NIS2 testare Brașov", href: "/ro/nis2-testare-securitate-brasov/" },
+      { label: "Pentester vs firmă (blog)", href: "/blog/pentester-brasov-vs-company/" },
+    ],
+    serviceSchema: {
+      name: "Firme pentesting România",
+      serviceType: "Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "nis2-testare-securitate-brasov",
+    path: "/ro/nis2-testare-securitate-brasov/",
+    lang: "ro",
+    title: "NIS2 testare securitate Brașov",
+    metaTitle: "Servicii conformare NIS2 Brașov | Testare securitate | Petre Radu",
+    metaDescription:
+      "Servicii de testare de securitate pentru teme NIS2 în Brașov și România: test de penetrare web, API, rețea, dovezi exploatabile. Petre Radu Cătălin.",
+    h1: "NIS2 · testare",
+    h1Accent: "Brașov",
+    intro:
+      "Companii obligate de Directiva NIS2 nu caută un «hacker», ci dovezi că riscurile tehnice sunt testate. Ofer testare de securitate și test de penetrare din Brașov: web, API, rețea, identitate. Nu vând certificate de conformitate; livrezi findings validate pe care le poți lega de programul tău de risc.",
+    whoForHeading: "Pentru cine",
+    whoFor: [
+      "Organizații din Brașov / România cu obligații sau presiune tip NIS2",
+      "Echipe de risc care au nevoie de dovezi ofensive, nu doar politici",
+      "Furnizori din lanțul de aprovizionare care trebuie să arate testare recentă",
+      "Management care caută servicii conformare NIS2 Brașov în sens de readiness tehnică",
+    ],
+    whatHeading: "Ce livrează un pentest în context NIS2",
+    whatItems: [
+      {
+        title: "Suprafață web și API",
+        text: "Autentificare, autorizare, injectări, logică de business pe aplicațiile critice.",
+      },
+      {
+        title: "Perimetru și rețea internă",
+        text: "Servicii expuse, segmentare slabă, căi către sisteme sensibile.",
+      },
+      {
+        title: "Identitate / AD / cloud",
+        text: "Escaladare, lateral movement, misconfigurări care duc la impact real.",
+      },
+      {
+        title: "Raport pentru risc",
+        text: "Severitate legată de exploatare, remediere prioritizată, re-test opțional.",
+      },
+    ],
+    processHeading: "Proces",
+    processSteps: [
+      {
+        title: "Mapare pe riscuri",
+        text: "Legăm scope-ul de activele esențiale și de așteptările stakeholderilor.",
+      },
+      {
+        title: "Testare autorizată",
+        text: "Reguli de engagement clare. Fără teatru, cu dovezi.",
+      },
+      {
+        title: "Raport acționabil",
+        text: "Poți atașa findings la registrul de risc și la planul de remediere.",
+      },
+      {
+        title: "Închidere",
+        text: "Re-test pe critice ca să demonstrezi că riscul a scăzut.",
+      },
+    ],
+    methodologyHeading: "Limite oneste",
+    methodologyText:
+      "NIS2 e un cadru legal/organizatoric larg. Eu acopăr partea ofensivă: testare de securitate hands-on. Pentru consultanță juridică de conformitate, colaborează cu specialiști legali / GRC. Eu îți dau dovezi tehnice pe care programul tău le poate folosi.",
+    methodologyPoints: [
+      "OWASP / PTES",
+      "Focus pe exploatare reală",
+      "Livrabile pentru IT și management",
+          "Fără pretenții de certificare DNSC pe care nu le dețin",
+    ],
+    pricingHeading: "Buget",
+    pricingText:
+      "Costul urmează scope-ul (vezi pret test de penetrare). NIS2 nu are un preț unic; are nevoie de adâncime pe activele esențiale.",
+    localHeading: "Brașov",
+    localText:
+      "Baza este Brașov. Livrare remote în România. Pentru servicii conformare NIS2 Brașov în sens de testare ofensivă, contactează Petre Radu Cătălin.",
+    faqHeading: "FAQ NIS2",
+    faqs: [
+      {
+        question: "Oferi certificat de conformitate NIS2?",
+        answer:
+          "Nu. Ofer testare de securitate cu dovezi. Conformitatea e un program mai larg (procese, guvernanță, juridic).",
+      },
+      {
+        question: "Ajută un pentest la NIS2?",
+        answer:
+          "Da, ca dovadă că vulnerabilitățile pe active esențiale sunt identificate și tratate. Nu înlocuiește tot cadrul.",
+      },
+    ],
+    ctaHeading: "Planifică testarea NIS2-ready",
+    ctaText: "Spune ce active sunt esențiale și ce termen ai. Propun un scope util pentru registrul de risc.",
+    ctaLabel: "Contact",
+    relatedLabel: "Conexe",
+    related: [
+      { label: "Testare securitate aplicație web", href: "/ro/testare-securitate-aplicatie-web/" },
+      { label: "Rețea internă", href: "/ro/testare-securitate-retea-interna/" },
+      { label: "Firme pentesting România", href: "/ro/firme-pentesting-romania/" },
+      { label: "Checklist web (blog)", href: "/blog/web-app-pentest-checklist-romania-nis2/" },
+    ],
+    serviceSchema: {
+      name: "NIS2 security testing Brașov",
+      serviceType: "Security Testing",
+      areaName: "Brașov",
+      areaType: "City",
+    },
+  }),
+  page({
+    slug: "pentest-magazin-online",
+    path: "/ro/pentest-magazin-online/",
+    lang: "ro",
+    title: "Pentest magazin online",
+    metaTitle: "Pentest magazin online Shopify / WooCommerce | Petre Radu",
+    metaDescription:
+      "Pentest magazin online Shopify sau WooCommerce: plăți, conturi, cupoane, IDOR pe comenzi. Testare de securitate e-commerce din Brașov, România.",
+    h1: "Pentest magazin",
+    h1Accent: "online",
+    intro:
+      "Magazinele online Shopify / WooCommerce (și custom) adună plăți, date personale și logică de cupoane. Un pentest magazin online verifică dacă un atacator poate fura sesiuni, modifica prețuri, citi comenzi străine sau abuza API-ul storefront-ului.",
+    whoForHeading: "Pentru cine",
+    whoFor: [
+      "Shop-uri pe Shopify, WooCommerce, Magento sau stack custom",
+      "Branduri înainte de campanii mari sau integrări de plată noi",
+      "Agenții care vor un test independent pe magazinul clientului",
+    ],
+    whatHeading: "Ce testez pe e-commerce",
+    whatItems: [
+      {
+        title: "Autentificare și conturi",
+        text: "Reset parole, takeover, sesiuni, privilege pe roluri customer/admin.",
+      },
+      {
+        title: "Logică de business",
+        text: "Prețuri, cupoane, cantități negative, race conditions la checkout.",
+      },
+      {
+        title: "IDOR pe comenzi și date",
+        text: "Acces la comenzi, facturi, adrese ale altor clienți.",
+      },
+      {
+        title: "API / headless / plugins",
+        text: "Endpoint-uri storefront, webhooks, plugin-uri WooCommerce, app-uri Shopify cu scope excesiv.",
+      },
+    ],
+    processHeading: "Proces",
+    processSteps: [
+      {
+        title: "Scope pe storefront + admin",
+        text: "Stabilim ce e in-scope: storefront, checkout, admin, apps.",
+      },
+      {
+        title: "Conturi de test",
+        text: "Customer + staff unde e posibil, pe staging preferabil.",
+      },
+      {
+        title: "Testare manuală",
+        text: "Focus pe logică și autorizare, nu doar pe CVE-uri de plugin.",
+      },
+      {
+        title: "Raport + remediere",
+        text: "Findings cu PoC și ordine de fix înainte de Black Friday sau go-live.",
+      },
+    ],
+    pricingHeading: "Preț",
+    pricingText:
+      "Un pentest magazin online concentrat pe un singur storefront costă mai puțin decât un ecosistem multi-store + ERP. Cere ofertă pe scope.",
+    localHeading: "Livrare",
+    localText:
+      "Remote din Brașov pentru magazine din toată România. EN/RO reporting.",
+    faqHeading: "FAQ e-commerce",
+    faqs: [
+      {
+        question: "Testezi Shopify SaaS sau doar tema/app-urile mele?",
+        answer:
+          "Scope-ul se concentrează pe ce controlezi tu: temă, apps, checkout custom, integrări. Platforma SaaS are limite; le discutăm transparent.",
+      },
+      {
+        question: "WooCommerce pe WordPress?",
+        answer:
+          "Da. Includ plugin-uri, API REST, și căi tipice de escalate către admin.",
+      },
+    ],
+    ctaHeading: "Programează pentest pe magazin",
+    ctaText: "Trimite URL-ul storefront-ului și stack-ul (Shopify/Woo/custom).",
+    ctaLabel: "Contact",
+    relatedLabel: "Vezi și",
+    related: [
+      { label: "Testare aplicație web", href: "/ro/testare-securitate-aplicatie-web/" },
+      { label: "Verificare vulnerabilități API", href: "/ro/verificare-vulnerabilitati-api/" },
+      { label: "E-commerce pentest (EN)", href: "/ecommerce-penetration-testing/" },
+      { label: "Preț test de penetrare", href: "/ro/pret-test-de-penetrare/" },
+    ],
+    serviceSchema: {
+      name: "Pentest magazin online",
+      serviceType: "E-commerce Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "testare-securitate-aplicatie-web",
+    path: "/ro/testare-securitate-aplicatie-web/",
+    lang: "ro",
+    title: "Testare securitate aplicație web",
+    metaTitle: "Testare securitate aplicație web | Petre Radu Cătălin",
+    metaDescription:
+      "Testare securitate aplicație web: OWASP, autentificare, IDOR, XSS, logică de business. Pentester din Brașov pentru SaaS și portaluri din România.",
+    h1: "Testare securitate",
+    h1Accent: "aplicație web",
+    intro:
+      "Testare securitate aplicație web înseamnă mai mult decât un scan: autentificare, autorizare, injectări, XSS, SSRF, upload-uri și logică de business. Livrez un test de penetrare pe aplicația ta, cu dovezi și pași de remediere.",
+    whoForHeading: "Fit",
+    whoFor: [
+      "SaaS și portaluri B2B din România",
+      "Echipe înainte de release major sau enterprise sale",
+      "Product owners care vor OWASP-aligned testing",
+    ],
+    whatHeading: "Acoperire tipică",
+    whatItems: [
+      {
+        title: "AuthN / AuthZ",
+        text: "Login, MFA, reset, roluri, IDOR, privilege escalation.",
+      },
+      {
+        title: "Injection & XSS",
+        text: "SQLi, command injection, stored/reflected XSS, template injection.",
+      },
+      {
+        title: "Logică de business",
+        text: "Fluxuri pe care scanerele nu le înțeleg: plăți, aprobări, multi-tenant.",
+      },
+      {
+        title: "Config & session",
+        text: "Cookie flags, CORS, CSRF, headers, file upload.",
+      },
+    ],
+    processHeading: "Proces",
+    processSteps: [
+      {
+        title: "Scope scris",
+        text: "Ținte, roluri și autorizare înainte de test.",
+      },
+      {
+        title: "Testare practică",
+        text: "Manual-first pe auth, logică și injectări.",
+      },
+      {
+        title: "Raport cu dovezi",
+        text: "PoC, impact, ordine de remediere.",
+      },
+      {
+        title: "Re-test opțional",
+        text: "Verificare după fixuri pe critice.",
+      },
+    ],
+    methodologyHeading: "Metodologie",
+    methodologyText:
+      "Aliniere OWASP Top 10 și WSTG. Fiecare finding are PoC. Severitatea reflectă exploatarea, nu doar CVSS din scanner.",
+    methodologyPoints: [
+      "OWASP Top 10 / WSTG",
+      "Testare manuală prioritară",
+      "Raport pentru eng + management",
+      "Re-test opțional",
+    ],
+    pricingHeading: "Preț",
+    pricingText:
+      "Depinde de numărul de roluri, endpoint-uri și medii. Vezi pret test de penetrare pentru cum se construiește oferta.",
+    localHeading: "Brașov / România",
+    localText:
+      "Petre Radu Cătălin, Brașov. Remote național. Pagină canonică pentru testare securitate aplicație web.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "Include și API-ul din spatele SPA?",
+        answer:
+          "Da, de obicei API-ul este parte din același engagement. Pentru focus API-only vezi pagina de verificare vulnerabilități API.",
+      },
+    ],
+    ctaHeading: "Solicită test pe aplicația web",
+    ctaText: "Trimite URL staging + tip de auth. Propun scope și durată.",
+    ctaLabel: "Contact",
+    relatedLabel: "Conexe",
+    related: [
+      { label: "Verificare vulnerabilități API", href: "/ro/verificare-vulnerabilitati-api/" },
+      { label: "Pentest magazin online", href: "/ro/pentest-magazin-online/" },
+      { label: "Web app pentest (EN)", href: "/api-penetration-testing/" },
+      { label: "Test de penetrare Brașov", href: "/ro/pentesting-brasov/" },
+    ],
+    serviceSchema: {
+      name: "Testare securitate aplicație web",
+      serviceType: "Web Application Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "verificare-vulnerabilitati-api",
+    path: "/ro/verificare-vulnerabilitati-api/",
+    lang: "ro",
+    title: "Verificare vulnerabilități API",
+    metaTitle: "Verificare vulnerabilități API | API pentest | Petre Radu",
+    metaDescription:
+      "Verificare vulnerabilități API: BOLA/IDOR, auth broken, mass assignment, rate limit. Test de penetrare API REST/GraphQL din Brașov, România.",
+    h1: "Verificare vulnerabilități",
+    h1Accent: "API",
+    intro:
+      "API-urile moderne sunt suprafața reală. Verificare vulnerabilități API înseamnă test de penetrare pe REST/GraphQL: autentificare, obiecte pe ID, mass assignment, business logic și abuz de rate limits.",
+    whoForHeading: "Pentru cine",
+    whoFor: [
+      "Echipe cu mobile + API backend",
+      "Integrări B2B / partner API",
+      "Headless commerce și microservicii",
+    ],
+    whatHeading: "Ce caut",
+    whatItems: [
+      {
+        title: "BOLA / IDOR",
+        text: "Acces la resursele altor useri prin ID-uri previzibile sau tokens slabe.",
+      },
+      {
+        title: "Broken authentication",
+        text: "JWT greșit validat, refresh tokens, API keys în client.",
+      },
+      {
+        title: "Mass assignment & injectări",
+        text: "Câmpuri ascunse, injection în parametri, SSRF prin webhooks.",
+      },
+      {
+        title: "Abuse & GraphQL",
+        text: "Introspection excesivă, nested queries, lipsa autorizării pe mutation.",
+      },
+    ],
+    processHeading: "Proces",
+    processSteps: [
+      {
+        title: "Colectare spec",
+        text: "OpenAPI/Swagger, Postman, sau trafic din client.",
+      },
+      {
+        title: "Auth matrix",
+        text: "Roluri și token-uri pe fiecare resursă sensibilă.",
+      },
+      {
+        title: "Exploatare controlată",
+        text: "PoC pe findings, fără distrugere de date de producție.",
+      },
+      {
+        title: "Raport",
+        text: "Endpoint, payload, impact, fix.",
+      },
+    ],
+    pricingHeading: "Preț",
+    pricingText:
+      "Numărul de endpoint-uri și complexitatea auth dictează efortul. Ofertă după scurtă review a spec-ului.",
+    localHeading: "Contact",
+    localText:
+      "Petre Radu Cătălin, Brașov. Pagină pentru verificare vulnerabilități API / API pentest România.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "GraphQL sau doar REST?",
+        answer: "Ambele, când sunt in-scope.",
+      },
+    ],
+    ctaHeading: "Trimite spec-ul API",
+    ctaText: "OpenAPI sau colecție Postman + tip de auth. Revin cu plan.",
+    ctaLabel: "Contact",
+    relatedLabel: "Conexe",
+    related: [
+      { label: "Testare aplicație web", href: "/ro/testare-securitate-aplicatie-web/" },
+      { label: "API pentest (EN)", href: "/api-penetration-testing/" },
+      { label: "Pentest magazin online", href: "/ro/pentest-magazin-online/" },
+    ],
+    serviceSchema: {
+      name: "Verificare vulnerabilități API",
+      serviceType: "API Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "testare-securitate-retea-interna",
+    path: "/ro/testare-securitate-retea-interna/",
+    lang: "ro",
+    title: "Testare securitate rețea internă",
+    metaTitle: "Testare securitate rețea internă | Internal pentest | Petre Radu",
+    metaDescription:
+      "Testare securitate rețea internă: segmentare, servicii expuse, Active Directory, mișcare laterală. Evaluare ofensivă din Brașov, România.",
+    h1: "Testare securitate",
+    h1Accent: "rețea internă",
+    intro:
+      "Testare securitate rețea internă arată ce se întâmplă după un foothold: scan de servicii, credențiale slabe, share-uri, escalate în Active Directory. Nu e un scan de compliance; e o evaluare ofensivă cu dovezi.",
+    whoForHeading: "Pentru cine",
+    whoFor: [
+      "Companii cu sediu / VPN / office network",
+      "Medii cu Active Directory",
+      "Echipe care vor să vadă impactul unui laptop compromis",
+    ],
+    whatHeading: "Acoperire",
+    whatItems: [
+      {
+        title: "Discovery intern",
+        text: "Host-uri, porturi, servicii periculos expuse pe LAN/VLAN.",
+      },
+      {
+        title: "Credențiale și share-uri",
+        text: "Parole implicite, SMB, backup-uri accesibile.",
+      },
+      {
+        title: "Active Directory",
+        text: "Kerberos abuse, ACL-uri, escalate către Domain Admin când e fezabil.",
+      },
+      {
+        title: "Segmentare",
+        text: "Dacă OT/server VLAN-urile sunt cu adevărat izolate.",
+      },
+    ],
+    processHeading: "Proces",
+    processSteps: [
+      {
+        title: "Acces autorizat",
+        text: "VPN sau on-site, cont de start, reguli de siguranță.",
+      },
+      {
+        title: "Recon + exploit",
+        text: "Lanțuri realiste, fără a cădea producția.",
+      },
+      {
+        title: "Documentare",
+        text: "Path-ul de atac, evidențe, impact.",
+      },
+      {
+        title: "Remediere",
+        text: "Priorități pentru IT: patch, harden, segmentare.",
+      },
+    ],
+    methodologyHeading: "Metodologie",
+    methodologyText:
+      "Faze tip PTES / ATT&CK pe identitate. Separat de un simplu vulnerability scan pe IP-uri.",
+    methodologyPoints: [
+      "PTES-style phases",
+      "MITRE ATT&CK pe căi de identitate",
+      "Safety controls pe producție",
+      "Re-test pe critice",
+    ],
+    pricingHeading: "Preț",
+    pricingText:
+      "Internal + AD e de obicei un engagement dedicat, mai scump decât web-only. Vezi pret test de penetrare.",
+    localHeading: "On-site Brașov",
+    localText:
+      "Remote prin VPN sau on-site în Brașov când mediul o cere.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "E același lucru cu un scan Nessus intern?",
+        answer:
+          "Nu. Scanul listează CVE-uri. Eu demonstrez căi de atac și impact pe business.",
+      },
+    ],
+    ctaHeading: "Planifică testul pe rețeaua internă",
+    ctaText: "Descrie tipul de rețea (AD? VPN?) și fereastra de test.",
+    ctaLabel: "Contact",
+    relatedLabel: "Conexe",
+    related: [
+      { label: "Internal network (EN)", href: "/internal-network-penetration-testing/" },
+      { label: "NIS2 testare Brașov", href: "/ro/nis2-testare-securitate-brasov/" },
+      { label: "Red Team Brașov", href: "/red-team-brasov/" },
+    ],
+    serviceSchema: {
+      name: "Testare securitate rețea internă",
+      serviceType: "Internal Network Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "api-penetration-testing",
+    path: "/api-penetration-testing/",
+    lang: "en",
+    title: "API Penetration Testing",
+    metaTitle: "API Penetration Testing | Petre Radu Cătălin",
+    metaDescription:
+      "API penetration testing for REST and GraphQL: BOLA/IDOR, auth flaws, mass assignment. Named pentester based in Brașov, Romania.",
+    h1: "API Penetration",
+    h1Accent: "Testing",
+    intro:
+      "API penetration testing finds the authorization and business-logic bugs scanners miss on REST and GraphQL. I am Petre Radu Cătălin, a penetration tester in Brașov working with Romanian and EU product teams.",
+    whoForHeading: "Who books this",
+    whoFor: [
+      "Mobile and SPA backends",
+      "Partner / B2B APIs",
+      "Teams preparing enterprise security reviews",
+    ],
+    whatHeading: "What I test",
+    whatItems: sharedWhatEn,
+    processHeading: "Process",
+    processSteps: sharedProcessEn,
+    pricingHeading: "Pricing",
+    pricingText:
+      "Driven by endpoint count and auth complexity. Ask for a scoped quote.",
+    localHeading: "Based in Brașov",
+    localText:
+      "Remote across Romania and the EU. Romanian page: verificare vulnerabilități API.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "Do you need an OpenAPI file?",
+        answer:
+          "It helps. Traffic captures and Postman collections also work.",
+      },
+    ],
+    ctaHeading: "Request an API pentest",
+    ctaText: "Send your spec and auth model to hello@petreraducatalin.com.",
+    ctaLabel: "Contact",
+    relatedLabel: "Related",
+    related: [
+      { label: "Verificare vulnerabilități API", href: "/ro/verificare-vulnerabilitati-api/" },
+      { label: "E-commerce pentest", href: "/ecommerce-penetration-testing/" },
+      { label: "Pentester Brașov", href: "/pentester-brasov/" },
+    ],
+    serviceSchema: {
+      name: "API Penetration Testing",
+      serviceType: "API Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "ecommerce-penetration-testing",
+    path: "/ecommerce-penetration-testing/",
+    lang: "en",
+    title: "E-commerce Penetration Testing",
+    metaTitle: "E-commerce / Shopify / WooCommerce Pentest | Petre Radu",
+    metaDescription:
+      "E-commerce penetration testing for Shopify, WooCommerce, and custom shops: checkout logic, IDOR on orders, plugin risk. Brașov-based pentester.",
+    h1: "E-commerce",
+    h1Accent: "Penetration Testing",
+    intro:
+      "Online stores lose money through business-logic bugs as often as through CVEs. I test Shopify, WooCommerce, and custom checkouts for account takeover, price/coupon abuse, and order IDOR.",
+    whoForHeading: "Fit",
+    whoFor: [
+      "Shopify and WooCommerce merchants",
+      "Custom commerce platforms",
+      "Agencies needing an independent test before go-live",
+    ],
+    whatHeading: "Coverage",
+    whatItems: sharedWhatEn,
+    processHeading: "Process",
+    processSteps: sharedProcessEn,
+    pricingHeading: "Pricing",
+    pricingText:
+      "Single storefront vs multi-store + ERP changes the quote. See pret test de penetrare for orientation.",
+    localHeading: "Romania / EU",
+    localText:
+      "Delivered from Brașov. RO page: pentest magazin online.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "Shopify SaaS limits?",
+        answer:
+          "We scope what you control: theme, apps, custom checkout, integrations. Platform limits are discussed up front.",
+      },
+    ],
+    ctaHeading: "Book an e-commerce pentest",
+    ctaText: "Share the storefront URL and stack.",
+    ctaLabel: "Contact",
+    relatedLabel: "Related",
+    related: [
+      { label: "Pentest magazin online", href: "/ro/pentest-magazin-online/" },
+      { label: "API Penetration Testing", href: "/api-penetration-testing/" },
+      { label: "Security Testing Brașov", href: "/security-testing-brasov/" },
+    ],
+    serviceSchema: {
+      name: "E-commerce Penetration Testing",
+      serviceType: "E-commerce Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "internal-network-penetration-testing",
+    path: "/internal-network-penetration-testing/",
+    lang: "en",
+    title: "Internal Network Penetration Testing",
+    metaTitle: "Internal Network Penetration Testing | Petre Radu Cătălin",
+    metaDescription:
+      "Internal network penetration testing and Active Directory attack paths. Named pentester in Brașov for Romanian and EU teams.",
+    h1: "Internal Network",
+    h1Accent: "Penetration Testing",
+    intro:
+      "Internal network penetration testing answers what happens after a foothold: weak services, credential reuse, and Active Directory paths. Practical evidence, not a scanner dump.",
+    whoForHeading: "Who this is for",
+    whoFor: [
+      "Companies with office LAN / VPN",
+      "Active Directory environments",
+      "NIS2-minded teams needing offensive evidence",
+    ],
+    whatHeading: "Coverage",
+    whatItems: sharedWhatEn,
+    processHeading: "Process",
+    processSteps: sharedProcessEn,
+    localHeading: "Brașov base",
+    localText:
+      "VPN remote or on-site in Brașov. RO: testare securitate rețea internă.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "Is this a vulnerability scan?",
+        answer:
+          "No. I validate exploit paths and impact, especially around identity.",
+      },
+    ],
+    ctaHeading: "Plan an internal pentest",
+    ctaText: "Describe AD presence and access method (VPN/on-site).",
+    ctaLabel: "Contact",
+    relatedLabel: "Related",
+    related: [
+      { label: "Testare rețea internă", href: "/ro/testare-securitate-retea-interna/" },
+      { label: "Red Team Brașov", href: "/red-team-brasov/" },
+      { label: "NIS2 testing RO", href: "/ro/nis2-testare-securitate-brasov/" },
+    ],
+    serviceSchema: {
+      name: "Internal Network Penetration Testing",
+      serviceType: "Internal Network Penetration Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
+  page({
+    slug: "nis2-security-testing-romania",
+    path: "/nis2-security-testing-romania/",
+    lang: "en",
+    title: "NIS2 Security Testing Romania",
+    metaTitle: "NIS2 Security Testing Romania | Petre Radu Cătălin",
+    metaDescription:
+      "NIS2 readiness security testing in Romania: penetration testing evidence for essential assets. Brașov-based pentester Petre Radu Cătălin.",
+    h1: "NIS2 Security",
+    h1Accent: "Testing Romania",
+    intro:
+      "NIS2 increases pressure for technical evidence. I deliver penetration testing and security testing on essential assets so your risk register has exploitable findings, not only policies. I do not sell legal compliance certificates.",
+    whoForHeading: "Fit",
+    whoFor: [
+      "Romanian organisations under NIS2 pressure",
+      "Supply-chain vendors asked for recent testing",
+      "Risk teams needing offensive proof",
+    ],
+    whatHeading: "What you get",
+    whatItems: sharedWhatEn,
+    processHeading: "Process",
+    processSteps: sharedProcessEn,
+    localHeading: "Romania delivery",
+    localText:
+      "Based in Brașov. RO page: nis2-testare-securitate-brasov.",
+    faqHeading: "FAQ",
+    faqs: [
+      {
+        question: "Do you certify NIS2 compliance?",
+        answer:
+          "No. I provide offensive testing evidence your GRC/legal partners can use inside a wider programme.",
+      },
+    ],
+    ctaHeading: "Scope NIS2-oriented testing",
+    ctaText: "List essential assets and timelines.",
+    ctaLabel: "Contact",
+    relatedLabel: "Related",
+    related: [
+      { label: "NIS2 RO", href: "/ro/nis2-testare-securitate-brasov/" },
+      { label: "Firme pentesting România", href: "/ro/firme-pentesting-romania/" },
+      { label: "Pentester Romania", href: "/pentester-romania/" },
+    ],
+    serviceSchema: {
+      name: "NIS2 Security Testing Romania",
+      serviceType: "Security Testing",
+      areaName: "Romania",
+      areaType: "Country",
+    },
+  }),
 ];
 
 export function getKeywordLanding(slug: string) {

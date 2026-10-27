@@ -61,6 +61,50 @@ export const hreflangPairs: Record<
     en: "/pentester-romania/",
     ro: "/ro/pentester-romania/",
   },
+  "/ro/pret-test-de-penetrare/": {
+    en: "/services/penetration-testing-romania/",
+    ro: "/ro/pret-test-de-penetrare/",
+  },
+  "/ro/firme-pentesting-romania/": {
+    en: "/pentester-romania/",
+    ro: "/ro/firme-pentesting-romania/",
+  },
+  "/ro/nis2-testare-securitate-brasov/": {
+    en: "/nis2-security-testing-romania/",
+    ro: "/ro/nis2-testare-securitate-brasov/",
+  },
+  "/nis2-security-testing-romania/": {
+    en: "/nis2-security-testing-romania/",
+    ro: "/ro/nis2-testare-securitate-brasov/",
+  },
+  "/ro/pentest-magazin-online/": {
+    en: "/ecommerce-penetration-testing/",
+    ro: "/ro/pentest-magazin-online/",
+  },
+  "/ecommerce-penetration-testing/": {
+    en: "/ecommerce-penetration-testing/",
+    ro: "/ro/pentest-magazin-online/",
+  },
+  "/ro/testare-securitate-aplicatie-web/": {
+    en: "/security-testing-brasov/",
+    ro: "/ro/testare-securitate-aplicatie-web/",
+  },
+  "/ro/verificare-vulnerabilitati-api/": {
+    en: "/api-penetration-testing/",
+    ro: "/ro/verificare-vulnerabilitati-api/",
+  },
+  "/api-penetration-testing/": {
+    en: "/api-penetration-testing/",
+    ro: "/ro/verificare-vulnerabilitati-api/",
+  },
+  "/ro/testare-securitate-retea-interna/": {
+    en: "/internal-network-penetration-testing/",
+    ro: "/ro/testare-securitate-retea-interna/",
+  },
+  "/internal-network-penetration-testing/": {
+    en: "/internal-network-penetration-testing/",
+    ro: "/ro/testare-securitate-retea-interna/",
+  },
 };
 
 export function languagesForPath(path: string): { en: string; ro: string } {
