@@ -10,16 +10,18 @@ import { ToolsSection } from "@/components/tools-section";
 import { BlogSection } from "@/components/blog-section";
 import { ContactSection } from "@/components/contact-section";
 import { TrustedCollaboratorsSection } from "@/components/trusted-collaborators";
+import { LocalSeoBand } from "@/components/local-seo-band";
+import { ClientsLocationsSection } from "@/components/clients-locations-section";
 
 export const metadata: Metadata = {
-  title: "Petre Radu Cătălin | Penetration Tester & Offensive Security",
+  title: { absolute: "Penetration Tester Brașov | Petre Radu Cătălin" },
   description: siteConfig.description,
   alternates: { canonical: `${siteConfig.url}/` },
   openGraph: {
     type: "website",
     url: siteConfig.url,
-    title: "Petre Radu Cătălin | Offensive Security Professional",
-    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security. Based in Brașov, Romania.",
+    title: siteConfig.ogTitle,
+    description: siteConfig.ogDescription,
   },
 };
 
@@ -27,6 +29,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <LocalSeoBand />
+      <ClientsLocationsSection />
       <AboutSection />
       <TrustedCollaboratorsSection />
       <ExpertiseSection />

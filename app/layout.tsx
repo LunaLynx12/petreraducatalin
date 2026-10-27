@@ -3,6 +3,10 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { Analytics } from "@/components/seo";
+import {
+  buildPersonJsonLd,
+  buildProfessionalServiceJsonLd,
+} from "@/components/seo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
@@ -21,51 +25,34 @@ const jetbrainsMono = JetBrains_Mono({
   preload: true,
 });
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: siteConfig.name,
-  alternateName: siteConfig.alternateName,
-  jobTitle: siteConfig.jobTitle,
-  worksFor: {
-    "@type": "Organization",
-    name: "NTT DATA",
+const rootJsonLd = [
+  buildPersonJsonLd(),
+  buildProfessionalServiceJsonLd(),
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    alternateName: [
+      "Pentester Brașov",
+      "Penetration Tester Brașov",
+      "Pentester Romania",
+      siteConfig.alternateName,
+    ],
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    inLanguage: ["en", "ro"],
   },
-  url: siteConfig.url,
-  sameAs: [
-    siteConfig.social.linkedin,
-    siteConfig.social.github,
-    siteConfig.social.x,
-    siteConfig.social.devto,
-    siteConfig.social.reddit,
-    siteConfig.social.youtube,
-    siteConfig.social.site,
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Universitatea Transilvania din Brașov",
-  },
-  knowsAbout: [
-    "Penetration Testing",
-    "Red Team Operations",
-    "Active Directory Security",
-    "Cloud Security",
-    "AI Security",
-    "MITRE ATT&CK Framework",
-    "GDPR Compliance",
-    "NIS2 Directive",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Brașov",
-    addressCountry: "RO",
-  },
-};
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Petre Radu Cătălin | Penetration Tester & Offensive Security",
+    default: "Penetration Tester Brașov | Petre Radu Cătălin",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -82,22 +69,22 @@ export const metadata: Metadata = {
     type: "website",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Petre Radu Cătălin | Offensive Security Professional",
-    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security. Based in Brașov, Romania.",
+    title: siteConfig.ogTitle,
+    description: siteConfig.ogDescription,
     locale: "en_US",
     images: [
       {
         url: `${siteConfig.url}/images/og.png?v=2`,
         width: 1200,
         height: 630,
-        alt: "Petre Radu Cătălin - Senior Offensive Security Professional",
+        alt: "Petre Radu Cătălin - Penetration Tester Brașov, Romania",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Petre Radu Cătălin | Offensive Security Professional",
-    description: "Penetration Tester @ NTT DATA. Offensive Security, Red Team, Cloud & AI Security.",
+    title: siteConfig.ogTitle,
+    description: siteConfig.ogDescription,
     images: [`${siteConfig.url}/images/og.png?v=2`],
   },
   robots: {
@@ -112,15 +99,19 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "32x32" }],
+    apple: [
+      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
     shortcut: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
     : {}),
 };
 
@@ -132,16 +123,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        inter.variable,
-        jetbrainsMono.variable,
-        "scroll-smooth"
-      )}
+      className={cn(inter.variable, jetbrainsMono.variable, "scroll-smooth")}
     >
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
       </head>
       <body className="scanline">

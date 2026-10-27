@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUp, Github, Linkedin } from "lucide-react";
-import { NAV_LINKS, siteConfig } from "@/data/site";
+import { NAV_LINKS, SERVICE_LINKS, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/button";
 
 function XIcon({ className }: { className?: string }) {
@@ -57,8 +57,8 @@ export function Footer() {
               <span className="text-muted">- Senior Offensive Security Professional</span>
             </p>
             <p className="max-w-xs text-sm text-muted">
-              Penetration testing, bug bounty research, and practical security
-              evaluation. Based in Brașov, Romania.
+              Penetration tester in Brașov, Romania. Web, AD, cloud pentesting
+              and practical security evaluation for teams across Romania.
             </p>
           </div>
 
@@ -68,6 +68,16 @@ export function Footer() {
             </h2>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              {SERVICE_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

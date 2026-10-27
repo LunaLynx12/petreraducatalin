@@ -1,7 +1,7 @@
 export const bioParagraphs: { heading: string; text: string }[] = [
   {
     heading: "Who I am",
-    text: "I'm Petre Radu Cătălin, an offensive security professional focused on penetration testing, bug bounty research, and practical security evaluation. I work as a Penetration Tester at NTT DATA and am based in Brașov, Romania.",
+    text: "I'm Petre Radu Cătălin, a penetration tester and pentester based in Brașov, Romania. I focus on web, API, infrastructure, and practical security evaluation. I work as a Penetration Tester at NTT DATA and I am the founder of Kiwi Defence.",
   },
   {
     heading: "My philosophy",

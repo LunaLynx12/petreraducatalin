@@ -22,7 +22,7 @@ export const expertiseItems: ExpertiseItem[] = [
     points: [
       "Web & API penetration testing (OWASP Top 10)",
       "Active Directory exploitation & privilege escalation",
-      "Network security audits",
+      "Network penetration testing",
       "Red Team emulation aligned to MITRE ATT&CK",
       "Automated recon & exploit development (Python, Bash)",
     ],

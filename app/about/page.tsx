@@ -8,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "About Petre Radu Cătălin",
-  description: "Full biography of Petre Radu Cătălin (Petre Radu) - offensive security professional focused on penetration testing, bug bounty work, and practical security evaluation. Based in Brașov, Romania.",
+  description:
+    "Biography of Petre Radu Cătălin (Petre Radu), penetration tester in Brașov, Romania. Pentesting, bug bounty work, and practical security evaluation for teams across Romania.",
   alternates: { canonical: `${siteConfig.url}/about/` },
 };
 
@@ -16,7 +17,7 @@ const extendedBio = [
   {
     heading: "Foundations",
     paragraph:
-      "Petre Radu Cătălin is an offensive security professional based in Brașov, Romania, currently working as a Penetration Tester at NTT DATA. His work focuses on practical assessment of web applications, infrastructure, and security controls, with attention to how real weaknesses can be exploited and remediated.",
+      "Petre Radu Cătălin is a penetration tester based in Brașov, Romania, currently working as a Penetration Tester at NTT DATA and founder of Kiwi Defence. His work focuses on practical assessment of web applications, infrastructure, and security controls, with attention to how real weaknesses can be exploited and remediated. For named expert engagements use petreraducatalin.com. For company platform services see kiwidefence.com.",
   },
   {
     heading: "Education",

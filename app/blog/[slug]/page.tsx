@@ -133,9 +133,9 @@ export default async function PostPage({ params }: PostPageProps) {
           </p>
           <p className="mt-2 text-sm leading-relaxed text-muted">
             <strong className="text-foreground">Petre Radu Cătălin</strong> is a
-            Penetration Tester at NTT DATA and offensive security professional
-            based in Brașov, Romania. He specializes in Active Directory
-            exploitation, cloud security, and AI security evaluations.{" "}
+            penetration tester in Brașov, Romania, and a Penetration Tester at
+            NTT DATA. He specializes in web and Active Directory assessments,
+            cloud security, and AI security evaluations.{" "}
             <Link
               href="/#contact"
               className="text-secondary underline underline-offset-2"

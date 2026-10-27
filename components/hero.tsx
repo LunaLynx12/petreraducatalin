@@ -58,24 +58,29 @@ export function Hero() {
               </span>
             </p>
             <p className="mt-3 text-lg text-foreground/90 sm:text-xl">
-              Offensive Security · Bug Bounty · Cloud &amp; AI Security
+              Penetration Tester Brașov · Pentester Romania · Cloud &amp; AI Security
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, an offensive security
-              professional focused on penetration testing, security research, and
-              practical risk assessment. I work on real-world web application and
-              infrastructure testing, then turn findings into clear remediation paths.
+              I&apos;m <strong className="font-semibold text-foreground">Petre Radu Cătălin</strong>, a
+              penetration tester based in Brașov, Romania. Satisfied clients in
+              București, Cluj-Napoca, Timișoara, Amsterdam, Rotterdam, The Hague,
+              Vienna, Graz, Linz, Helsinki, Espoo, and Tampere.
             </p>
           </Reveal>
 
           <Reveal delay={0.25}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Button asChild size="lg" className="font-mono">
+                <Link href="/pentester-brasov/">
+                  Hire Pentester Brașov <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="font-mono">
                 <Link href="#projects">
-                  View My Work <ArrowRight aria-hidden="true" />
+                  View My Work
                 </Link>
               </Button>
             </div>

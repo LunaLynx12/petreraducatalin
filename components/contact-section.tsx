@@ -33,7 +33,8 @@ const contactChannels = [
   { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/petreradu", href: siteConfig.social.linkedin },
   { icon: Github, label: "GitHub", value: "LunaLynx12", href: siteConfig.social.github },
-  { icon: Globe, label: "kiwidefence.com", value: "Security research & services", href: siteConfig.social.site },
+  { icon: Globe, label: "Website", value: "petreraducatalin.com", href: siteConfig.social.site },
+  { icon: Globe, label: "Company", value: "kiwidefence.com", href: siteConfig.social.kiwi },
 ];
 
 export function ContactSection() {
@@ -62,7 +63,7 @@ export function ContactSection() {
           eyebrow="connect"
           id="contact-heading"
           title="Work with Petre Radu Cătălin"
-          description="Available for remote and on-site engagements. Based in Brașov, Romania."
+          description="Available for remote EU engagements and on-site in Romania. Based in Brașov. Satisfied clients in Romania, Netherlands, Austria, and Finland."
         />
 
         <div className="mb-8 rounded-xl border border-border bg-surface/70 p-4 text-sm text-muted">
@@ -92,7 +93,7 @@ export function ContactSection() {
               ))}
               <p className="flex items-center gap-2 rounded-xl border border-border bg-surface/70 p-4 font-mono text-sm text-muted">
                 <MapPin className="h-4 w-4 text-secondary" aria-hidden="true" />
-                Brașov, Romania - CET (UTC+2)
+                Brașov, Romania · CET (UTC+2) · RO / NL / AT / FI clients
               </p>
             </div>
           </Reveal>
