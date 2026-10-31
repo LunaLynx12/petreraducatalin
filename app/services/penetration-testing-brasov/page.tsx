@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import { brasovService } from "@/data/services";
 import { languagesForPath } from "@/data/hreflang";
+import { ogImages } from "@/lib/metadata";
 import { ServiceLanding } from "@/components/service-landing";
 
 const languages = languagesForPath(brasovService.path);
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
     description: brasovService.metaDescription,
     locale: "en_US",
     alternateLocale: ["ro_RO"],
+    images: ogImages,
   },
 };
 

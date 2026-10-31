@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
 import { Accordion } from "@/components/accordion";

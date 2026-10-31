@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight, Github, Lock } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
@@ -54,12 +53,18 @@ export function ProjectsSection() {
                     className="group block overflow-hidden bg-surface-2"
                   >
                     <div className="relative aspect-[16/10] w-full">
-                      <Image
-                        src={`/images/projects/${project.slug}.webp`}
-                        alt={`${project.title} - ${project.subtitle} project by Petre Radu Cătălin`}
-                        fill
+                      {/* Static export, so next/image cannot generate a srcset.
+                          The two hand-built variants are smaller than the
+                          framework's default single file. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/images/projects/${project.slug}-800.webp`}
+                        srcSet={`/images/projects/${project.slug}-800.webp 800w, /images/projects/${project.slug}.webp 1200w`}
                         sizes="(max-width: 1024px) 100vw, 60vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        alt={`${project.title} - ${project.subtitle} project by Petre Radu Cătălin`}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                       />
                     </div>
                   </Link>

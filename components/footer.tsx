@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowUp, Github, Linkedin } from "lucide-react";
 import { NAV_LINKS, SERVICE_LINKS, siteConfig } from "@/data/site";
@@ -170,9 +168,8 @@ export function Footer() {
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-night-muted">
             © 2026 {siteConfig.name}. All rights reserved.
           </p>
-          <button
-            type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          <a
+            href="#main"
             className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-night-muted transition-colors hover:text-night-text"
           >
             Back to top
@@ -180,7 +177,7 @@ export function Footer() {
               className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5"
               aria-hidden="true"
             />
-          </button>
+          </a>
         </div>
       </div>
     </footer>

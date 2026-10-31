@@ -1,42 +1,15 @@
-"use client";
-
-import { useState } from "react";
 import {
   ArrowUpRight,
-  CheckCircle2,
   Github,
   Globe,
   Linkedin,
   Mail,
   MapPin,
-  Send,
 } from "lucide-react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/data/site";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your name (min 2 characters)."),
-  email: z.string().email("Please enter a valid email address."),
-  subject: z.string().min(3, "Please add a short subject."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
-});
-
-type ContactValues = z.infer<typeof contactSchema>;
 
 const contactChannels = [
   {
@@ -72,24 +45,6 @@ const contactChannels = [
 ];
 
 export function ContactSection() {
-  const [sent, setSent] = useState(false);
-
-  const form = useForm<ContactValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: { name: "", email: "", subject: "", message: "" },
-  });
-
-  function onSubmit(values: ContactValues) {
-    const subject = encodeURIComponent(`[Portfolio] ${values.subject}`);
-    const body = encodeURIComponent(
-      `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
-    );
-    window.location.assign(
-      `mailto:${siteConfig.email}?subject=${subject}&body=${body}`
-    );
-    setSent(true);
-  }
-
   return (
     <section
       id="contact"
@@ -168,121 +123,7 @@ export function ContactSection() {
           <div className="lg:col-span-7">
             <Reveal delay={0.1}>
               <div className="bg-canvas p-6 text-ink md:p-8">
-                {sent ? (
-                  <div className="flex min-h-[360px] flex-col items-center justify-center gap-4 text-center">
-                    <CheckCircle2
-                      className="h-10 w-10 text-accent"
-                      aria-hidden="true"
-                    />
-                    <h3 className="font-serif text-2xl text-ink">
-                      Request prepared
-                    </h3>
-                    <p className="max-w-sm text-sm leading-relaxed text-body">
-                      Your email client should open with the message pre-filled.
-                      If it did not, write to me directly at{" "}
-                      <a
-                        href={`mailto:${siteConfig.email}`}
-                        className="text-accent underline underline-offset-4"
-                      >
-                        {siteConfig.email}
-                      </a>
-                      .
-                    </p>
-                    <Button variant="outline" onClick={() => setSent(false)}>
-                      Send another message
-                    </Button>
-                  </div>
-                ) : (
-                  <Form {...form}>
-                    <form
-                      onSubmit={form.handleSubmit(onSubmit)}
-                      className="space-y-6"
-                      noValidate
-                    >
-                      <div className="grid gap-6 sm:grid-cols-2">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Name</FormLabel>
-                              <FormControl>
-                                <Input
-                                  placeholder="Jane Smith"
-                                  autoComplete="name"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Email</FormLabel>
-                              <FormControl>
-                                <Input
-                                  type="email"
-                                  placeholder="jane@company.com"
-                                  autoComplete="email"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-
-                      <FormField
-                        control={form.control}
-                        name="subject"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Subject</FormLabel>
-                            <FormControl>
-                              <Input
-                                placeholder="Penetration test for our SaaS platform"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Tell me about your engagement — scope, timeline, and what you're protecting."
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <Button type="submit" size="lg" className="w-full">
-                        <Send className="h-4 w-4" aria-hidden="true" />
-                        Send message
-                      </Button>
-
-                      <p className="text-center font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
-                        Requests open your email client — no data is stored on
-                        this site.
-                      </p>
-                    </form>
-                  </Form>
-                )}
+                <ContactForm />
               </div>
             </Reveal>
           </div>

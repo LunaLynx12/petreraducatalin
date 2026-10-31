@@ -1,36 +1,24 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
+import { ogImages, ogImage } from "@/lib/metadata";
 import { Analytics } from "@/components/seo";
 import { buildRootJsonLdGraph } from "@/components/seo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { cn } from "@/lib/utils";
+import { RevealObserver } from "@/components/reveal-observer";
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin", "latin-ext"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-  display: "swap",
-  preload: true,
-});
-
-const interTight = Inter_Tight({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
-  display: "swap",
-  preload: true,
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-  preload: true,
-});
+/**
+ * Fonts are self-hosted and subsetted (see scripts/generate-fonts.mjs), then
+ * declared in globals.css. Preloading is explicit so it behaves identically on
+ * every platform; Next's local-font preload manifest is unreliable on Windows.
+ */
+const fontPreloads = [
+  "/fonts/inter-tight.woff2",
+  "/fonts/instrument-serif.woff2",
+  "/fonts/instrument-serif-italic.woff2",
+  "/fonts/plex-mono-400.woff2",
+];
 
 const rootJsonLd = buildRootJsonLdGraph();
 
@@ -57,20 +45,13 @@ export const metadata: Metadata = {
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
     locale: "en_US",
-    images: [
-      {
-        url: `${siteConfig.url}/images/og.png?v=2`,
-        width: 1200,
-        height: 630,
-        alt: "Petre Radu Cătălin - Penetration Tester Brașov, Romania",
-      },
-    ],
+    images: ogImages,
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
-    images: [`${siteConfig.url}/images/og.png?v=2`],
+    images: [ogImage.url],
   },
   robots: {
     index: true,
@@ -106,16 +87,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        instrumentSerif.variable,
-        interTight.variable,
-        plexMono.variable,
-        "scroll-smooth"
-      )}
-    >
+    <html lang="en">
       <head>
+        {fontPreloads.map((href) => (
+          <link
+            key={href}
+            rel="preload"
+            href={href}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
@@ -131,6 +114,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <RevealObserver />
         <Analytics />
       </body>
     </html>

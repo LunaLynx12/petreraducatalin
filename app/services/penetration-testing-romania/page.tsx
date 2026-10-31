@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import { romaniaService } from "@/data/services";
 import { languagesForPath } from "@/data/hreflang";
+import { ogImages } from "@/lib/metadata";
 import { ServiceLanding } from "@/components/service-landing";
 
 const languages = languagesForPath(romaniaService.path);
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     description: romaniaService.metaDescription,
     locale: "en_US",
     alternateLocale: ["ro_RO"],
+    images: ogImages,
   },
 };
 

@@ -9,7 +9,11 @@
     "start": "next start",
     "lint": "eslint .",
     "prebuild": "node scripts/generate-rss.mjs",
+    "postbuild": "node scripts/postbuild-html.mjs && node scripts/verify-export.mjs",
+    "verify:export": "node scripts/verify-export.mjs",
     "generate:rss": "node scripts/generate-rss.mjs",
+    "generate:fonts": "node scripts/generate-fonts.mjs",
+    "generate:images": "node scripts/generate-image-variants.mjs",
     "generate:og": "node scripts/generate-og.mjs",
     "generate:blog-covers": "node scripts/generate-blog-covers.mjs",
     "generate:project-covers": "node scripts/generate-project-covers.mjs",
@@ -17,9 +21,6 @@
     "seo:browser": "node scripts/seo-browser-assist.mjs"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.0",
-    "@radix-ui/react-dialog": "^1.1.2",
-    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -28,11 +29,9 @@
     "next": "^15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hook-form": "^7.53.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "tailwind-merge": "^2.5.4",
-    "zod": "^3.23.8"
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",

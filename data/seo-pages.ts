@@ -132,7 +132,7 @@ export const keywordLandings: KeywordLanding[] = [
     path: "/penetration-tester-brasov/",
     lang: "en",
     title: "Penetration Tester Brașov",
-    metaTitle: "Penetration Tester Brașov | Petre Radu Cătălin",
+    metaTitle: "Hire a Penetration Tester in Brașov | Petre Radu Cătălin",
     metaDescription:
       "Penetration tester Brașov: Petre Radu Cătălin delivers manual web, API, AD, and cloud penetration testing for companies in Brașov and Romania.",
     h1: "Penetration Tester",

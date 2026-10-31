@@ -1,19 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 const links = [
   { label: "Profile", href: "/#about", id: "about" },
@@ -29,6 +21,10 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
+
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -60,6 +56,50 @@ export function Navbar() {
 
     return () => observer.disconnect();
   }, [pathname]);
+
+  // While the menu is open: lock scrolling, handle Escape and trap Tab focus.
+  useEffect(() => {
+    if (!open) return;
+
+    closeRef.current?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+        return;
+      }
+      if (event.key !== "Tab" || !panelRef.current) return;
+
+      const focusable = panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
+
+  function closeMenu() {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }
 
   return (
     <header
@@ -123,30 +163,42 @@ export function Navbar() {
           </Link>
         </div>
 
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <button
-              aria-label="Open menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-line-strong text-ink transition-colors hover:border-accent hover:text-accent lg:hidden"
-            >
-              <Menu className="h-5 w-5" />
-            </button>
-          </DialogTrigger>
+        <button
+          ref={triggerRef}
+          type="button"
+          aria-label="Open menu"
+          aria-haspopup="dialog"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen(true)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-line-strong text-ink transition-colors hover:border-accent hover:text-accent lg:hidden"
+        >
+          <Menu className="h-5 w-5" aria-hidden="true" />
+        </button>
 
-          <DialogContent
-            aria-describedby={undefined}
-            className="inset-0 left-0 top-0 h-[100dvh] w-full max-w-none translate-x-0 translate-y-0 rounded-none border-0 bg-canvas p-0"
+        {open ? (
+          <div
+            ref={panelRef}
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
+            className="fixed inset-0 z-[60] bg-canvas lg:hidden"
           >
-            <DialogTitle className="sr-only">Site navigation</DialogTitle>
-            <DialogDescription className="sr-only">
-              Links to the main sections of the site.
-            </DialogDescription>
-
             <div className="flex h-full flex-col">
-              <div className="flex h-20 items-center border-b border-line px-5">
+              <div className="flex h-20 items-center justify-between border-b border-line px-5">
                 <span className="font-serif text-xl text-ink">
                   Petre Radu
                 </span>
+                <button
+                  ref={closeRef}
+                  type="button"
+                  aria-label="Close menu"
+                  onClick={closeMenu}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line-strong text-ink transition-colors hover:border-accent hover:text-accent"
+                >
+                  <X className="h-5 w-5" aria-hidden="true" />
+                </button>
               </div>
 
               <nav
@@ -154,34 +206,31 @@ export function Navbar() {
                 className="flex flex-1 flex-col justify-center px-5"
               >
                 {links.map((link, i) => (
-                  <DialogClose key={link.href} asChild>
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="group flex items-baseline gap-4 border-b border-line py-5"
-                    >
-                      <span className="font-mono text-[10px] text-muted">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-serif text-4xl leading-none text-ink transition-colors group-hover:text-accent">
-                        {link.label}
-                      </span>
-                    </Link>
-                  </DialogClose>
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="group flex items-baseline gap-4 border-b border-line py-5"
+                  >
+                    <span className="font-mono text-[10px] text-muted">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-serif text-4xl leading-none text-ink transition-colors group-hover:text-accent">
+                      {link.label}
+                    </span>
+                  </Link>
                 ))}
               </nav>
 
               <div className="border-t border-line p-5">
-                <DialogClose asChild>
-                  <Link
-                    href="/#contact"
-                    onClick={() => setOpen(false)}
-                    className="flex w-full items-center justify-between rounded-full bg-ink px-6 py-4 text-sm font-medium text-canvas transition-colors hover:bg-accent"
-                  >
-                    Start a project
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </DialogClose>
+                <Link
+                  href="/#contact"
+                  onClick={closeMenu}
+                  className="flex w-full items-center justify-between rounded-full bg-ink px-6 py-4 text-sm font-medium text-canvas transition-colors hover:bg-accent"
+                >
+                  Start a project
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
                 <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
                   <span>{siteConfig.location.label}</span>
                   <a href={`mailto:${siteConfig.email}`} className="hover:text-ink">
@@ -190,8 +239,8 @@ export function Navbar() {
                 </div>
               </div>
             </div>
-          </DialogContent>
-        </Dialog>
+          </div>
+        ) : null}
       </nav>
     </header>
   );

@@ -9,6 +9,7 @@ import {
   getCity,
 } from "@/data/locations";
 import { Reveal } from "@/components/reveal";
+import { ogImages } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import {
   JsonLd,
@@ -54,6 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `${siteConfig.url}${data.path}`,
       title,
       description,
+      images: ogImages,
     },
   };
 }

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { collaborators } from "@/data/collaborators";
+import { ogImages } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo";
 import { Badge } from "@/components/ui/badge";
 
@@ -35,6 +36,7 @@ export async function generateMetadata({
       title: `${collab.name} - ${collab.headline}`,
       description: collab.description,
       siteName: siteConfig.name,
+      images: ogImages,
     },
     twitter: {
       card: "summary",

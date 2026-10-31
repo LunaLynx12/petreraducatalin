@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useRef, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type RevealVariant = "up" | "mask" | "image";
 
@@ -13,11 +11,15 @@ interface RevealProps {
 }
 
 /**
- * Scroll reveal driven by a CSS transition plus one IntersectionObserver.
+ * Marks a block for the shared scroll reveal.
  *
- * Elements are only hidden once they are known to start below the fold, so
- * content is always visible without JS, while the bundle loads, or if the
- * observer never fires. See `.reveal` in globals.css.
+ * This is a server component on purpose: it emits plain markup and a data
+ * attribute, and the single `<RevealObserver />` in the root layout does the
+ * observing. Previously every Reveal was its own client component, which cost
+ * one hydrated component and one IntersectionObserver per block.
+ *
+ * Nothing is hidden by default, so content stays visible without JS. See
+ * `.reveal` in globals.css.
  */
 export function Reveal({
   children,
@@ -25,41 +27,14 @@ export function Reveal({
   className,
   variant = "up",
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    if (typeof IntersectionObserver === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    // Already on screen or scrolled past: leave it visible, skip the animation.
-    const { top } = node.getBoundingClientRect();
-    if (top < (window.innerHeight || 0)) return;
-
-    node.classList.add("reveal-armed");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
-        node.classList.add("is-visible");
-        observer.disconnect();
-      },
-      { rootMargin: "0px 0px -80px 0px", threshold: 0.01 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div
-      ref={ref}
+      data-reveal=""
       data-variant={variant === "up" ? undefined : variant}
       className={className ? `reveal ${className}` : "reveal"}
       style={
         delay > 0
-          ? ({ "--reveal-delay": `${Math.round(delay * 1000)}ms` } as React.CSSProperties)
+          ? ({ "--reveal-delay": `${Math.round(delay * 1000)}ms` } as CSSProperties)
           : undefined
       }
     >

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
+import { ogImages } from "@/lib/metadata";
 import { Hero } from "@/components/hero";
 import { LocationTicker } from "@/components/location-ticker";
 import { ProjectsSection } from "@/components/projects-section";
@@ -22,14 +23,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
-    images: [
-      {
-        url: `${siteConfig.url}/images/og.png?v=2`,
-        width: 1200,
-        height: 630,
-        alt: "Petre Radu Cătălin - Penetration Tester based in Brașov, Romania",
-      },
-    ],
+    images: ogImages,
   },
 };
 

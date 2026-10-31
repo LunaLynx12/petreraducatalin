@@ -2,11 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Self-hosted, subsetted webfonts (see scripts/generate-fonts.mjs).
+ *
+ * The fallback faces below carry the same metric overrides Next.js computed,
+ * so the swap from fallback to webfont does not reflow the page.
+ */
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Tight Fallback";
+  src: local("Arial");
+  ascent-override: 99.65%;
+  descent-override: 24.81%;
+  line-gap-override: 0%;
+  size-adjust: 97.21%;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif Fallback";
+  src: local("Times New Roman");
+  ascent-override: 117.87%;
+  descent-override: 36.91%;
+  line-gap-override: 0%;
+  size-adjust: 83.99%;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono Fallback";
+  src: local("Arial");
+  ascent-override: 77.95%;
+  descent-override: 20.91%;
+  line-gap-override: 0%;
+  size-adjust: 131.49%;
+}
+
 @layer base {
   :root {
     --background: 40 31% 94%;
     --foreground: 210 12% 10%;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-sans: "Inter Tight", "Inter Tight Fallback";
+    --font-serif: "Instrument Serif", "Instrument Serif Fallback";
+    --font-mono: "IBM Plex Mono", "IBM Plex Mono Fallback";
   }
 
   * {
@@ -26,7 +102,6 @@
         transparent 42%
       ),
       radial-gradient(circle at 88% 8%, rgba(154, 107, 79, 0.035), transparent 38%);
-    background-attachment: fixed;
   }
 
   h1,
@@ -104,7 +179,6 @@
     pointer-events: none;
     opacity: 0.022;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
   }
 
   .glow-text {
@@ -171,6 +245,17 @@
     text-wrap: pretty;
   }
 
+  /* Native disclosure panel. Animating opacity/transform keeps the entrance on
+   * the compositor; animating height would force layout on every frame. */
+  details[open] > .accordion-panel {
+    animation: accordion-in 320ms var(--ease-out) both;
+  }
+
+  /* Deliberately no `content-visibility: auto` on the sections. It made the
+   * first render cheaper, but placeholders use the intrinsic-size estimate, so
+   * anchor navigation (#expertise, #blog, ...) landed hundreds of pixels off
+   * until every section above had rendered. Correct in-page navigation wins. */
+
   /* Scroll reveal.
    *
    * Nothing is hidden by default: the component only arms elements that start
@@ -188,7 +273,6 @@
   .reveal.reveal-armed {
     opacity: 0;
     transform: translateY(16px);
-    will-change: opacity, transform;
   }
 
   .reveal.reveal-armed[data-variant="mask"] {
@@ -204,11 +288,21 @@
     opacity: 1;
     transform: none;
     clip-path: inset(0 0 0% 0);
-    will-change: auto;
     transition:
       opacity var(--reveal-duration) var(--ease-out) var(--reveal-delay),
       transform var(--reveal-duration) var(--ease-out) var(--reveal-delay),
       clip-path var(--reveal-duration) var(--ease-out) var(--reveal-delay);
+  }
+}
+
+@keyframes accordion-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
