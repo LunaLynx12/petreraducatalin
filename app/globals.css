@@ -4,8 +4,9 @@
 
 @layer base {
   :root {
-    --background: 240 33% 5%;
-    --foreground: 210 25% 88%;
+    --background: 40 31% 94%;
+    --foreground: 210 12% 10%;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   * {
@@ -14,28 +15,41 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6rem;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background-image: radial-gradient(
-        circle at 20% 0%,
-        rgba(0, 255, 136, 0.05),
-        transparent 40%
+        circle at 12% 0%,
+        rgba(74, 93, 110, 0.045),
+        transparent 42%
       ),
-      radial-gradient(circle at 90% 10%, rgba(0, 204, 255, 0.05), transparent 40%);
+      radial-gradient(circle at 88% 8%, rgba(154, 107, 79, 0.035), transparent 38%);
     background-attachment: fixed;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    font-weight: 400;
+  }
+
   ::selection {
-    background: rgba(0, 255, 136, 0.25);
-    color: #e0e0e0;
+    background: rgba(74, 93, 110, 0.2);
+    color: #16181b;
+  }
+
+  :focus-visible {
+    outline: 2px solid #4a5d6e;
+    outline-offset: 2px;
   }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #2a2a3a #12121a;
+    scrollbar-color: #c6bfaf #f4f1eb;
   }
 
   ::-webkit-scrollbar {
@@ -43,90 +57,158 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #12121a;
+    background: #f4f1eb;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2a2a3a;
+    background: #c6bfaf;
     border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #00ff88;
+    background: #4a5d6e;
+  }
+
+  .prose {
+    --tw-prose-body: #4b4f54;
+    --tw-prose-headings: #16181b;
+    --tw-prose-lead: #4b4f54;
+    --tw-prose-links: #4a5d6e;
+    --tw-prose-bold: #16181b;
+    --tw-prose-counters: #66686b;
+    --tw-prose-bullets: #4a5d6e;
+    --tw-prose-hr: #dcd6ca;
+    --tw-prose-quotes: #16181b;
+    --tw-prose-quote-borders: #c6bfaf;
+    --tw-prose-captions: #66686b;
+    --tw-prose-code: #16181b;
+    --tw-prose-pre-code: #ece9e2;
+    --tw-prose-pre-bg: #111417;
+    --tw-prose-th-borders: #c6bfaf;
+    --tw-prose-td-borders: #dcd6ca;
   }
 }
 
 @layer utilities {
-  .glow-text {
-    text-shadow: 0 0 24px rgba(0, 255, 136, 0.35);
-  }
-
-  .text-gradient-green {
-    background: linear-gradient(120deg, #00ff88, #7dffce);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .scanline::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 60;
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.06) 3px,
-      rgba(0, 0, 0, 0.06) 4px
-    );
-    mix-blend-mode: overlay;
-  }
-
-  .grid-lines {
-    background-image: linear-gradient(
-        rgba(224, 224, 224, 0.035) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(224, 224, 224, 0.035) 1px, transparent 1px);
-    background-size: 56px 56px;
-  }
-
-  .glass {
-    background: rgba(10, 10, 15, 0.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-  }
-
-  .neon-border {
-    position: relative;
-  }
-  .neon-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 255, 136, 0.5),
-      rgba(0, 204, 255, 0.15) 45%,
-      rgba(255, 51, 102, 0.25)
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+  .section-y {
+    padding-block: clamp(80px, 10vw, 144px);
   }
 
   .section-padding {
     @apply py-20 md:py-28;
   }
 
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.022;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .glow-text {
+    text-shadow: none;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(120deg, #4a5d6e, #16181b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .grid-lines {
+    background-image: linear-gradient(
+        rgba(22, 24, 27, 0.055) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(22, 24, 27, 0.055) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .glass {
+    background: rgba(244, 241, 235, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .neon-border {
+    border: 1px solid #dcd6ca;
+  }
+
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s var(--ease-out);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
   .animate-pause {
     animation-play-state: paused;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Scroll reveal.
+   *
+   * Nothing is hidden by default: the component only arms elements that start
+   * below the fold, and only once it has mounted. Content therefore stays
+   * visible with JS disabled, while a bundle loads, or if an observer never
+   * fires (background/throttled tabs). Arming has no transition so the hidden
+   * state is applied instantly off-screen; the transition lives on the
+   * `.is-visible` state so the reveal itself animates.
+   */
+  .reveal {
+    --reveal-delay: 0ms;
+    --reveal-duration: 600ms;
+  }
+
+  .reveal.reveal-armed {
+    opacity: 0;
+    transform: translateY(16px);
+    will-change: opacity, transform;
+  }
+
+  .reveal.reveal-armed[data-variant="mask"] {
+    transform: translateY(28px);
+  }
+
+  .reveal.reveal-armed[data-variant="image"] {
+    --reveal-duration: 900ms;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  .reveal.reveal-armed.is-visible {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0% 0);
+    will-change: auto;
+    transition:
+      opacity var(--reveal-duration) var(--ease-out) var(--reveal-delay),
+      transform var(--reveal-duration) var(--ease-out) var(--reveal-delay),
+      clip-path var(--reveal-duration) var(--ease-out) var(--reveal-delay);
   }
 }
 
@@ -140,5 +222,11 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  /* The component skips arming under reduced motion; this is belt and braces. */
+  .reveal.reveal-armed {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
   }
 }

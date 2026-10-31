@@ -1,101 +1,120 @@
-import { Briefcase, GraduationCap, MapPin } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
+import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
-import { Badge } from "@/components/ui/badge";
 import { experienceItems, educationItems } from "@/data/experience";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="section-padding border-t border-border">
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="section-y bg-surface/40"
+    >
       <div className="container">
-        <SectionHeading
-          eyebrow="history"
+        <SectionHeader
+          index="04"
+          eyebrow="History"
           id="experience-heading"
           title="Experience"
-          description="Penetration testing, bug bounty research, and hands-on security work shaped by real-world findings and practical remediation guidance."
+          description="Penetration testing, bug bounty research, and hands-on security work shaped by real findings and practical remediation."
         />
 
-        <div className="mt-6 rounded-xl border border-border bg-surface/70 p-5 text-sm text-muted">
-          <p>
-            <strong className="text-foreground">Engagement model:</strong> for broader scopes, I coordinate complementary work
-            with trusted specialists in cloud, compliance, and incident response. I remain the primary point of contact and
-            lead the assessment flow from scoping through reporting and remediation validation.
-          </p>
-        </div>
+        <Reveal>
+          <div className="mb-10 border border-line bg-surface p-5 text-sm leading-relaxed text-body">
+            <strong className="font-medium text-ink">Engagement model:</strong>{" "}
+            for broader scopes, I coordinate complementary work with trusted
+            specialists in cloud, compliance, and incident response. I remain
+            the primary point of contact and lead the assessment from scoping
+            through reporting and remediation validation.
+          </div>
+        </Reveal>
 
-        <div className="relative mx-auto mt-8 max-w-3xl">
-          <div aria-hidden="true" className="absolute left-[22px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-secondary/30 to-transparent md:left-[26px]" />
+        <div className="border-t border-line">
+          {experienceItems.map((item, i) => (
+            <Reveal key={`${item.company}-${item.role}`} delay={0.04 * i}>
+              <article className="grid gap-4 border-b border-line py-8 md:grid-cols-12 md:gap-8 md:py-10">
+                <div className="md:col-span-3">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                    {item.period}
+                  </p>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                    {item.location}
+                  </p>
+                </div>
 
-          <ol className="space-y-8">
-            {experienceItems.map((item, i) => (
-              <Reveal key={`${item.company}-${item.role}`} delay={0.05 * i}>
-                <li className="relative flex gap-5">
-                  <span className="relative z-10 mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/40 bg-surface font-mono text-sm font-bold text-primary shadow-glow-sm">
-                    {item.company
-                      .split(" ")
-                      .map((word) => word[0])
-                      .slice(0, 2)
-                      .join("")
-                      .toUpperCase()}
-                  </span>
-                  <div className="flex-1 rounded-xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/30">
-                    <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                      <h3 className="font-mono text-base font-semibold text-foreground">
-                        {item.company}
-                      </h3>
-                      <Badge variant={item.type === "Enterprise" ? "default" : "secondary"}>
-                        {item.type}
-                      </Badge>
-                    </div>
-                    <p className="mb-1 text-sm font-medium text-primary">{item.role}</p>
-                    <p className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-muted">
-                      <span>{item.period}</span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3 w-3" aria-hidden="true" />
-                        {item.location}
-                      </span>
-                    </p>
-                    <ul className="space-y-1.5">
-                      {item.details.map((detail) => (
-                        <li key={detail} className="flex items-start gap-2 text-sm text-muted">
-                          <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-secondary" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="md:col-span-9">
+                  <div className="flex flex-wrap items-baseline justify-between gap-3">
+                    <h3 className="font-serif text-2xl leading-tight text-ink md:text-3xl">
+                      {item.company}
+                    </h3>
+                    <span className="rounded-full border border-line px-3 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
+                      {item.type}
+                    </span>
                   </div>
-                </li>
-              </Reveal>
-            ))}
 
-            <Reveal delay={0.1}>
-              <li className="relative flex gap-5">
-                <span className="relative z-10 mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-secondary/40 bg-surface text-secondary">
-                  <GraduationCap className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div className="flex-1 rounded-xl border border-border bg-surface/60 p-5">
-                  <h3 className="font-mono text-base font-semibold text-foreground">
-                    {educationItems[0].institution}
-                  </h3>
-                  <p className="mb-1 text-sm font-medium text-secondary">
-                    {educationItems[0].degree}
+                  <p className="mt-1 text-sm font-medium text-accent">
+                    {item.role}
                   </p>
-                  <p className="mb-3 font-mono text-xs text-muted">
-                    {educationItems[0].period}
-                  </p>
-                  <ul className="space-y-1.5">
-                    {educationItems[0].details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-2 text-sm text-muted">
-                        <Briefcase className="mt-0.5 h-3.5 w-3.5 shrink-0 text-secondary" aria-hidden="true" />
+
+                  <ul className="mt-4 grid gap-x-8 gap-y-2 md:grid-cols-2">
+                    {item.details.map((detail) => (
+                      <li
+                        key={detail}
+                        className="flex items-start gap-2.5 text-sm leading-relaxed text-body"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-px w-3 shrink-0 bg-accent"
+                        />
                         {detail}
                       </li>
                     ))}
                   </ul>
                 </div>
-              </li>
+              </article>
             </Reveal>
-          </ol>
+          ))}
         </div>
+
+        <Reveal className="mt-14">
+          <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+            Education
+          </h3>
+
+          <div className="mt-5 border-t border-line">
+            {educationItems.map((item, i) => (
+              <div
+                key={`${item.institution}-${item.degree}`}
+                className="grid gap-3 border-b border-line py-6 md:grid-cols-12 md:gap-8"
+              >
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted md:col-span-3">
+                  {item.period}
+                </p>
+                <div className="md:col-span-9">
+                  <h4 className="font-serif text-xl text-ink">
+                    {item.degree}
+                  </h4>
+                  <p className="mt-1 text-sm text-accent">{item.institution}</p>
+                  {i === 0 ? (
+                    <ul className="mt-3 grid gap-x-8 gap-y-1.5 md:grid-cols-2">
+                      {item.details.map((detail) => (
+                        <li
+                          key={detail}
+                          className="flex items-start gap-2.5 text-sm leading-relaxed text-body"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 h-px w-3 shrink-0 bg-line-strong"
+                          />
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

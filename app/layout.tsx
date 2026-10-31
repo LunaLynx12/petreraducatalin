@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { Analytics } from "@/components/seo";
@@ -8,16 +8,26 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
   preload: true,
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const interTight = Inter_Tight({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-jetbrains",
+  variable: "--font-sans",
+  display: "swap",
+  preload: true,
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
   preload: true,
 });
@@ -98,7 +108,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(inter.variable, jetbrainsMono.variable, "scroll-smooth")}
+      className={cn(
+        instrumentSerif.variable,
+        interTight.variable,
+        plexMono.variable,
+        "scroll-smooth"
+      )}
     >
       <head>
         <script
@@ -106,10 +121,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
       </head>
-      <body className="scanline">
+      <body className="grain">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2.5 focus:text-sm focus:text-canvas"
         >
           Skip to content
         </a>

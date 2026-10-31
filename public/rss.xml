@@ -5,8 +5,116 @@
     <link>https://petreraducatalin.com/blog/</link>
     <description>Insights from Petre Radu Cătălin - technical write-ups on offensive security, penetration testing, cloud threats, and AI security.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 11:26:45 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 09:42:45 GMT</lastBuildDate>
     <atom:link href="https://petreraducatalin.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ghid practic: securitate AWS și Azure înainte de un pentest</title>
+      <link>https://petreraducatalin.com/blog/ghid-securitate-aws-azure/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/ghid-securitate-aws-azure/</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Checklist ofensiv pentru AWS și Azure: IAM, storage public, secrete, logging. Ce să repari înainte să angajezi un pentester.</description>
+      <category>AWS</category>
+      <category>Azure</category>
+      <category>Cloud Security</category>
+      <category>Ghid</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Cum se repară vulnerabilități IDOR și XSS (ghid practic)</title>
+      <link>https://petreraducatalin.com/blog/reparare-vulnerabilitati-idor-xss/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/reparare-vulnerabilitati-idor-xss/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Pași concreți pentru a remedia IDOR (Broken Object Level Authorization) și XSS după un pentest: cauze, fix-uri și cum verifici că riscul e închis.</description>
+      <category>IDOR</category>
+      <category>XSS</category>
+      <category>Remediere</category>
+      <category>Application Security</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Cum alegi un pentester în Brașov (ghid practic)</title>
+      <link>https://petreraducatalin.com/blog/cum-alegi-pentester-brasov/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/cum-alegi-pentester-brasov/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Ghid în română pentru firme din Brașov care caută pentester, test de penetrare, ethical hacking sau testare de securitate: ce să ceri, ce să eviți și cum începi.</description>
+      <category>Test de penetrare</category>
+      <category>Brașov</category>
+      <category>România</category>
+      <category>Ghid</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Cât costă un pentest în România (2026)</title>
+      <link>https://petreraducatalin.com/blog/cat-costa-un-pentest-in-romania/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/cat-costa-un-pentest-in-romania/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Orientare de preț pentru test de penetrare în România: ce mută bugetul, cum compari oferte și de ce un număr pe homepage înșală.</description>
+      <category>Test de penetrare</category>
+      <category>România</category>
+      <category>Preț</category>
+      <category>Ghid cumpărare</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Pentester Brașov vs Security Company: Who Should You Hire?</title>
+      <link>https://petreraducatalin.com/blog/pentester-brasov-vs-company/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/pentester-brasov-vs-company/</guid>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+      <description>When to hire Petre Radu Cătălin as a named pentester in Brașov, and when Kiwi Defence company services are the better fit. Clear buying guide for Romanian teams.</description>
+      <category>Penetration Testing</category>
+      <category>Brașov</category>
+      <category>Romania</category>
+      <category>Buying Guide</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>What a Real Pentest Engagement in Romania Looks Like (Sanitized Lessons)</title>
+      <link>https://petreraducatalin.com/blog/pentest-engagement-romania-sanitized-lessons/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/pentest-engagement-romania-sanitized-lessons/</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Sanitized lessons from penetration testing engagements with Romanian teams: where projects stall, which findings recur, and how reporting has to work for mixed English and Romanian stakeholders.</description>
+      <category>Penetration Testing</category>
+      <category>Romania</category>
+      <category>Brașov</category>
+      <category>Case Study</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Web App Pentest Checklist for Romanian SMEs (NIS2-Ready Thinking)</title>
+      <link>https://petreraducatalin.com/blog/web-app-pentest-checklist-romania-nis2/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/web-app-pentest-checklist-romania-nis2/</guid>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
+      <description>A practical web application penetration testing checklist for Romanian SMEs that need evidence of risk management, not theatre. Built for product, IT, and security owners.</description>
+      <category>Penetration Testing</category>
+      <category>NIS2</category>
+      <category>Romania</category>
+      <category>Web Security</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>Pentesting Costs in Romania (2026): What Actually Drives Price</title>
+      <link>https://petreraducatalin.com/blog/pentesting-costs-romania-2026/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/pentesting-costs-romania-2026/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+      <description>What Romanian companies should budget for web, infrastructure, and Active Directory penetration testing in 2026, and which scope choices change the price the most.</description>
+      <category>Penetration Testing</category>
+      <category>Romania</category>
+      <category>Pricing</category>
+      <category>Buying Guide</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
+    <item>
+      <title>How to Hire a Penetration Tester in Brașov</title>
+      <link>https://petreraducatalin.com/blog/hire-penetration-tester-brasov/</link>
+      <guid isPermaLink="true">https://petreraducatalin.com/blog/hire-penetration-tester-brasov/</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+      <description>A practical checklist for Brașov companies hiring a pentester: scope, evidence, reporting, and red flags that turn a penetration test into expensive noise.</description>
+      <category>Penetration Testing</category>
+      <category>Brașov</category>
+      <category>Romania</category>
+      <category>Buying Guide</category>
+      <author>Petre Radu Cătălin</author>
+    </item>
     <item>
       <title>AI Security: Testing LLMs for Prompt Injection and Data Exfiltration</title>
       <link>https://petreraducatalin.com/blog/ai-security-testing-llms/</link>

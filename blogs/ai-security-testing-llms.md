@@ -4,7 +4,7 @@ date: "2026-07-02"
 excerpt: "A field guide to how I evaluate AI systems offensively - prompt injection, indirect injection through retrieved content, and the data-exfiltration bugs that leak what LLMs are told through their own outputs."
 tags: ["AI Security","Penetration Testing","LLM Security"]
 readTime: "10 min read"
-cover: "/images/blog/ai-security-testing-llms.webp"
+cover: "/images/blog/ai-security-testing-llms.png"
 ---
 
 AI systems bring a completely new class of vulnerability to enterprise security, and most teams are still treating them like a web application. As **Petre Radu Cătălin**, I evaluate modern AI systems as part of my offensive security work, with a particular focus on prompt injection and the quiet data-exfiltration bugs that leak sensitive information through an LLM's own outputs.
