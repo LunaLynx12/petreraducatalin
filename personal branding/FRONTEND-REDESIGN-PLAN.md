@@ -457,3 +457,39 @@ Result (mobile Lighthouse, production export, median of three runs): **Performan
 Open for pass two:
 - Inner pages still use the old compositions (they inherit the new tokens, nav, footer, and primitives).
 - `/contact/` and `/privacy/` do not exist as routes; the contact block lives at `/#contact`.
+
+---
+
+## 11. Pass two - status
+
+Branch: `redesign/case-file`.
+
+### Shared composition
+
+- `PageHero` gained a `breadcrumbs` slot and is now used by every inner page, so each route opens with the same paper band: mono breadcrumb, mono eyebrow, serif H1 with a clay italic accent, lead paragraph, hairline meta row.
+- `FaqList` (new) renders native `<details>` rows with a rotating plus, a serif question and a 68ch answer. It replaces the four hand-rolled FAQ blocks in `ServiceLanding`, the country page, the city page and the services hub.
+- All inner pages now share one rhythm: hero band, then a `container` with `pb-20 md:pb-28`, sections separated by hairlines rather than cards.
+
+### Pages
+
+- **About** - wide Stage photo band with caption, bio as numbered two-column sections, mission as a pull quote plus skill badges, closing CTA row.
+- **Blog index** - editorial list rows with a cover thumbnail, mono date/read-time, serif title, tags and a quiet "read article" link. RSS lives in the hero meta row.
+- **Blog post** - serif H1 at a 62ch measure, mono meta line, paper-toned `prose` (no `prose-invert`, which was forcing light text on the paper canvas), serif `prose-headings`, dark code blocks, author note under a rule.
+- **Projects** - alternating full-width spreads with `-800.webp` srcsets, mono index/lock labels, serif titles, two-column highlight lists and outline buttons.
+- **Services hub** - 29 rows separated by hairlines. Duplicate hrefs now resolve to the keyword-landing description instead of the old "Service landing optimized for local hiring intent" placeholder, so every row has reader-facing copy.
+- **Locations hub / country / city** - country spreads with city chips, quote panels, `FaqList`, a dark `night` CTA band and cross-links.
+- **Service landings** - the whole `ServiceLanding` template: bordered angle note, what/who/process sections, numbered process rows, clay-ruled local note, `FaqList`, dark CTA band, related-page chips. All copy, heading levels, JSON-LD and breadcrumb payloads unchanged.
+- **Collaborator** - portrait with hairline frame, serif name, accent headline, specialty panel and outline link button.
+- **For AI** - fact list as a two-column definition list, citations as labelled links, FAQ as a definition list.
+- **404** - serif "Recon failed on this route." with a mono error label and a primary home button.
+
+### Cleanup
+
+- Removed the now-unused `.neon-border`, `.text-gradient-green` and `.glow-text` utilities from `globals.css`.
+- No `font-mono` headings, `rounded-2xl`/`rounded-xl` cards, `bg-primary/5` panels or `shadow-glow` hovers remain in `app/` or `components/`.
+
+### QA
+
+- `npx tsc --noEmit`, `npm run lint` and `npm run build` clean; `verify-export` reports 66 pages OK.
+- No console errors, one `h1` per route and no horizontal overflow at 390, 768 and 1440 px across 15 inner routes.
+- Visual review at 390 and 1440 px for about, blog index, a post, projects, services, locations hub, country, city, a service landing, collaborator and 404.

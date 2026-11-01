@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarDays, Clock, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { getAllPosts, getPost } from "@/lib/posts";
 import { JsonLd } from "@/components/seo";
@@ -85,60 +85,69 @@ export default async function PostPage({ params }: PostPageProps) {
   };
 
   return (
-    <article className="section-padding">
+    <article>
       <JsonLd data={articleJsonLd} />
-      <div className="container max-w-3xl">
+      <div className="container max-w-3xl pb-20 pt-32 md:pb-28 md:pt-40">
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-muted transition-colors hover:text-primary"
+          className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted transition-colors hover:text-accent"
         >
-          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-          all_articles
+          <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
+          All articles
         </Link>
 
-        <header className="mb-10">
-          <h1 className="font-mono text-3xl font-bold leading-tight text-foreground sm:text-4xl">
+        <header className="mt-8">
+          <div className="flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <span aria-hidden="true" className="h-px w-4 bg-line-strong" />
+            <span>{post.readTime}</span>
+          </div>
+
+          <h1 className="mt-4 max-w-[26ch] text-balance font-serif text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.03] tracking-[-0.03em] text-ink">
             {post.title}
           </h1>
-          <div className="mt-5 flex flex-wrap items-center gap-4 font-mono text-xs text-muted">
-            <span>
-              by <span className="text-primary">Petre Radu Cătălin</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
-              <time dateTime={post.date}>{formatDate(post.date)}</time>
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-              {post.readTime}
-            </span>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <Badge key={tag} className="font-mono text-[10px]">
-                {tag}
-              </Badge>
-            ))}
+
+          <p className="mt-5 max-w-[60ch] text-pretty text-lg leading-relaxed text-body">
+            {post.excerpt}
+          </p>
+
+          <div className="mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+              By <span className="text-accent">Petre Radu Cătălin</span>
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="font-mono text-[10px]"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </div>
         </header>
 
         <div
-          className="prose prose-invert prose-sm sm:prose-base max-w-none prose-headings:font-mono prose-headings:text-primary prose-a:text-secondary prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-primary prose-pre:border prose-pre:border-border prose-pre:bg-[#0d0d14]"
+          className="prose prose-sm mt-12 max-w-none sm:prose-base prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-[-0.01em] prose-headings:text-ink prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-code:text-ink prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-line prose-pre:bg-night prose-pre:text-night-text prose-img:border prose-img:border-line"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
 
-        <div className="mt-12 rounded-xl border border-border bg-surface/70 p-6">
-          <p className="font-mono text-sm font-semibold text-primary">
+        <div className="mt-14 border-t border-line-strong pt-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
             About the author
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            <strong className="text-foreground">Petre Radu Cătălin</strong> is a
-            penetration tester in Brașov, Romania, and a Penetration Tester at
-            NTT DATA. He specializes in web and Active Directory assessments,
+          <p className="mt-3 max-w-[68ch] text-sm leading-relaxed text-body">
+            <strong className="font-medium text-ink">
+              Petre Radu Cătălin
+            </strong>{" "}
+            is a penetration tester in Brașov, Romania, and a Penetration Tester
+            at NTT DATA. He specializes in web and Active Directory assessments,
             cloud security, and AI security evaluations.{" "}
             <Link
               href="/#contact"
-              className="text-secondary underline underline-offset-2"
+              className="link-underline text-accent"
             >
               Work with him
             </Link>

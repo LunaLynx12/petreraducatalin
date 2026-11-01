@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, Github, ExternalLink, Check, Lock, TerminalSquare } from "lucide-react";
+import { ArrowUpRight, Check, Github, Lock } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { projects } from "@/data/projects";
 import { JsonLd } from "@/components/seo";
 import { Reveal } from "@/components/reveal";
+import { PageHero } from "@/components/page-hero";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Projects & Case Studies",
@@ -34,123 +36,160 @@ const projectJsonLd = projects.map((project) => ({
 
 export default function ProjectsPage() {
   return (
-    <article className="section-padding">
+    <article>
       <JsonLd data={projectJsonLd} />
-      <div className="container max-w-5xl">
-        <Reveal>
-          <Link
-            href="/#projects"
-            className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-muted transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            back_to_home
-          </Link>
-          <h1 className="font-mono text-3xl font-bold text-foreground sm:text-5xl">
-            Projects &amp; <span className="text-gradient-green">Case Studies</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Deep-dives into the projects of Petre Radu Cătălin - tools for
-            malware analysis, forensic research, and the automation that makes
-            penetration testing at NTT DATA faster and more repeatable.
-          </p>
-        </Reveal>
+      <PageHero
+        eyebrow="Selected work"
+        title={
+          <>
+            Projects &amp; <em className="italic text-clay">Case Studies</em>
+          </>
+        }
+        description="Deep-dives into the projects of Petre Radu Cătălin — tools for malware analysis, forensic research, and the automation that makes penetration testing at NTT DATA faster and more repeatable."
+        meta={
+          <>
+            <span>{projects.length} projects</span>
+            <span aria-hidden="true" className="h-3 w-px bg-line-strong" />
+            <span>Open source &amp; private engagements</span>
+          </>
+        }
+      />
 
-        <div className="mt-14 space-y-14">
-          {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={0.05 * i}>
-              <section
-                id={project.slug}
-                aria-labelledby={`${project.slug}-title`}
-                className="scroll-mt-24 overflow-hidden rounded-2xl border border-border bg-surface"
-              >
-                <div className="relative aspect-[16/8] border-b border-border bg-black/20">
-                  <Image
-                    src={`/images/projects/${project.slug}.webp`}
-                    alt={`${project.title} - ${project.subtitle} case study by Petre Radu Cătălin`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 896px"
-                    className="object-cover"
-                  />
-                  {project.private ? (
-                    <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-md border border-accent/40 bg-accent/15 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-accent">
-                      <Lock className="h-3.5 w-3.5" aria-hidden="true" />
-                      Repo private - capabilities only
-                    </span>
-                  ) : null}
-                </div>
-
-                <div className="p-6 md:p-10">
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <h2
-                        id={`${project.slug}-title`}
-                        className="font-mono text-2xl font-bold text-foreground"
-                      >
-                        {project.title}
-                      </h2>
-                      <p className="mt-1 text-sm font-medium text-secondary">
-                        {project.subtitle}
-                      </p>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge key={tag} className="font-mono text-[10px]">
-                          {tag}
-                        </Badge>
-                      ))}
+      <div className="container max-w-6xl pb-20 md:pb-28">
+        {projects.map((project, i) => (
+          <Reveal key={project.slug} delay={0.05 * i}>
+            <section
+              id={project.slug}
+              aria-labelledby={`${project.slug}-title`}
+              className="scroll-mt-28 border-b border-line py-12 first:border-t md:py-16"
+            >
+              <div className="grid items-start gap-8 md:grid-cols-12 md:gap-10">
+                <div
+                  className={cn(
+                    "md:col-span-6",
+                    i % 2 === 1 && "md:order-2"
+                  )}
+                >
+                  <div className="overflow-hidden border border-line bg-surface-2">
+                    <div className="relative aspect-[16/10] w-full">
+                      {/* Static export, so next/image cannot generate a srcset.
+                          The two hand-built variants are smaller than the
+                          framework's default single file. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/images/projects/${project.slug}-800.webp`}
+                        srcSet={`/images/projects/${project.slug}-800.webp 800w, /images/projects/${project.slug}.webp 1200w`}
+                        sizes="(max-width: 1024px) 100vw, 640px"
+                        alt={`${project.title} - ${project.subtitle} case study by Petre Radu Cătălin`}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
                     </div>
                   </div>
+                </div>
 
-                  <p className="mt-6 text-base leading-relaxed text-foreground/85">
+                <div
+                  className={cn(
+                    "md:col-span-6",
+                    i % 2 === 1 && "md:order-1"
+                  )}
+                >
+                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                    <span className="text-accent">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span aria-hidden="true" className="h-px w-8 bg-line-strong" />
+                    <span className="inline-flex items-center gap-1.5">
+                      {project.private ? (
+                        <>
+                          <Lock className="h-3 w-3" aria-hidden="true" />
+                          Private engagement
+                        </>
+                      ) : (
+                        "Open source"
+                      )}
+                    </span>
+                  </div>
+
+                  <h2
+                    id={`${project.slug}-title`}
+                    className="mt-4 font-serif text-3xl leading-tight tracking-[-0.02em] text-ink md:text-4xl"
+                  >
+                    {project.title}
+                  </h2>
+                  <p className="mt-2 text-sm font-medium text-accent">
+                    {project.subtitle}
+                  </p>
+
+                  <p className="mt-5 max-w-[62ch] text-pretty text-base leading-relaxed text-body">
                     {project.description}
                   </p>
 
-                  <h3 className="mb-3 mt-8 flex items-center gap-2 font-mono text-sm font-semibold uppercase tracking-widest text-primary">
-                    <TerminalSquare className="h-4 w-4" aria-hidden="true" />
+                  <h3 className="mt-8 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
                     Highlights
                   </h3>
-                  <ul className="grid gap-3 md:grid-cols-2">
+                  <ul className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
                     {project.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="flex items-start gap-2 rounded-lg border border-border bg-background/40 p-3.5 text-sm text-foreground/85"
+                        className="flex items-start gap-2 text-sm leading-relaxed text-body"
                       >
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                        <Check
+                          className="mt-0.5 h-4 w-4 shrink-0 text-accent"
+                          aria-hidden="true"
+                        />
                         {highlight}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-4">
-                    {project.repo ? (
-                      <a
-                        href={project.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-5 py-2.5 font-mono text-sm text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-glow"
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="font-mono text-[10px]"
                       >
-                        <Github className="h-4 w-4" aria-hidden="true" />
-                        View on GitHub
-                      </a>
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 flex flex-wrap items-center gap-6">
+                    {project.repo ? (
+                      <Button asChild variant="outline" size="sm">
+                        <a
+                          href={project.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github aria-hidden="true" />
+                          View on GitHub
+                        </a>
+                      </Button>
                     ) : (
-                      <span className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 font-mono text-sm text-muted">
-                        <Lock className="h-4 w-4" aria-hidden="true" />
+                      <span className="inline-flex items-center gap-2 border border-line px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                        <Lock className="h-3.5 w-3.5" aria-hidden="true" />
                         Internal tooling
                       </span>
                     )}
                     <Link
                       href="/#contact"
-                      className="inline-flex items-center gap-2 font-mono text-sm text-secondary transition-opacity hover:opacity-80"
+                      className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-accent"
                     >
-                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
                       Request a walkthrough
+                      <ArrowUpRight
+                        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
                     </Link>
                   </div>
                 </div>
-              </section>
-            </Reveal>
-          ))}
-        </div>
+              </div>
+            </section>
+          </Reveal>
+        ))}
       </div>
     </article>
   );

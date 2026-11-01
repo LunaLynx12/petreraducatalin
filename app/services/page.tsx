@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig, SERVICE_LINKS } from "@/data/site";
 import { keywordLandings } from "@/data/seo-pages";
 import { Reveal } from "@/components/reveal";
+import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: { absolute: "Penetration Testing Services | Petre Radu Cătălin" },
@@ -12,11 +13,24 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/services/` },
 };
 
+const extraDescriptions: Record<string, string> = {
+  "/ro/pentesting-brasov/":
+    "Testare de penetrare pentru firme din Brașov: web, API, rețea internă și Active Directory, cu raport în română și engleză.",
+  "/locations/":
+    "Where clients work with me: Romania, the Netherlands, Austria, and Finland. Remote-first across the EU, on-site in Romania.",
+  "/locations/netherlands/":
+    "Penetration testing for teams in Amsterdam, Rotterdam, and The Hague. Remote-first from Brașov, EU-friendly collaboration.",
+  "/locations/austria/":
+    "Penetration testing for teams in Vienna, Graz, and Linz. Remote-first from Brașov, EU-friendly collaboration.",
+  "/locations/finland/":
+    "Penetration testing for teams in Helsinki, Espoo, and Tampere. Remote-first from Brașov, EU-friendly collaboration.",
+};
+
 const hubs = [
   ...SERVICE_LINKS.map((l) => ({
     href: l.href,
     title: l.label,
-    text: "Service landing optimized for local hiring intent.",
+    text: extraDescriptions[l.href] ?? l.label,
   })),
   ...keywordLandings.map((p) => ({
     href: p.path,
@@ -31,50 +45,64 @@ const uniqueHubs = Array.from(
 
 export default function ServicesHubPage() {
   return (
-    <article className="section-padding">
-      <div className="container max-w-4xl">
-        <Reveal>
-          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-primary">
-            services hub
-          </p>
-          <h1 className="font-mono text-3xl font-bold text-foreground sm:text-5xl">
+    <article>
+      <PageHero
+        eyebrow="Services hub"
+        title={
+          <>
             Penetration testing{" "}
-            <span className="text-gradient-green">services</span>
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+            <em className="italic text-clay">services</em>
+          </>
+        }
+        description={
+          <>
             Canonical service and keyword pages for Petre Radu Cătălin, the
             penetration tester based in Brașov, Romania. Use these pages when
             you need a named expert. For company platform services, see{" "}
             <a
               href="https://kiwidefence.com"
-              className="text-secondary underline underline-offset-2"
+              className="link-underline text-accent"
               rel="noopener noreferrer"
             >
               Kiwi Defence
             </a>
             .
-          </p>
-        </Reveal>
+          </>
+        }
+        meta={
+          <>
+            <span>{uniqueHubs.length} pages</span>
+            <span aria-hidden="true" className="h-3 w-px bg-line-strong" />
+            <span>Web · API · Cloud · Identity · Red team</span>
+          </>
+        }
+      />
 
-        <div className="mt-12 space-y-4">
+      <div className="container max-w-5xl pb-20 md:pb-28">
+        <div className="border-t border-line">
           {uniqueHubs.map((item, i) => (
-            <Reveal key={item.href} delay={0.03 * i}>
+            <Reveal key={item.href} delay={0.02 * i}>
               <Link
                 href={item.href}
-                className="group flex items-start justify-between gap-4 rounded-xl border border-border bg-surface/60 p-5 transition-all hover:border-primary/40 hover:shadow-glow"
+                className="group grid gap-3 border-b border-line py-6 md:grid-cols-12 md:gap-8 md:py-7"
               >
-                <div>
-                  <h2 className="font-mono text-base font-semibold text-foreground group-hover:text-primary">
+                <div className="flex items-baseline gap-3 md:col-span-5">
+                  <span className="font-mono text-[10px] text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="font-serif text-xl leading-snug text-ink transition-colors group-hover:text-accent md:text-2xl">
                     {item.title}
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {item.text}
-                  </p>
                 </div>
-                <ArrowRight
-                  className="mt-1 h-4 w-4 shrink-0 text-primary"
-                  aria-hidden="true"
-                />
+                <p className="max-w-[62ch] text-sm leading-relaxed text-body md:col-span-6">
+                  {item.text}
+                </p>
+                <div className="flex items-start justify-end md:col-span-1">
+                  <ArrowUpRight
+                    className="h-4 w-4 text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </div>
               </Link>
             </Reveal>
           ))}

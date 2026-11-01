@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Target } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { Reveal } from "@/components/reveal";
+import { PageHero } from "@/components/page-hero";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About Petre Radu Cătălin",
@@ -54,47 +56,58 @@ const coreSkills = [
 
 export default function AboutPage() {
   return (
-    <article className="section-padding">
-      <div className="container max-w-4xl">
-        <Reveal>
-          <Link
-            href="/#about"
-            className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-muted transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            back_to_home
-          </Link>
-          <h1 className="font-mono text-3xl font-bold text-foreground sm:text-5xl">
-            About <span className="text-gradient-green">Petre Radu Cătălin</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-            Full biography of Petre Radu Cătălin (Petre Radu) - offensive
-            security professional focused on penetration testing, research, and
-            practical security evaluation. Based in Brașov, Romania.
-          </p>
-        </Reveal>
+    <article>
+      <PageHero
+        eyebrow="Profile"
+        title={
+          <>
+            About{" "}
+            <em className="italic text-clay">Petre Radu Cătălin</em>
+          </>
+        }
+        description="Full biography of Petre Radu Cătălin (Petre Radu) — offensive security professional focused on penetration testing, research, and practical security evaluation. Based in Brașov, Romania."
+        meta={
+          <>
+            <span>Brașov, Romania</span>
+            <span aria-hidden="true" className="h-3 w-px bg-line-strong" />
+            <span>Penetration Tester @ NTT DATA</span>
+            <span aria-hidden="true" className="h-3 w-px bg-line-strong" />
+            <span>Founder, Kiwi Defence</span>
+          </>
+        }
+      />
 
-        <Reveal delay={0.1} className="mt-10">
-          <div className="neon-border overflow-hidden rounded-2xl bg-surface">
+      <div className="container max-w-5xl pb-20 md:pb-28">
+        <Reveal className="mt-14 md:mt-20">
+          <figure className="overflow-hidden border border-line bg-surface-2">
             <Image
               src="/images/Stage.webp"
               alt="Petre Radu Cătălin presenting on stage at a cybersecurity conference"
               width={1672}
               height={941}
-              className="aspect-[16/7] w-full object-cover object-right"
+              className="aspect-[16/8] w-full object-cover object-right grayscale-[0.35] sepia-[0.05]"
               priority
             />
-          </div>
+            <figcaption className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+              <span>On stage — cybersecurity conference</span>
+              <span className="text-accent">Brașov, Romania</span>
+            </figcaption>
+          </figure>
         </Reveal>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-16 md:mt-20">
           {extendedBio.map((section, i) => (
             <Reveal key={section.heading} delay={0.04 * i}>
-              <section>
-                <h2 className="mb-3 font-mono text-xl font-semibold text-primary">
-                  {String(i + 1).padStart(2, "0")}. {section.heading}
-                </h2>
-                <p className="text-base leading-relaxed text-foreground/85">
+              <section className="grid gap-4 border-t border-line py-8 md:grid-cols-12 md:gap-8 md:py-10">
+                <div className="md:col-span-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h2 className="mt-3 font-serif text-2xl leading-tight tracking-[-0.01em] text-ink md:text-3xl">
+                    {section.heading}
+                  </h2>
+                </div>
+                <p className="max-w-[68ch] text-pretty text-base leading-relaxed text-body md:col-span-8">
                   {section.paragraph}
                 </p>
               </section>
@@ -102,35 +115,57 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <Reveal delay={0.1} className="mt-14">
-          <div className="neon-border rounded-2xl bg-surface/70 p-6 md:p-8">
-            <h2 className="mb-2 flex items-center gap-2 font-mono text-xl font-semibold text-primary">
-              <Target className="h-5 w-5" aria-hidden="true" />
-              Personal Mission
-            </h2>
-            <p className="text-base leading-relaxed text-foreground/85">
-              To identify critical vulnerabilities and deliver actionable
-              defense - helping organizations understand their real exposure
-              before attackers do, and to raise the bar for security practice in
-              Romania and beyond.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {coreSkills.map((skill) => (
-                <Badge key={skill} className="font-mono">
-                  {skill}
-                </Badge>
-              ))}
+        <Reveal className="mt-16 md:mt-20">
+          <section className="grid gap-6 border-t border-line-strong pt-8 md:grid-cols-12 md:gap-8">
+            <div className="md:col-span-4">
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                Personal mission
+              </p>
+              <h2 className="mt-3 max-w-[16ch] text-balance font-serif text-3xl leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">
+                Find what matters. Prove it. Fix it.
+              </h2>
             </div>
-          </div>
+            <div className="md:col-span-8">
+              <p className="max-w-[68ch] text-pretty text-base leading-relaxed text-body">
+                To identify critical vulnerabilities and deliver actionable
+                defense — helping organizations understand their real exposure
+                before attackers do, and to raise the bar for security practice
+                in Romania and beyond.
+              </p>
+              <ul className="mt-7 flex flex-wrap gap-2">
+                {coreSkills.map((skill) => (
+                  <li key={skill}>
+                    <Badge variant="outline" className="font-mono text-[10px]">
+                      {skill}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
         </Reveal>
 
-        <Reveal delay={0.15} className="mt-12 text-center">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-6 py-3 font-mono text-sm text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-glow"
-          >
-            Work with me
-          </Link>
+        <Reveal className="mt-16 border-t border-line pt-8 md:mt-20">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Button asChild size="lg">
+              <Link href="/#contact">
+                Work with me
+                <ArrowUpRight aria-hidden="true" />
+              </Link>
+            </Button>
+            <Link
+              href="/#projects"
+              className="link-underline font-mono text-[10px] uppercase tracking-[0.16em] text-accent"
+            >
+              Selected work
+            </Link>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="link-underline font-mono text-[10px] uppercase tracking-[0.16em] text-muted"
+            >
+              {siteConfig.email}
+            </a>
+          </div>
         </Reveal>
       </div>
     </article>

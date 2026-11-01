@@ -6,6 +6,7 @@ interface PageHeroProps {
   title: ReactNode;
   description?: ReactNode;
   meta?: ReactNode;
+  breadcrumbs?: ReactNode;
   children?: ReactNode;
   className?: string;
 }
@@ -15,12 +16,14 @@ export function PageHero({
   title,
   description,
   meta,
+  breadcrumbs,
   children,
   className,
 }: PageHeroProps) {
   return (
     <header className={cn("border-b border-line", className)}>
-      <div className="container pb-16 pt-32 md:pb-24 md:pt-40">
+      <div className="container pb-16 pt-32 md:pb-20 md:pt-40">
+        {breadcrumbs}
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
           {eyebrow}
         </p>
