@@ -1,81 +1,143 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Github, ExternalLink, Lock, ChevronRight } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
+import { ArrowUpRight, Github, Lock } from "lucide-react";
+import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="section-padding border-t border-border">
+    <section
+      id="projects"
+      aria-labelledby="projects-heading"
+      className="section-y"
+    >
       <div className="container">
-        <SectionHeading
-          eyebrow="featured_work"
+        <SectionHeader
+          index="01"
+          eyebrow="Selected work"
           id="projects-heading"
           title="Projects"
-          description="Selected projects from research, development, and real engagements - static malware analysis, forensic tooling, and the automation that powers my assessments."
+          description="Research, tooling, and real engagement work — static malware analysis, forensic tooling, and the automation behind faster assessments."
+          action={
+            <Link
+              href="/projects/"
+              className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-accent"
+            >
+              All case studies
+              <ArrowUpRight
+                className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          }
         />
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="border-t border-line">
           {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={0.06 * i} className="h-full">
-              <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-border">
-                  <Image
-                    src={`/images/projects/${project.slug}.webp`}
-                    alt={`${project.title} - ${project.subtitle} project by Petre Radu Cătălin`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                  {project.private ? (
-                    <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-md border border-accent/40 bg-accent/15 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-accent">
-                      <Lock className="h-3 w-3" aria-hidden="true" />
-                      Private
-                    </span>
-                  ) : null}
+            <Reveal
+              key={project.slug}
+              delay={0.05 * i}
+              className="border-b border-line"
+            >
+              <article className="grid items-center gap-8 py-10 md:grid-cols-12 md:gap-10 md:py-14">
+                <div
+                  className={cn(
+                    "md:col-span-7",
+                    i % 2 === 1 && "md:order-2"
+                  )}
+                >
+                  <Link
+                    href={`/projects/#${project.slug}`}
+                    className="group block overflow-hidden bg-surface-2"
+                  >
+                    <div className="relative aspect-[16/10] w-full">
+                      {/* Static export, so next/image cannot generate a srcset.
+                          The two hand-built variants are smaller than the
+                          framework's default single file. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/images/projects/${project.slug}-800.webp`}
+                        srcSet={`/images/projects/${project.slug}-800.webp 800w, /images/projects/${project.slug}.webp 1200w`}
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        alt={`${project.title} - ${project.subtitle} project by Petre Radu Cătălin`}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  </Link>
                 </div>
 
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-mono text-lg font-semibold text-foreground">
+                <div
+                  className={cn(
+                    "md:col-span-5",
+                    i % 2 === 1 && "md:order-1"
+                  )}
+                >
+                  <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                    <span className="text-accent">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="h-px w-8 bg-line-strong"
+                    />
+                    <span>
+                      {project.private ? "Private engagement" : "Open source"}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-4 font-serif text-3xl leading-tight tracking-[-0.02em] text-ink md:text-4xl">
                     {project.title}
                   </h3>
-                  <p className="mt-1 text-xs font-medium text-secondary">{project.subtitle}</p>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  <p className="mt-2 text-sm font-medium text-accent">
+                    {project.subtitle}
+                  </p>
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-body">
                     {project.description}
                   </p>
 
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="font-mono text-[10px]">
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="font-mono text-[10px]"
+                      >
                         {tag}
                       </Badge>
                     ))}
                   </div>
 
-                  <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
+                  <div className="mt-6 flex flex-wrap items-center gap-5">
                     {project.repo ? (
                       <a
                         href={project.repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-primary transition-opacity hover:opacity-80"
+                        className="link-underline inline-flex items-center gap-2 text-sm font-medium text-ink"
                       >
                         <Github className="h-4 w-4" aria-hidden="true" />
                         GitHub
                       </a>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 text-sm text-muted">
+                      <span className="inline-flex items-center gap-2 text-sm text-muted">
                         <Lock className="h-4 w-4" aria-hidden="true" />
                         Private repo
                       </span>
                     )}
+
                     <Link
-                      href={`/projects#${project.slug}`}
-                      className="inline-flex items-center gap-1.5 text-sm text-secondary transition-opacity hover:opacity-80"
+                      href={`/projects/#${project.slug}`}
+                      className="group inline-flex items-center gap-2 text-sm font-medium text-accent"
                     >
-                      Case study <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                      Case study
+                      <ArrowUpRight
+                        className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
                     </Link>
                   </div>
                 </div>
@@ -83,16 +145,6 @@ export function ProjectsSection() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.1} className="mt-10 text-center">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 rounded-md border border-secondary/40 bg-secondary/10 px-6 py-3 font-mono text-sm text-secondary transition-all hover:bg-secondary hover:text-secondary-foreground hover:shadow-glow-cyan"
-          >
-            <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            Explore All Projects
-          </Link>
-        </Reveal>
       </div>
     </section>
   );

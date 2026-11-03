@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowUp, Github, Linkedin } from "lucide-react";
 import { NAV_LINKS, SERVICE_LINKS, siteConfig } from "@/data/site";
-import { Button } from "@/components/ui/button";
 
 function XIcon({ className }: { className?: string }) {
   return (
@@ -46,81 +43,120 @@ const findMeOn = [
   { label: "YouTube", href: siteConfig.social.youtube, icon: YouTubeIcon, handle: "@PetreRaduCatalin" },
 ];
 
+const footerServices = SERVICE_LINKS.slice(0, 8);
+
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface/40">
-      <div className="container py-12">
-        <div className="grid gap-10 md:grid-cols-3">
-          <div className="space-y-3">
-            <p className="font-mono text-lg font-semibold">
-              <span className="text-primary">Petre Radu Cătălin</span>{" "}
-              <span className="text-muted">- Senior Offensive Security Professional</span>
+    <footer className="bg-night text-night-text">
+      <div className="container py-16 md:py-20">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-night-muted">
+              Offensive security · Brașov, Romania
             </p>
-            <p className="max-w-xs text-sm text-muted">
-              Penetration tester in Brașov, Romania. Web, AD, cloud pentesting
-              and practical security evaluation for teams across Romania.
+            <p className="mt-6 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[0.95] tracking-[-0.03em]">
+              Petre Radu{" "}
+              <span className="italic text-night-muted">Cătălin</span>
             </p>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-night-muted">
+              Penetration testing for web, cloud, and identity-heavy
+              environments. Working with teams across Romania, the Netherlands,
+              Austria, and Finland.
+            </p>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="mt-8 inline-flex border-b border-night-line pb-1 font-serif text-2xl text-night-text transition-colors hover:border-night-text"
+            >
+              {siteConfig.email}
+            </a>
           </div>
 
-          <nav aria-label="Footer navigation">
-            <h2 className="mb-4 font-mono text-sm uppercase tracking-widest text-primary">
-              Site Navigation
+          <nav aria-label="Footer navigation" className="lg:col-span-3">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-night-muted">
+              Site index
             </h2>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="mt-5 space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-primary"
+                    className="text-sm text-night-muted transition-colors hover:text-night-text"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/blog" className="text-sm text-muted transition-colors hover:text-primary">
-                  Read the Blog
+                <Link
+                  href="/projects"
+                  className="text-sm text-night-muted transition-colors hover:text-night-text"
+                >
+                  Case studies
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-sm text-muted transition-colors hover:text-primary">
-                  View Case Studies
+                <Link
+                  href="/about"
+                  className="text-sm text-night-muted transition-colors hover:text-night-text"
+                >
+                  Full biography
                 </Link>
               </li>
               <li>
-                <a href="/rss.xml" className="text-sm text-muted transition-colors hover:text-primary">
-                  Subscribe via RSS
+                <a
+                  href="/rss.xml"
+                  className="text-sm text-night-muted transition-colors hover:text-night-text"
+                >
+                  RSS feed
                 </a>
               </li>
             </ul>
           </nav>
 
-          <div>
-            <h3 className="mb-4 font-mono text-sm uppercase tracking-widest text-primary">
-              Find me on
-            </h3>
-            <ul className="space-y-2">
+          <nav aria-label="Services" className="lg:col-span-2">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-night-muted">
+              Services
+            </h2>
+            <ul className="mt-5 space-y-2.5">
+              {footerServices.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-night-muted transition-colors hover:text-night-text"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/services/"
+                  className="text-sm text-night-text transition-colors hover:text-white"
+                >
+                  All services →
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="lg:col-span-2">
+            <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-night-muted">
+              Elsewhere
+            </h2>
+            <ul className="mt-5 space-y-2.5">
               {findMeOn.map(({ label, href, icon: Icon, handle }) => (
                 <li key={href}>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer me"
-                    className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-primary"
+                    className="group inline-flex items-center gap-2 text-sm text-night-muted transition-colors hover:text-night-text"
                   >
-                    <Icon className="h-4 w-4" />
-                    <span className="font-medium">{label}</span>
-                    <span className="text-xs text-muted/60">{handle}</span>
+                    <Icon className="h-3.5 w-3.5" />
+                    <span>{label}</span>
+                    <span className="text-[10px] text-night-text/55 hidden xl:inline">
+                      {handle}
+                    </span>
                   </a>
                 </li>
               ))}
@@ -128,18 +164,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-          <p className="text-xs text-muted">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-night-line pt-6 sm:flex-row sm:items-center">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-night-muted">
             © 2026 {siteConfig.name}. All rights reserved.
           </p>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          <a
+            href="#main"
+            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-night-muted transition-colors hover:text-night-text"
           >
-            <ArrowUp className="h-4 w-4" aria-hidden="true" />
             Back to top
-          </Button>
+            <ArrowUp
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5"
+              aria-hidden="true"
+            />
+          </a>
         </div>
       </div>
     </footer>

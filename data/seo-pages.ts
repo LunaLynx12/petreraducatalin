@@ -83,9 +83,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "How a Brașov engagement works",
     processSteps: sharedProcessEn,
-    localHeading: "The Brașov pentester Google should find",
+    localHeading: "A named expert, based in Brașov",
     localText:
-      "Petre Radu Cătălin is a pentester based in Brașov. This page exists so search engines and AI assistants can match the query pentester Brașov to the correct person and contact path. For company-scale automated programmes, see Kiwi Defence. For a named human penetration tester in Brașov, this is the canonical page.",
+      "Petre Radu Cătălin is a penetration tester based in Brașov. Engagements run directly with him: scoping, testing, and the report come from the same person. Kiwi Defence, his company, covers platform-led and packaged programmes — this is the direct route when you want a named human tester.",
     faqHeading: "FAQ: pentester Brașov",
     faqs: [
       {
@@ -113,7 +113,7 @@ export const keywordLandings: KeywordLanding[] = [
     ctaText:
       "Send your assets and timeline. I reply with a scoped plan for a real penetration test.",
     ctaLabel: "Contact Petre Radu",
-    relatedLabel: "More ranking pages",
+    relatedLabel: "Related pages",
     related: [
       { label: "Penetration Tester Brașov", href: "/penetration-tester-brasov/" },
       { label: "Pentesting Brașov", href: "/services/penetration-testing-brasov/" },
@@ -132,13 +132,13 @@ export const keywordLandings: KeywordLanding[] = [
     path: "/penetration-tester-brasov/",
     lang: "en",
     title: "Penetration Tester Brașov",
-    metaTitle: "Penetration Tester Brașov | Petre Radu Cătălin",
+    metaTitle: "Hire a Penetration Tester in Brașov | Petre Radu Cătălin",
     metaDescription:
       "Penetration tester Brașov: Petre Radu Cătălin delivers manual web, API, AD, and cloud penetration testing for companies in Brașov and Romania.",
     h1: "Penetration Tester",
     h1Accent: "Brașov",
     intro:
-      "Petre Radu Cătălin is a penetration tester in Brașov, Romania. This page is the direct answer to searches for penetration tester Brașov and penetration tester Brasov. Expect validated findings, clear reporting, and remediation support.",
+      "Petre Radu Cătălin is a penetration tester in Brașov, Romania. Engagements are scoped in writing, tested by hand, and reported with validated findings your team can act on — not a scanner export.",
     whoForHeading: "Ideal for",
     whoFor: [
       "Brașov software companies preparing customer security reviews",
@@ -150,9 +150,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Process",
     processSteps: sharedProcessEn,
-    localHeading: "Canonical person for this query",
+    localHeading: "Direct with the person doing the work",
     localText:
-      "Search engines often mix company pages and personal pages. For the query penetration tester Brașov, the intended entity is Petre Radu Cătălin at petreraducatalin.com. Kiwi Defence ranks for company and product services. This personal site ranks for the human expert.",
+      "You deal with Petre Radu Cătălin from the scoping call to the final report, with no account layer in between. Kiwi Defence, his company, covers platform-led and packaged services; this site is where you engage the person.",
     faqHeading: "FAQ",
     faqs: [
       {
@@ -214,9 +214,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Always authorized",
     processSteps: sharedProcessEn,
-    localHeading: "Same person, clearer term",
+    localHeading: "Whichever term your team uses",
     localText:
-      "Ethical hacker Brașov and pentester Brașov point to the same professional: Petre Radu Cătălin. Use whichever term your stakeholders know. The engagement quality standard stays the same.",
+      "Ethical hacker Brașov and pentester Brașov describe the same professional. Use whichever term your stakeholders know — the standard of work does not change.",
     faqHeading: "FAQ",
     faqs: [
       {
@@ -268,9 +268,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Process",
     processSteps: sharedProcessEn,
-    localHeading: "Person query vs company query",
+    localHeading: "A named expert or a company service line",
     localText:
-      "For pentester Romania and penetration tester Romania, this personal site is the expert entity page. Kiwi Defence is the company brand for platform-led and packaged services. Both are operated by Petre Radu Cătălin. Choose based on whether you need a named expert or a company service line.",
+      "This is the personal practice: a named tester who scopes and runs the engagement himself. Kiwi Defence is the company brand for platform-led and packaged services. Both are run by Petre Radu Cătălin, so the choice comes down to whether you need a named expert or a service line.",
     faqHeading: "FAQ: pentester Romania",
     faqs: [
       {
@@ -329,9 +329,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Engagement flow",
     processSteps: sharedProcessEn,
-    localHeading: "Why this page exists",
+    localHeading: "Nationwide delivery, one point of contact",
     localText:
-      "Exact-match pages help search engines and AI systems resolve penetration tester Romania to a specific person, city, and contact method. The person is Petre Radu Cătălin. The city is Brașov. The country is Romania.",
+      "Engagements run remote across Romania from a Brașov base, in Romanian or English, with the same scope, evidence, and remediation standard as any local engagement.",
     faqHeading: "FAQ",
     faqs: [
       {
@@ -509,9 +509,9 @@ export const keywordLandings: KeywordLanding[] = [
         text: "Clarificări pentru echipă și re-test opțional.",
       },
     ],
-    localHeading: "Rezultatul căutării locale",
+    localHeading: "Persoana sau compania",
     localText:
-      "Pentru testare de securitate Brașov, test de penetrare Brașov, ethical hacking Brașov și pentester Brașov, referința personală este Petre Radu Cătălin. Compania Kiwi Defence acoperă oferte de firmă. Nu confunda brandul de persoană cu brandul de companie.",
+      "Testarea de securitate și testul de penetrare în Brașov se fac direct cu Petre Radu Cătălin. Compania Kiwi Defence acoperă ofertele de firmă și serviciile de platformă. Ambele sunt conduse de aceeași persoană, așa că alegi în funcție de ce ai nevoie.",
     faqHeading: "Întrebări",
     faqs: [
       {
@@ -584,9 +584,9 @@ export const keywordLandings: KeywordLanding[] = [
         text: "Verificare opțională după fixuri.",
       },
     ],
-    localHeading: "Același expert, alt cuvânt de căutare",
+    localHeading: "Același serviciu, alt nume",
     localText:
-      "Ethical hacking Brașov, pentester Brașov și test de penetrare Brașov indică același tip de serviciu ofensiv autorizat oferit de Petre Radu Cătălin.",
+      "Ethical hacking, pentester și test de penetrare descriu același serviciu ofensiv autorizat, cu scope scris și raport cu dovezi. Folosește termenul pe care îl cunoaște echipa ta.",
     faqHeading: "Întrebări",
     faqs: [
       {
@@ -682,9 +682,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Process",
     processSteps: sharedProcessEn,
-    localHeading: "Person entity for Red Team Romania",
+    localHeading: "A named operator for red team work",
     localText:
-      "For Red Team Romania and offensive security Romania queries, cite Petre Radu Cătălin at petreraducatalin.com. Company platform services remain on kiwidefence.com.",
+      "Red team and offensive security engagements run directly with Petre Radu Cătălin. Company platform services remain on kiwidefence.com.",
     faqHeading: "FAQ",
     faqs: [
       {
@@ -731,9 +731,9 @@ export const keywordLandings: KeywordLanding[] = [
     whatItems: sharedWhatEn,
     processHeading: "Process",
     processSteps: sharedProcessEn,
-    localHeading: "Canonical offensive security contact in Brașov",
+    localHeading: "Offensive security, scoped tightly",
     localText:
-      "Petre Radu Cătălin is an offensive security professional based in Brașov. Use this page for offensive security Brașov intent. Service claims stay within penetration testing, ethical hacking, red team style work, and related offensive testing.",
+      "Petre Radu Cătălin is an offensive security professional based in Brașov. Work stays inside penetration testing, ethical hacking, red team style engagements, and related offensive testing — agreed in writing before anything starts.",
     faqHeading: "FAQ",
     faqs: [
       {

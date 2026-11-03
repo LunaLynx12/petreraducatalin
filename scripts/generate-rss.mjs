@@ -56,6 +56,12 @@ ${categories}
   })
   .join("\n");
 
+// Use the newest post date rather than the build time: the feed then changes
+// only when content does, which keeps caches and `git status` stable.
+const lastBuildDate = posts.length
+  ? `    <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>`
+  : "";
+
 const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -63,7 +69,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8" ?>
     <link>${SITE_URL}/blog/</link>
     <description>${SITE_DESCRIPTION}</description>
     <language>en</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${lastBuildDate}
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
 ${items}
   </channel>

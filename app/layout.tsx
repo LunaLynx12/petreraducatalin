@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
+import { ogImages, ogImage } from "@/lib/metadata";
 import { Analytics } from "@/components/seo";
 import { buildRootJsonLdGraph } from "@/components/seo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { cn } from "@/lib/utils";
+import { RevealObserver } from "@/components/reveal-observer";
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-jetbrains",
-  display: "swap",
-  preload: true,
-});
+/**
+ * Fonts are self-hosted and subsetted (see scripts/generate-fonts.mjs), then
+ * declared in globals.css. Preloading is explicit so it behaves identically on
+ * every platform; Next's local-font preload manifest is unreliable on Windows.
+ */
+const fontPreloads = [
+  "/fonts/inter-tight.woff2",
+  "/fonts/instrument-serif.woff2",
+  "/fonts/instrument-serif-italic.woff2",
+  "/fonts/plex-mono-400.woff2",
+];
 
 const rootJsonLd = buildRootJsonLdGraph();
 
@@ -47,20 +45,13 @@ export const metadata: Metadata = {
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
     locale: "en_US",
-    images: [
-      {
-        url: `${siteConfig.url}/images/og.png?v=2`,
-        width: 1200,
-        height: 630,
-        alt: "Petre Radu Cătălin - Penetration Tester Brașov, Romania",
-      },
-    ],
+    images: ogImages,
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.ogTitle,
     description: siteConfig.ogDescription,
-    images: [`${siteConfig.url}/images/og.png?v=2`],
+    images: [ogImage.url],
   },
   robots: {
     index: true,
@@ -96,26 +87,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(inter.variable, jetbrainsMono.variable, "scroll-smooth")}
-    >
+    <html lang="en">
       <head>
+        {fontPreloads.map((href) => (
+          <link
+            key={href}
+            rel="preload"
+            href={href}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
       </head>
-      <body className="scanline">
+      <body className="grain">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2.5 focus:text-sm focus:text-canvas"
         >
           Skip to content
         </a>
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <RevealObserver />
         <Analytics />
       </body>
     </html>

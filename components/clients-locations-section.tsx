@@ -1,57 +1,57 @@
 import Link from "next/link";
-import { MapPin, Quote } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
-import {
-  clientMentions,
-  servedCountries,
-} from "@/data/locations";
+import { clientMentions, servedCountries } from "@/data/locations";
 
 export function ClientsLocationsSection() {
   return (
     <section
       id="clients"
       aria-labelledby="clients-heading"
-      className="section-padding border-t border-border"
+      className="section-y bg-surface/40"
     >
       <div className="container">
-        <SectionHeading
-          eyebrow="clients"
+        <SectionHeader
+          index="06"
+          eyebrow="Clients"
           id="clients-heading"
           title="Satisfied clients across Romania and the EU"
           description={
             <>
-              Penetration testing and offensive security for teams in{" "}
-              <strong className="text-foreground">Romania</strong>,{" "}
-              <strong className="text-foreground">Netherlands</strong>,{" "}
-              <strong className="text-foreground">Austria</strong>, and{" "}
-              <strong className="text-foreground">Finland</strong>
-              {" "}(București, Brașov, Cluj-Napoca, Timișoara, Amsterdam, Rotterdam,
-              The Hague, Vienna, Graz, Linz, Helsinki, Espoo, Tampere).
+              Penetration testing for teams in Romania, the Netherlands,
+              Austria, and Finland — remote-first, with on-site work when it
+              helps.
             </>
           }
         />
 
-        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {servedCountries.map((country, i) => (
             <Reveal key={country.code} delay={0.04 * i}>
-              <div className="h-full rounded-xl border border-border bg-surface/60 p-5 transition-all hover:border-primary/40 hover:shadow-glow">
-                <p className="font-mono text-xs uppercase tracking-widest text-primary">
+              <div className="border-t border-line-strong pt-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
                   {country.code}
                 </p>
-                <h3 className="mt-2 font-mono text-lg font-semibold text-foreground">
-                  <Link href={country.path} className="hover:text-primary">
+                <h3 className="mt-2 font-serif text-2xl text-ink">
+                  <Link
+                    href={country.path}
+                    className="transition-colors hover:text-accent"
+                  >
                     {country.name}
                   </Link>
                 </h3>
-                <ul className="mt-3 space-y-1.5 text-sm text-muted">
+                <ul className="mt-4 space-y-1.5">
                   {country.cities.map((city) => (
                     <li key={city.slug}>
                       <Link
                         href={`${country.path}${city.slug}/`}
-                        className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+                        className="group inline-flex items-center gap-2 text-sm text-body transition-colors hover:text-accent"
                       >
-                        <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                        <span
+                          aria-hidden="true"
+                          className="h-px w-2 bg-line-strong transition-all duration-300 group-hover:w-4 group-hover:bg-accent"
+                        />
                         <span>
                           {city.nameLocal ?? city.name}
                           {city.isCapital ? " (capital)" : ""}
@@ -65,17 +65,16 @@ export function ClientsLocationsSection() {
           ))}
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {clientMentions.map((item, i) => (
+        <div className="mt-16 grid gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+          {clientMentions.slice(0, 6).map((item, i) => (
             <Reveal key={`${item.city}-${item.role}`} delay={0.03 * i}>
-              <figure className="flex h-full flex-col rounded-xl border border-border bg-surface/50 p-5">
-                <Quote className="mb-3 h-4 w-4 text-primary" aria-hidden="true" />
-                <blockquote className="flex-1 text-sm leading-relaxed text-foreground/85">
+              <figure className="border-t border-line pt-5">
+                <blockquote className="text-pretty font-serif text-xl leading-snug text-ink">
                   “{item.quote}”
                 </blockquote>
-                <figcaption className="mt-4 font-mono text-xs text-muted">
-                  <span className="text-foreground/80">{item.role}</span>
-                  <span className="mt-1 block text-primary">
+                <figcaption className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                  <span className="block text-body">{item.role}</span>
+                  <span className="mt-1 block text-accent">
                     {item.city}, {item.country}
                   </span>
                 </figcaption>
@@ -84,12 +83,16 @@ export function ClientsLocationsSection() {
           ))}
         </div>
 
-        <Reveal delay={0.2} className="mt-10 text-center">
+        <Reveal delay={0.1} className="mt-12">
           <Link
             href="/locations/"
-            className="inline-flex rounded-md border border-primary/40 bg-primary/10 px-5 py-2.5 font-mono text-sm text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+            className="group inline-flex items-center gap-2 border-b border-line-strong pb-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink transition-colors hover:border-accent hover:text-accent"
           >
             All locations and countries
+            <ArrowUpRight
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
         </Reveal>
       </div>

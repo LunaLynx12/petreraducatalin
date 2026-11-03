@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import type { KeywordLanding } from "@/data/seo-pages";
 import { languagesForPath } from "@/data/hreflang";
+import { ogImages } from "@/lib/metadata";
 import { ServiceLanding } from "@/components/service-landing";
 
 export function keywordMetadata(page: KeywordLanding): Metadata {
@@ -25,6 +26,7 @@ export function keywordMetadata(page: KeywordLanding): Metadata {
       description: page.metaDescription,
       locale: page.lang === "ro" ? "ro_RO" : "en_US",
       alternateLocale: page.lang === "ro" ? ["en_US"] : ["ro_RO"],
+      images: ogImages,
     },
   };
 }
